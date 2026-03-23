@@ -98,20 +98,38 @@ function App() {
               I didn't start with Figma.<br/>
               I started with a pencil.
             </p>
+
+            <p className="manifesto-line reveal">
+              Hello, I am Laveena.<br/>
+              But call me lavee.
+            </p>
+
+            <p className="manifesto-line reveal" style={{ fontSize: 'clamp(1.5rem, 3.5vw, 2.8rem)' }}>
+              Before I knew what design even was - I was drawing characters, doodling art, crafting things with my hands.
+            </p>
             
             <p className="manifesto-line reveal">
-              Business cards. Banners. Posters.<br/>
-              Then screens. Flows. Experiences.<br/>
-              <span className="font-serif italic text-secondary">Then a full passion for Product Design.</span>
+              That love grew into ↓
+            </p>
+
+            <p className="manifesto-line reveal" style={{ fontSize: 'clamp(1.2rem, 3vw, 2.2rem)' }}>
+              &rarr; Business cards. Banners. Posters.<br/>
+              &rarr; Then screens. Flows. Experiences.<br/>
+              <span className="font-serif italic text-secondary">&rarr; Then a full passion for Product Design.</span>
             </p>
             
             <p className="manifesto-line reveal">
               Computer Science gave me logic.<br/>
               Design gave me feeling.
             </p>
+
+            <p className="manifesto-line reveal">
+              Together - I build things that solve AND feel right.
+            </p>
             
-            <p className="manifesto-line reveal" style={{ fontStyle: 'italic', color: 'var(--text-secondary)' }}>
-              Design should solve. Not decorate.
+            <p className="manifesto-line reveal">
+              Because I believe one thing deeply -<br/>
+              <span style={{ fontStyle: 'italic', color: 'var(--text-secondary)' }}>Design should solve. Not decorate.</span>
             </p>
           </div>
         </section>

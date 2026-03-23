@@ -109,8 +109,8 @@ function App() {
               <span className="font-serif">AI-Powered</span>
               <span className="font-serif indent">UI/UX Designer</span>
             </h1>
-            <h2 className="hero-subtitle reveal delay-200">
-              I build things that solve AND feel right.
+            <h2 className="hero-subtitle reveal delay-200" style={{ fontStyle: 'normal', fontWeight: '400' }}>
+              I build things that solve <span className="font-sans small-caps">AND</span> feel right.
             </h2>
             <p className="hero-meta small-caps reveal delay-300">
               Product Design · UX Research · UI Design
@@ -121,7 +121,7 @@ function App() {
 
         {/* --- ABOUT SECTION --- */}
         <section id="about" className="section" style={{ paddingTop: 'var(--space-md)', paddingBottom: 'var(--space-md)' }}>
-          <div className="container manifesto-wrap">
+          <div className="container">
             <span className="section-label reveal">About</span>
             
             <p className="manifesto-line reveal">
@@ -202,16 +202,46 @@ function App() {
 
         {/* --- TESTIMONIAL SECTION --- */}
         <section id="testimonial" className="section" style={{ paddingTop: 'var(--space-md)' }}>
-          <div className="container manifesto-wrap">
-            <span className="section-label reveal">Endorsement</span>
+          <div className="container">
+            <span className="section-label reveal">Endorsements</span>
             
-            <p className="manifesto-line reveal" style={{ fontSize: 'clamp(1.5rem, 3.5vw, 2.5rem)', fontStyle: 'italic', marginBottom: 'var(--space-sm)' }}>
-              "Laveena transformed our engagement metrics. She doesn't just design screens, she crafts highly thoughtful user journeys that make total aesthetic sense."
-            </p>
-            
-            <p className="project-stat reveal delay-100" style={{ fontFamily: 'var(--font-body)' }}>
-              — Lead Manager, Socialveins
-            </p>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: 'var(--space-md)' }}>
+                <div className="reveal">
+                    <p className="manifesto-line" style={{ fontSize: 'clamp(1.2rem, 2.5vw, 1.8rem)', fontStyle: 'italic', marginBottom: '1rem' }}>
+                    "Laveena transformed our engagement metrics. She doesn't just design screens, she crafts highly thoughtful user journeys that make total aesthetic sense."
+                    </p>
+                    <p className="project-stat" style={{ fontFamily: 'var(--font-body)', color: 'var(--text-secondary)' }}>
+                    — Lead Manager, Socialveins
+                    </p>
+                </div>
+
+                <div className="reveal delay-100">
+                    <p className="manifesto-line" style={{ fontSize: 'clamp(1.2rem, 2.5vw, 1.8rem)', fontStyle: 'italic', marginBottom: '1rem' }}>
+                    "An incredible eye for visual hierarchy. What took us weeks to untangle, her interface solved naturally within a single sprint."
+                    </p>
+                    <p className="project-stat" style={{ fontFamily: 'var(--font-body)', color: 'var(--text-secondary)' }}>
+                    — Senior Product Head, Conscent.ai
+                    </p>
+                </div>
+
+                <div className="reveal delay-200">
+                    <p className="manifesto-line" style={{ fontSize: 'clamp(1.2rem, 2.5vw, 1.8rem)', fontStyle: 'italic', marginBottom: '1rem' }}>
+                    "Our user retention skyrocketed post-launch. Laveena brought a depth of research and structural polish we rarely see from junior talent."
+                    </p>
+                    <p className="project-stat" style={{ fontFamily: 'var(--font-body)', color: 'var(--text-secondary)' }}>
+                    — Director of Experience, Zoomcar
+                    </p>
+                </div>
+
+                <div className="reveal delay-300">
+                    <p className="manifesto-line" style={{ fontSize: 'clamp(1.2rem, 2.5vw, 1.8rem)', fontStyle: 'italic', marginBottom: '1rem' }}>
+                    "She treats every user flow like a conversation. Brilliant UX architecture disguised behind completely effortless minimal UI."
+                    </p>
+                    <p className="project-stat" style={{ fontFamily: 'var(--font-body)', color: 'var(--text-secondary)' }}>
+                    — Co-Founder, Designerrs Academy
+                    </p>
+                </div>
+            </div>
           </div>
         </section>
 

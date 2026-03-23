@@ -178,38 +178,73 @@ function App() {
           </div>
         </section>
 
-        {/* --- CASE STUDIES SECTION --- */}
+        {/* --- PREMIUM CASE STUDIES SECTION --- */}
         <section id="work" className="section">
           <div className="container">
-            <span className="section-label reveal">Work</span>
+            <span className="section-label reveal">Selected Work</span>
             
-            <div className="projects-grid">
+            <div className="premium-projects">
               
-              <a href="#/designlink" className="project-item reveal">
-                <div className="project-image-wrap">
-                    <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?auto=format&fit=crop&w=1600&q=80" alt="DesignLink Interface" className="project-image" />
-                </div>
-                <div className="project-info">
-                  <div className="project-title" style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
-                      DesignLink Platform <span>(Designerrs Academy)</span>
-                      <span className="small-caps" style={{ border: '1px solid currentColor', padding: '0.3rem 0.8rem', borderRadius: '20px', fontSize: '0.7rem', opacity: 0.8 }}>Read Case Study &rarr;</span>
+              {/* DESIGNLINK CARD */}
+              <a href="#/designlink" className="premium-card reveal">
+                <div className="premium-card-left">
+                  <span className="premium-label">DesignLink • 2024</span>
+                  <h3 className="premium-headline">Connecting designers with real-world opportunities through a seamless platform</h3>
+                  
+                  <div className="premium-tags">
+                    <span className="premium-tag">Design Platform</span>
+                    <span className="premium-tag">B2B</span>
+                    <span className="premium-tag">Marketplace</span>
+                    <span className="premium-tag">UX/UI</span>
                   </div>
-                  <div className="project-stat">Simplifying job matching for creative professionals</div>
+                </div>
+
+                <div className="premium-card-right">
+                    <div className="premium-mockup-wrapper">
+                        <div className="mockup-desktop">
+                            <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?auto=format&fit=crop&w=1600&q=80" alt="DesignLink Desktop Mockup" className="mockup-img" />
+                        </div>
+                        <div className="mockup-mobile">
+                            <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=800&q=80" alt="DesignLink Mobile App" className="mockup-img" />
+                        </div>
+                    </div>
+                </div>
+
+                <div className="premium-cta">
+                    View Case Study &rarr;
                 </div>
               </a>
 
-              <a href="#/zoomcar" className="project-item reveal">
-                <div className="project-image-wrap">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1600&q=80" alt="Zoomcar Case Study" className="project-image" />
-                </div>
-                <div className="project-info">
-                  <div className="project-title" style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
-                      Zoomcar Host App <span>(Conscent.ai Internship)</span>
-                      <span className="small-caps" style={{ border: '1px solid currentColor', padding: '0.3rem 0.8rem', borderRadius: '20px', fontSize: '0.7rem', opacity: 0.8 }}>Read Case Study &rarr;</span>
+              {/* CRAFTCONNECT CARD */}
+              <a href="#/craftconnect" className="premium-card reveal delay-100">
+                <div className="premium-card-left">
+                  <span className="premium-label">CraftConnect • 2024</span>
+                  <h3 className="premium-headline">Empowering Rajasthan artisans with direct global market access</h3>
+                  
+                  <div className="premium-tags">
+                    <span className="premium-tag">Social Impact</span>
+                    <span className="premium-tag">E-commerce</span>
+                    <span className="premium-tag">B2C</span>
+                    <span className="premium-tag">Mobile-first</span>
                   </div>
-                  <div className="project-stat">Driving a 40% Listing Extension Rate</div>
+                </div>
+
+                <div className="premium-card-right">
+                    <div className="premium-mockup-wrapper">
+                        <div className="mockup-desktop" style={{ transform: 'rotate(-2deg)' }}>
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1600&q=80" alt="CraftConnect Flow Desktop" className="mockup-img" />
+                        </div>
+                        <div className="mockup-mobile" style={{ transform: 'rotate(4deg)', right: '15%' }}>
+                            <img src="https://images.unsplash.com/photo-1509391366360-1f9e21ce161c?auto=format&fit=crop&w=800&q=80" alt="CraftConnect Mobile UI" className="mockup-img" />
+                        </div>
+                    </div>
+                </div>
+
+                <div className="premium-cta">
+                    View Case Study &rarr;
                 </div>
               </a>
+
             </div>
           </div>
         </section>

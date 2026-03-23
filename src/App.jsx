@@ -118,6 +118,12 @@ function App() {
         {/* --- HERO / INTRO SECTION --- */}
         <section id="hero" className="hero">
           <div className="container">
+            <div className="reveal" style={{ marginBottom: '2rem' }}>
+                <span className="tagline-bracket" style={{ fontFamily: 'monospace', fontSize: '0.85rem', padding: '0.4rem 0.8rem', border: '1px solid rgba(0,0,0,0.1)', borderRadius: '4px' }}>
+                  [ Boosting engagement by 25% through design ]
+                </span>
+            </div>
+          
             <h1 className="hero-title reveal delay-100" style={{ gap: '0.5rem' }}>
               <span className="font-serif" style={{ display: 'block' }}>AI-Powered</span>
               <span className="font-serif" style={{ display: 'block' }}>UI/UX Designer</span>
@@ -133,12 +139,6 @@ function App() {
             
             <div style={{ marginTop: '2.5rem' }}>
               <a href="#contact" className="hero-cta reveal delay-400" style={{ fontSize: '1.1rem' }}>Open to projects →</a>
-            </div>
-            
-            <div className="reveal delay-400" style={{ marginTop: '4rem' }}>
-                <span className="tagline-bracket" style={{ fontFamily: 'monospace', fontSize: '0.85rem', padding: '0.4rem 0.8rem', border: '1px solid rgba(0,0,0,0.1)', borderRadius: '4px' }}>
-                  [ Boosting engagement by 25% through design ]
-                </span>
             </div>
           </div>
         </section>

@@ -90,7 +90,7 @@ function App() {
         </section>
 
         {/* --- ABOUT SECTION --- */}
-        <section id="about" className="section">
+        <section id="about" className="section" style={{ paddingTop: 'var(--space-md)', paddingBottom: 'var(--space-md)' }}>
           <div className="container manifesto-wrap">
             <span className="section-label reveal">About</span>
             
@@ -163,37 +163,19 @@ function App() {
           </div>
         </section>
 
-        {/* --- SKILLS & TOOLS SECTION --- */}
-        <section id="skills" className="section" style={{ paddingTop: 'var(--space-md)' }}>
-          <div className="container">
-            <span className="section-label reveal">Skills</span>
+        {/* --- TESTIMONIAL SECTION --- */}
+        <section id="testimonial" className="section" style={{ paddingTop: 'var(--space-md)' }}>
+          <div className="container manifesto-wrap">
+            <span className="section-label reveal">Endorsement</span>
             
-            <div className="skills-list small-caps reveal">
-                <span>Figma</span> <span className="dot">·</span> 
-                <span>Product Design</span> <span className="dot">·</span> 
-                <span>UX Research</span> <span className="dot">·</span> 
-                <span>UI Design</span> <span className="dot">·</span> 
-                <span>Wireframing</span> <span className="dot">·</span> 
-                <span>Prototyping</span> <span className="dot">·</span> 
-                <span>Visual Design</span> <span className="dot">·</span> 
-                <span>Community Building</span>
-            </div>
+            <p className="manifesto-line reveal" style={{ fontSize: 'clamp(1.5rem, 3.5vw, 2.5rem)', fontStyle: 'italic', marginBottom: 'var(--space-sm)' }}>
+              "Laveena transformed our engagement metrics. She doesn't just design screens, she crafts highly thoughtful user journeys that make total aesthetic sense."
+            </p>
+            
+            <p className="project-stat reveal delay-100" style={{ fontFamily: 'var(--font-body)' }}>
+              — Lead Manager, Socialveins
+            </p>
           </div>
-        </section>
-
-        {/* --- ACHIEVEMENTS & EXTRAS --- */}
-        <section id="recognition" className="section" style={{ paddingTop: 'var(--space-sm)' }}>
-            <div className="container">
-                <span className="section-label reveal">Recognition</span>
-                
-                <div className="recognition-list small-caps reveal">
-                    <div className="recog-item">LinkedIn Certified Marketing Insider</div>
-                    <div className="recog-item">2nd Position — Machin-o-Mania</div>
-                    <div className="recog-item">#Include&lt;her&gt; Cohort 2.0 Mentee</div>
-                    <div className="recog-item">Community Lead, GDSC Poornima — 20+ events, Tier-1 Gen AI Study Jams</div>
-                    <div className="recog-item">Publication: "A Heart Rate Monitor Using Wi-Fi Module ESP8266"</div>
-                </div>
-            </div>
         </section>
 
         {/* --- CONTACT / CTA SECTION --- */}

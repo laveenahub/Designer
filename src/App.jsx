@@ -1,10 +1,31 @@
 import { useEffect, useState } from 'react'
+import ZoomcarCaseStudy from './ZoomcarCaseStudy'
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
+  const [currentPage, setCurrentPage] = useState('home')
 
   useEffect(() => {
+    // Basic hash routing
+    const handleHashChange = () => {
+      if (window.location.hash === '#zoomcar' || window.location.hash === '#/zoomcar') {
+        setCurrentPage('zoomcar')
+        window.scrollTo(0,0)
+      } else {
+        setCurrentPage('home')
+      }
+    }
+    
+    window.addEventListener('hashchange', handleHashChange)
+    handleHashChange() // check on mount
+
+    return () => window.removeEventListener('hashchange', handleHashChange)
+  }, [])
+
+  useEffect(() => {
+    if (currentPage !== 'home') return;
+
     // Scroll handling for animations and navbar
     const handleScroll = () => {
       // Navbar scroll effect
@@ -38,8 +59,9 @@ function App() {
     }, 100)
 
     window.addEventListener('scroll', handleScroll)
+
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+  }, [currentPage]) // Added currentPage to dependency array for clarity, though it's checked at the start
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
@@ -47,6 +69,10 @@ function App() {
 
   const handleNavClick = () => {
     setIsMenuOpen(false)
+  }
+
+  if (currentPage === 'zoomcar') {
+    return <ZoomcarCaseStudy />;
   }
 
   return (
@@ -153,15 +179,16 @@ function App() {
                 </div>
               </a>
 
-              <a href="#" className="project-item reveal">
+              <a href="#/zoomcar" className="project-item reveal">
                 <div className="project-image-wrap">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1600&q=80" alt="Conscent Dashboard" className="project-image" />
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1600&q=80" alt="Zoomcar Case Study" className="project-image" />
                 </div>
                 <div className="project-info">
-                  <div className="project-title">
-                      Conscent.ai <span>(UI/UX Design, 7 months)</span>
+                  <div className="project-title" style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
+                      Zoomcar Host App <span>(Conscent.ai Internship)</span>
+                      <span className="small-caps" style={{ border: '1px solid currentColor', padding: '0.3rem 0.8rem', borderRadius: '20px', fontSize: '0.7rem', opacity: 0.8 }}>Read Case Study &rarr;</span>
                   </div>
-                  <div className="project-stat">Designing for India's content economy</div>
+                  <div className="project-stat">Driving a 40% Listing Extension Rate</div>
                 </div>
               </a>
 

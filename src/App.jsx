@@ -162,12 +162,12 @@ function App() {
                 
                 <div className="about-editorial-line reveal delay-100" style={{ display: 'flex', gap: '3rem', flexWrap: 'wrap', alignItems: 'baseline' }}>
                     <span style={{ color: 'var(--text-secondary)' }}>I didn't start with Figma.</span>
-                    <span style={{ fontSize: '1.2em' }}>I started with a pencil.</span>
+                    <span style={{ fontWeight: 'bold' }}>I started with a pencil.</span>
                 </div>
 
                 <div className="about-editorial-line reveal delay-100" style={{ marginTop: '1.5rem' }}>
                     <span style={{ color: 'var(--text-secondary)', display: 'block' }}>Hello, I am Laveena.</span>
-                    <span style={{ fontSize: '1.2em', display: 'block', marginTop: '0.5rem' }}>But call me lavee.</span>
+                    <span style={{ fontWeight: 'bold', display: 'block', marginTop: '0.5rem' }}>But call me lavee.</span>
                 </div>
 
                 <div className="about-editorial-line reveal delay-200" style={{ color: 'var(--text-secondary)', marginTop: '2.5rem' }}>
@@ -195,7 +195,7 @@ function App() {
                 
                 <div className="about-editorial-line reveal delay-500" style={{ marginTop: '2.5rem' }}>
                     <span style={{ color: 'var(--text-secondary)', display: 'block' }}>Because I believe one thing deeply -</span>
-                    <span style={{ fontSize: '1.2em', display: 'block', marginTop: '0.5rem' }}>Design should solve. Not decorate.</span>
+                    <span style={{ fontWeight: 'bold', display: 'block', marginTop: '0.5rem' }}>Design should solve. Not decorate.</span>
                 </div>
             </div>
 

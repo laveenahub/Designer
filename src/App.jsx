@@ -144,59 +144,73 @@ function App() {
         </section>
 
         {/* --- ABOUT SECTION --- */}
-        <section id="about" className="section" style={{ padding: 'var(--space-xl) 0' }}>
-          <div className="container about-grid">
-            <div className="about-left reveal">
-              <div className="polaroid-wrapper">
-                <img src="/profile.jpg" alt="Laveena Portrait" className="polaroid-img" />
-              </div>
-            </div>
+        <section id="about" className="section" style={{ paddingTop: '100px', paddingBottom: '120px' }}>
+          <div className="container">
             
-            <div className="about-right">
-              <span className="section-label reveal" style={{ marginBottom: '3rem' }}>ABOUT</span>
-              
-              <div className="poetic-manifesto">
-                <div className="poetic-line reveal delay-100">
-                  <span className="poetic-muted">I didn't start with Figma.</span><br/>
-                  <span className="poetic-emphasized">I started with a pencil.</span>
+            <div className="about-editorial">
+              {/* Left Column: Photo */}
+              <div className="about-photo-wrapper reveal">
+                <div className="about-photo-card">
+                  <img src="/profile.jpg" alt="Laveena Chetwani" className="about-img" />
+                </div>
+              </div>
+
+              {/* Right Column: Editorial Text */}
+              <div className="about-content">
+                <span className="about-top-label reveal delay-100">About</span>
+
+                <div className="manifesto-row reveal delay-200 manifesto-shift-1">
+                  I didn't start with Figma.
+                </div>
+                <div className="manifesto-row reveal delay-200 manifesto-shift-2" style={{ fontWeight: '600', color: 'var(--text-primary)' }}>
+                  I started with a pencil.
+                </div>
+                
+                <div className="manifesto-row reveal delay-300 manifesto-shift-1" style={{ marginTop: '2rem' }}>
+                  Hello, I am Laveena.
+                </div>
+                <div className="manifesto-row reveal delay-300 manifesto-shift-2" style={{ fontStyle: 'italic', fontWeight: '500' }}>
+                  But call me lavee.
                 </div>
 
-                <div className="poetic-line reveal delay-200" style={{ paddingLeft: '1.5rem' }}>
-                  <span className="poetic-muted">Hello, I am Laveena.</span><br/>
-                  <span className="poetic-emphasized">But call me lavee.</span>
+                <div className="manifesto-row reveal delay-400 manifesto-shift-1" style={{ marginTop: '3rem', fontSize: 'clamp(1.1rem, 2vw, 1.4rem)', maxWidth: '95%' }}>
+                  Before I knew what design even was - I was drawing characters, doodling art, crafting things with my hands.
                 </div>
 
-                <div className="poetic-line reveal delay-300">
-                  <span className="poetic-muted">
-                    Before I knew what design even was - I was drawing characters, doodling art, crafting things with my hands.
-                  </span>
+                <div className="manifesto-row reveal delay-500 manifesto-shift-1" style={{ marginTop: '2.5rem' }}>
+                  That love grew into &darr;
                 </div>
 
-                <div className="poetic-line reveal delay-400">
-                  <span className="poetic-muted">That love grew into &darr;</span>
+                <div className="manifesto-arrow-row reveal delay-500">
+                  <span>&rarr;</span> <span>Business cards. Banners. Posters.</span>
+                </div>
+                <div className="manifesto-arrow-row reveal delay-500" style={{ opacity: 0.8 }}>
+                  <span>&rarr;</span> <span>Then screens. Flows. Experiences.</span>
+                </div>
+                <div className="manifesto-arrow-row reveal delay-500" style={{ opacity: 0.6 }}>
+                  <span>&rarr;</span> <span>Then a full passion for Product Design.</span>
                 </div>
 
-                <div className="poetic-line reveal" style={{ paddingLeft: '3rem', fontSize: '0.9em' }}>
-                  &rarr; Business cards. Banners. Posters.<br/>
-                  &rarr; Then screens. Flows. Experiences.<br/>
-                  &rarr; Then a full passion for Product Design.
+                <div className="manifesto-row reveal delay-500 manifesto-shift-1" style={{ marginTop: '3rem' }}>
+                  Computer Science gave me logic.
                 </div>
-
-                <div className="poetic-line reveal">
-                  <span className="poetic-muted">Computer Science gave me logic.</span><br/>
-                  <span className="poetic-muted">Design gave me feeling.</span>
+                <div className="manifesto-row reveal delay-500 manifesto-shift-4">
+                  Design gave me feeling.
                 </div>
-
-                <div className="poetic-line reveal" style={{ paddingLeft: '2rem' }}>
+                
+                <div className="manifesto-row reveal delay-500 manifesto-shift-2" style={{ marginTop: '2rem' }}>
                   Together - I build things that solve AND feel right.
                 </div>
-
-                <div className="poetic-line reveal">
-                  <span className="poetic-muted">Because I believe one thing deeply -</span><br/>
-                  <span className="poetic-emphasized">Design should solve. Not decorate.</span>
+                
+                <div className="manifesto-row reveal delay-500 manifesto-shift-1" style={{ marginTop: '3rem' }}>
+                  Because I believe one thing deeply -
+                </div>
+                <div className="manifesto-emphasis reveal delay-500 manifesto-shift-2" style={{ marginTop: '0.5rem', fontWeight: '500' }}>
+                  Design should solve. Not decorate.
                 </div>
               </div>
             </div>
+
           </div>
         </section>
 

@@ -8,7 +8,7 @@
     --text-primary: #1A1A1A;
     --text-secondary: #5a5a5a;
     
-    --font-heading: 'Playfair Display', serif;
+    --font-heading: 'Glyseric', serif;
     --font-body: 'Inter', sans-serif;
     
     --transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
@@ -145,37 +145,6 @@ ul {
 .nav-links a:hover::before,
 .nav-links a:hover::after {
     opacity: 1;
-}
-
-/* Duplicated Text Stack Effect */
-.nav-links a span {
-    display: inline-block;
-    position: relative;
-    overflow: hidden;
-    vertical-align: bottom;
-    padding: 0 0.1em;
-}
-
-.nav-links a span::before {
-    content: attr(data-text);
-    position: absolute;
-    top: 100%;
-    transition: transform 0.3s cubic-bezier(0.76, 0, 0.24, 1);
-}
-
-.nav-links a span::after {
-    content: attr(data-text);
-    position: relative;
-    display: inline-block;
-    transition: transform 0.3s cubic-bezier(0.76, 0, 0.24, 1);
-}
-
-.nav-links a:hover span::before {
-    transform: translateY(-100%);
-}
-
-.nav-links a:hover span::after {
-    transform: translateY(-100%);
 }
 
 .mobile-menu-btn {

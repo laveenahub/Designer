@@ -56,9 +56,9 @@ function App() {
           <a href="#" className="logo">Lavee.</a>
           
           <div className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
-            <a href="#about" onClick={handleNavClick}><span data-text="About">About</span></a>
-            <a href="#work" onClick={handleNavClick}><span data-text="Work">Work</span></a>
-            <a href="#contact" onClick={handleNavClick}><span data-text="Contact">Contact</span></a>
+            <a href="#about" onClick={handleNavClick}>About</a>
+            <a href="#work" onClick={handleNavClick}>Work</a>
+            <a href="#contact" onClick={handleNavClick}>Contact</a>
           </div>
 
           <div 

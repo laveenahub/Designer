@@ -143,66 +143,59 @@ function App() {
           </div>
         </section>
 
-        {/* --- ABOUT SECTION (POETIC MANIFESTO) --- */}
-        <section id="about" className="section" style={{ paddingTop: 'var(--space-md)', paddingBottom: 'var(--space-md)' }}>
-          <div className="container">
+        {/* --- ABOUT SECTION --- */}
+        <section id="about" className="section" style={{ padding: 'var(--space-xl) 0' }}>
+          <div className="container about-grid">
+            <div className="about-left reveal">
+              <div className="polaroid-wrapper">
+                <img src="/profile.jpg" alt="Laveena Portrait" className="polaroid-img" />
+              </div>
+            </div>
             
-            <div className="about-grid">
+            <div className="about-right">
+              <span className="section-label reveal" style={{ marginBottom: '3rem' }}>ABOUT</span>
               
-              {/* LEFT COLUMN: Image */}
-              <div className="about-left reveal">
-                <div className="polaroid-card">
-                  <img src="/profile.jpg" alt="Laveena Portrait" className="polaroid-img" />
-                  <span className="polaroid-caption">lavee. 2024</span>
+              <div className="poetic-manifesto">
+                <div className="poetic-line reveal delay-100">
+                  <span className="poetic-muted">I didn't start with Figma.</span><br/>
+                  <span className="poetic-emphasized">I started with a pencil.</span>
+                </div>
+
+                <div className="poetic-line reveal delay-200" style={{ paddingLeft: '1.5rem' }}>
+                  <span className="poetic-muted">Hello, I am Laveena.</span><br/>
+                  <span className="poetic-emphasized">But call me lavee.</span>
+                </div>
+
+                <div className="poetic-line reveal delay-300">
+                  <span className="poetic-muted">
+                    Before I knew what design even was - I was drawing characters, doodling art, crafting things with my hands.
+                  </span>
+                </div>
+
+                <div className="poetic-line reveal delay-400">
+                  <span className="poetic-muted">That love grew into &darr;</span>
+                </div>
+
+                <div className="poetic-line reveal" style={{ paddingLeft: '3rem', fontSize: '0.9em' }}>
+                  &rarr; Business cards. Banners. Posters.<br/>
+                  &rarr; Then screens. Flows. Experiences.<br/>
+                  &rarr; Then a full passion for Product Design.
+                </div>
+
+                <div className="poetic-line reveal">
+                  <span className="poetic-muted">Computer Science gave me logic.</span><br/>
+                  <span className="poetic-muted">Design gave me feeling.</span>
+                </div>
+
+                <div className="poetic-line reveal" style={{ paddingLeft: '2rem' }}>
+                  Together - I build things that solve AND feel right.
+                </div>
+
+                <div className="poetic-line reveal">
+                  <span className="poetic-muted">Because I believe one thing deeply -</span><br/>
+                  <span className="poetic-emphasized">Design should solve. Not decorate.</span>
                 </div>
               </div>
-
-              {/* RIGHT COLUMN: Poetic Text */}
-              <div className="about-right">
-                <span className="section-label reveal" style={{ marginBottom: '3rem', color: 'var(--text-secondary)' }}>[ ABOUT ]</span>
-                
-                <div className="manifesto-wrap font-serif">
-                  
-                  <div className="manifesto-stanza reveal">
-                    <span>I didn't start with Figma.</span>
-                    <span className="manifesto-bold">I started with a pencil.</span>
-                  </div>
-
-                  <div className="manifesto-stanza reveal delay-100">
-                    <span className="manifesto-muted manifesto-shift-1">Hello, I am Laveena.</span>
-                    <span className="manifesto-bold manifesto-shift-1">But call me lavee.</span>
-                  </div>
-
-                  <div className="manifesto-stanza reveal delay-200">
-                    <span style={{ maxWidth: '600px', lineHeight: '1.4' }}>
-                      Before I knew what design even was - I was drawing characters, doodling art, crafting things with my hands.
-                    </span>
-                  </div>
-
-                  <div className="manifesto-stanza reveal delay-300">
-                    <span className="manifesto-muted">That love grew into &darr;</span>
-                    <span className="manifesto-shift-1">&rarr; Business cards. Banners. Posters.</span>
-                    <span className="manifesto-shift-1">&rarr; Then screens. Flows. Experiences.</span>
-                    <span className="manifesto-shift-2">&rarr; Then a full passion for Product Design.</span>
-                  </div>
-
-                  <div className="manifesto-stanza reveal delay-100">
-                    <span>Computer Science gave me logic.</span>
-                    <span className="manifesto-shift-1">Design gave me feeling.</span>
-                  </div>
-
-                  <div className="manifesto-stanza reveal delay-200">
-                    <span style={{ fontStyle: 'italic', opacity: 0.8 }}>Together - I build things that solve AND feel right.</span>
-                  </div>
-
-                  <div className="manifesto-stanza reveal delay-300">
-                    <span className="manifesto-muted">Because I believe one thing deeply -</span>
-                    <span className="manifesto-bold">Design should solve. Not decorate.</span>
-                  </div>
-
-                </div>
-              </div>
-
             </div>
           </div>
         </section>

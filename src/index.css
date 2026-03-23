@@ -49,6 +49,8 @@ body {
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    padding-left: 128px;
+    padding-right: 128px;
 }
 
 a {
@@ -64,8 +66,6 @@ ul {
     width: 100%;
     max-width: 1400px;
     margin: 0 auto;
-    padding-left: 128px;
-    padding-right: 128px;
 }
 
 .section {
@@ -96,7 +96,8 @@ ul {
 .navbar {
     position: fixed;
     top: 0;
-    width: 100%;
+    left: 128px;
+    width: calc(100% - 256px);
     z-index: 100;
     padding: 2.5rem 0;
     transition: var(--transition);
@@ -480,9 +481,19 @@ ul {
    Responsive Logic
    ========================================================================== */
 @media screen and (max-width: 768px) {
-    .container {
+    body {
         padding-left: 24px;
         padding-right: 24px;
+    }
+    
+    .navbar {
+        width: calc(100% - 48px);
+        left: 24px;
+    }
+
+    .container {
+        padding-left: 0;
+        padding-right: 0;
     }
 
     .nav-links {

@@ -201,17 +201,10 @@ function App() {
 
                 <div className="premium-card-right">
                     <div className="premium-mockup-wrapper">
-                        <div className="mockup-desktop">
-                            <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?auto=format&fit=crop&w=1600&q=80" alt="DesignLink Desktop Mockup" className="mockup-img" />
-                        </div>
                         <div className="mockup-mobile">
                             <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=800&q=80" alt="DesignLink Mobile App" className="mockup-img" />
                         </div>
                     </div>
-                </div>
-
-                <div className="premium-cta">
-                    View Case Study &rarr;
                 </div>
               </a>
 
@@ -231,17 +224,10 @@ function App() {
 
                 <div className="premium-card-right">
                     <div className="premium-mockup-wrapper">
-                        <div className="mockup-desktop" style={{ transform: 'rotate(-2deg)' }}>
-                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1600&q=80" alt="CraftConnect Flow Desktop" className="mockup-img" />
-                        </div>
-                        <div className="mockup-mobile" style={{ transform: 'rotate(4deg)', right: '15%' }}>
+                        <div className="mockup-mobile">
                             <img src="https://images.unsplash.com/photo-1509391366360-1f9e21ce161c?auto=format&fit=crop&w=800&q=80" alt="CraftConnect Mobile UI" className="mockup-img" />
                         </div>
                     </div>
-                </div>
-
-                <div className="premium-cta">
-                    View Case Study &rarr;
                 </div>
               </a>
 

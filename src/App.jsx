@@ -144,71 +144,59 @@ function App() {
         </section>
 
         {/* --- ABOUT SECTION --- */}
-        <section id="about" className="section" style={{ paddingTop: '100px', paddingBottom: '120px' }}>
-          <div className="container">
+        <section id="about" className="section" style={{ paddingTop: 'var(--space-md)', paddingBottom: 'var(--space-md)' }}>
+          <div className="container about-editorial-grid">
             
-            <div className="about-editorial">
-              {/* Left Column: Photo */}
-              <div className="about-photo-wrapper reveal">
-                <div className="about-photo-card">
-                  <img src="/profile.jpg" alt="Laveena Chetwani" className="about-img" />
+            {/* Left Column: Portrait */}
+            <div className="about-photo-column reveal">
+                <div className="about-photo-wrapper">
+                    <img src="/profile.jpg" alt="Laveena Chetwani" className="about-photo" />
                 </div>
-              </div>
+            </div>
 
-              {/* Right Column: Editorial Text */}
-              <div className="about-content">
-                <span className="about-top-label reveal delay-100">About</span>
-
-                <div className="manifesto-row reveal delay-200 manifesto-shift-1">
-                  I didn't start with Figma.
-                </div>
-                <div className="manifesto-row reveal delay-200 manifesto-shift-2" style={{ fontWeight: '600', color: 'var(--text-primary)' }}>
-                  I started with a pencil.
+            {/* Right Column: Poetic Content */}
+            <div className="about-text-content">
+                <div className="reveal" style={{ fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--text-secondary)', marginBottom: '1.5rem', fontFamily: 'var(--font-body)' }}>
+                    ABOUT
                 </div>
                 
-                <div className="manifesto-row reveal delay-300 manifesto-shift-1" style={{ marginTop: '2rem' }}>
-                  Hello, I am Laveena.
-                </div>
-                <div className="manifesto-row reveal delay-300 manifesto-shift-2" style={{ fontStyle: 'italic', fontWeight: '500' }}>
-                  But call me lavee.
+                <div className="about-editorial-line reveal delay-100" style={{ display: 'flex', gap: '3rem', flexWrap: 'wrap', alignItems: 'baseline' }}>
+                    <span style={{ color: 'var(--text-secondary)' }}>I didn't start with Figma.</span>
+                    <span style={{ fontSize: '1.2em' }}>I started with a pencil.</span>
                 </div>
 
-                <div className="manifesto-row reveal delay-400 manifesto-shift-1" style={{ marginTop: '3rem', fontSize: 'clamp(1.1rem, 2vw, 1.4rem)', maxWidth: '95%' }}>
-                  Before I knew what design even was - I was drawing characters, doodling art, crafting things with my hands.
+                <div className="about-editorial-line reveal delay-100" style={{ marginTop: '1.5rem' }}>
+                    <span style={{ color: 'var(--text-secondary)', display: 'block' }}>Hello, I am Laveena.</span>
+                    <span style={{ fontSize: '1.2em', display: 'block', marginTop: '0.5rem' }}>But call me lavee.</span>
                 </div>
 
-                <div className="manifesto-row reveal delay-500 manifesto-shift-1" style={{ marginTop: '2.5rem' }}>
-                  That love grew into &darr;
+                <div className="about-editorial-line reveal delay-200" style={{ color: 'var(--text-secondary)', marginTop: '2.5rem' }}>
+                    Before I knew what design even was - I was drawing characters, doodling art, crafting things with my hands.
                 </div>
 
-                <div className="manifesto-arrow-row reveal delay-500">
-                  <span>&rarr;</span> <span>Business cards. Banners. Posters.</span>
-                </div>
-                <div className="manifesto-arrow-row reveal delay-500" style={{ opacity: 0.8 }}>
-                  <span>&rarr;</span> <span>Then screens. Flows. Experiences.</span>
-                </div>
-                <div className="manifesto-arrow-row reveal delay-500" style={{ opacity: 0.6 }}>
-                  <span>&rarr;</span> <span>Then a full passion for Product Design.</span>
+                <div className="about-editorial-line reveal delay-300" style={{ marginTop: '2.5rem' }}>
+                    That love grew into &darr;
                 </div>
 
-                <div className="manifesto-row reveal delay-500 manifesto-shift-1" style={{ marginTop: '3rem' }}>
-                  Computer Science gave me logic.
+                <div className="about-editorial-line reveal delay-400" style={{ paddingLeft: '2rem', display: 'flex', flexDirection: 'column', gap: '0.8rem', marginTop: '1.5rem', color: 'var(--text-secondary)' }}>
+                    <div>&rarr; Business cards. Banners. Posters.</div>
+                    <div>&rarr; Then screens. Flows. Experiences.</div>
+                    <div style={{ color: 'var(--text-primary)' }}>&rarr; Then a full passion for Product Design.</div>
                 </div>
-                <div className="manifesto-row reveal delay-500 manifesto-shift-4">
-                  Design gave me feeling.
+
+                <div className="about-editorial-line reveal delay-400" style={{ marginTop: '2.5rem', color: 'var(--text-secondary)' }}>
+                    Computer Science gave me logic.<br/>
+                    Design gave me feeling.
+                </div>
+
+                <div className="about-editorial-line reveal delay-500" style={{ marginTop: '1.5rem' }}>
+                    Together - I build things that solve AND feel right.
                 </div>
                 
-                <div className="manifesto-row reveal delay-500 manifesto-shift-2" style={{ marginTop: '2rem' }}>
-                  Together - I build things that solve AND feel right.
+                <div className="about-editorial-line reveal delay-500" style={{ marginTop: '2.5rem' }}>
+                    <span style={{ color: 'var(--text-secondary)', display: 'block' }}>Because I believe one thing deeply -</span>
+                    <span style={{ fontSize: '1.2em', display: 'block', marginTop: '0.5rem' }}>Design should solve. Not decorate.</span>
                 </div>
-                
-                <div className="manifesto-row reveal delay-500 manifesto-shift-1" style={{ marginTop: '3rem' }}>
-                  Because I believe one thing deeply -
-                </div>
-                <div className="manifesto-emphasis reveal delay-500 manifesto-shift-2" style={{ marginTop: '0.5rem', fontWeight: '500' }}>
-                  Design should solve. Not decorate.
-                </div>
-              </div>
             </div>
 
           </div>

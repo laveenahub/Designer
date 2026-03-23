@@ -1,5 +1,13 @@
 @charset "utf-8";
 
+@font-face {
+    font-family: 'Glyseric';
+    src: url('/Glyseric-BF669db9a6082d6.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
 /* ==========================================================================
    CSS Variables for Editorial Theme
    ========================================================================== */

@@ -33,8 +33,8 @@ const DesignLinkCaseStudy = () => {
   }, []);
 
   return (
-    <div style={{ backgroundColor: '#FFFFFF', minHeight: '100vh', fontFamily: "'Inter', sans-serif" }}>
-      <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`} style={{ backgroundColor: isScrolled ? 'rgba(255, 255, 255, 0.95)' : 'transparent' }}>
+    <div style={{ minHeight: '100vh', fontFamily: "'Inter', sans-serif" }}>
+      <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
         <div className="container nav-container">
           <a href="#/" className="logo" style={{ color: '#0042D0' }}>Lavee.</a>
           <div className="nav-links active">

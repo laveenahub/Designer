@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react'
 import ZoomcarCaseStudy from './ZoomcarCaseStudy'
+import DesignLinkCaseStudy from './DesignLinkCaseStudy'
+import AiInPractice from './AiInPractice'
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -11,6 +13,12 @@ function App() {
     const handleHashChange = () => {
       if (window.location.hash === '#zoomcar' || window.location.hash === '#/zoomcar') {
         setCurrentPage('zoomcar')
+        window.scrollTo(0,0)
+      } else if (window.location.hash === '#designlink' || window.location.hash === '#/designlink') {
+        setCurrentPage('designlink')
+        window.scrollTo(0,0)
+      } else if (window.location.hash === '#ai-in-practice' || window.location.hash === '#/ai-in-practice') {
+        setCurrentPage('ai-in-practice')
         window.scrollTo(0,0)
       } else {
         setCurrentPage('home')
@@ -79,6 +87,10 @@ function App() {
     return <DesignLinkCaseStudy />;
   }
 
+  if (currentPage === 'ai-in-practice') {
+    return <AiInPractice />;
+  }
+
   return (
     <>
       <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
@@ -88,6 +100,8 @@ function App() {
           <div className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
             <a href="#about" onClick={handleNavClick}>About</a>
             <a href="#work" onClick={handleNavClick}>Work</a>
+            <a href="#/ai-in-practice" onClick={handleNavClick}>AI in Practise</a>
+            <a href="https://drive.google.com/file/d/1_DaxoUDhjx78x6eKOnqN8CNqCCWAeuUz/view?usp=drive_link" target="_blank" rel="noreferrer" title="Opens PDF ↗">Resume</a>
             <a href="#contact" onClick={handleNavClick}>Contact</a>
           </div>
 

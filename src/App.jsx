@@ -74,6 +74,10 @@ function App() {
   if (currentPage === 'zoomcar') {
     return <ZoomcarCaseStudy />;
   }
+  
+  if (currentPage === 'designlink') {
+    return <DesignLinkCaseStudy />;
+  }
 
   return (
     <>
@@ -167,13 +171,14 @@ function App() {
             
             <div className="projects-grid">
               
-              <a href="#" className="project-item reveal">
+              <a href="#/designlink" className="project-item reveal">
                 <div className="project-image-wrap">
                     <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?auto=format&fit=crop&w=1600&q=80" alt="DesignLink Interface" className="project-image" />
                 </div>
                 <div className="project-info">
-                  <div className="project-title">
-                      DesignLink Platform <span>(UX Research + UI Design, Designerrs Academy)</span>
+                  <div className="project-title" style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
+                      DesignLink Platform <span>(Designerrs Academy)</span>
+                      <span className="small-caps" style={{ border: '1px solid currentColor', padding: '0.3rem 0.8rem', borderRadius: '20px', fontSize: '0.7rem', opacity: 0.8 }}>Read Case Study &rarr;</span>
                   </div>
                   <div className="project-stat">Simplifying job matching for creative professionals</div>
                 </div>
@@ -191,19 +196,6 @@ function App() {
                   <div className="project-stat">Driving a 40% Listing Extension Rate</div>
                 </div>
               </a>
-
-              <a href="#" className="project-item reveal">
-                <div className="project-image-wrap">
-                    <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=1600&q=80" alt="Social Campaign Design" className="project-image" />
-                </div>
-                <div className="project-info">
-                  <div className="project-title">
-                      Social Campaign Design <span>(Socialveins)</span>
-                  </div>
-                  <div className="project-stat">35% uplift in engagement through visual campaigns</div>
-                </div>
-              </a>
-
             </div>
           </div>
         </section>

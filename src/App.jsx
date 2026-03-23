@@ -156,46 +156,46 @@ function App() {
 
             {/* Right Column: Poetic Content */}
             <div className="about-text-content">
-                <div className="reveal" style={{ fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--text-secondary)', marginBottom: '1.5rem', fontFamily: 'var(--font-body)' }}>
+                <div className="reveal" style={{ fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--text-secondary)', marginBottom: '1rem', fontFamily: 'var(--font-body)' }}>
                     ABOUT
                 </div>
                 
-                <div className="about-editorial-line reveal delay-100" style={{ display: 'flex', gap: '3rem', flexWrap: 'wrap', alignItems: 'baseline' }}>
-                    <span style={{ color: 'var(--text-secondary)' }}>I didn't start with Figma.</span>
-                    <span style={{ fontWeight: 'bold' }}>I started with a pencil.</span>
+                <div className="about-editorial-line reveal delay-100">
+                    <span style={{ color: 'var(--text-secondary)', display: 'block' }}>I didn't start with Figma.</span>
+                    <span style={{ fontWeight: 'bold', display: 'block' }}>I started with a pencil.</span>
                 </div>
 
-                <div className="about-editorial-line reveal delay-100" style={{ marginTop: '1.5rem' }}>
+                <div className="about-editorial-line reveal delay-100" style={{ marginTop: '1rem' }}>
                     <span style={{ color: 'var(--text-secondary)', display: 'block' }}>Hello, I am Laveena.</span>
-                    <span style={{ fontWeight: 'bold', display: 'block', marginTop: '0.5rem' }}>But call me lavee.</span>
+                    <span style={{ fontWeight: 'bold', display: 'block' }}>But call me lavee.</span>
                 </div>
 
-                <div className="about-editorial-line reveal delay-200" style={{ color: 'var(--text-secondary)', marginTop: '2.5rem' }}>
+                <div className="about-editorial-line reveal delay-200" style={{ color: 'var(--text-secondary)', marginTop: '1.5rem' }}>
                     Before I knew what design even was - I was drawing characters, doodling art, crafting things with my hands.
                 </div>
 
-                <div className="about-editorial-line reveal delay-300" style={{ marginTop: '2.5rem' }}>
+                <div className="about-editorial-line reveal delay-300" style={{ marginTop: '1.5rem' }}>
                     That love grew into &darr;
                 </div>
 
-                <div className="about-editorial-line reveal delay-400" style={{ paddingLeft: '2rem', display: 'flex', flexDirection: 'column', gap: '0.8rem', marginTop: '1.5rem', color: 'var(--text-secondary)' }}>
+                <div className="about-editorial-line reveal delay-400" style={{ paddingLeft: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.3rem', marginTop: '1rem', color: 'var(--text-secondary)' }}>
                     <div>&rarr; Business cards. Banners. Posters.</div>
                     <div>&rarr; Then screens. Flows. Experiences.</div>
                     <div style={{ color: 'var(--text-primary)' }}>&rarr; Then a full passion for Product Design.</div>
                 </div>
 
-                <div className="about-editorial-line reveal delay-400" style={{ marginTop: '2.5rem', color: 'var(--text-secondary)' }}>
+                <div className="about-editorial-line reveal delay-400" style={{ marginTop: '1.5rem', color: 'var(--text-secondary)' }}>
                     Computer Science gave me logic.<br/>
                     Design gave me feeling.
                 </div>
 
-                <div className="about-editorial-line reveal delay-500" style={{ marginTop: '1.5rem' }}>
+                <div className="about-editorial-line reveal delay-500" style={{ marginTop: '1rem' }}>
                     Together - I build things that solve AND feel right.
                 </div>
                 
-                <div className="about-editorial-line reveal delay-500" style={{ marginTop: '2.5rem' }}>
+                <div className="about-editorial-line reveal delay-500" style={{ marginTop: '1.5rem' }}>
                     <span style={{ color: 'var(--text-secondary)', display: 'block' }}>Because I believe one thing deeply -</span>
-                    <span style={{ fontWeight: 'bold', display: 'block', marginTop: '0.5rem' }}>Design should solve. Not decorate.</span>
+                    <span style={{ fontWeight: 'bold', display: 'block' }}>Design should solve. Not decorate.</span>
                 </div>
             </div>
 

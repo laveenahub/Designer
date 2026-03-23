@@ -61,9 +61,11 @@ ul {
 }
 
 .container {
-    width: 85%;
-    max-width: 1200px;
+    width: 100%;
+    max-width: 1400px;
     margin: 0 auto;
+    padding-left: 128px;
+    padding-right: 128px;
 }
 
 .section {
@@ -478,6 +480,11 @@ ul {
    Responsive Logic
    ========================================================================== */
 @media screen and (max-width: 768px) {
+    .container {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
     .nav-links {
         display: none;
         position: fixed;

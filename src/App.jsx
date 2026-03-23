@@ -117,19 +117,27 @@ function App() {
       <main>
         {/* --- HERO / INTRO SECTION --- */}
         <section id="hero" className="hero">
-          <div className="container">
-            <span className="small-caps tagline-bracket reveal">[ Boosting engagement by 25% through design ]</span>
-            <h1 className="hero-title reveal delay-100">
+          <div className="container" style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', alignItems: 'flex-start' }}>
+            <h1 className="hero-title reveal" style={{ marginBottom: '0.5rem' }}>
               <span className="font-serif">AI-Powered</span>
               <span className="font-serif indent">UI/UX Designer</span>
             </h1>
-            <h2 className="hero-subtitle reveal delay-200" style={{ fontStyle: 'normal', fontWeight: '400' }}>
-              I build things that solve <span className="font-sans small-caps">AND</span> feel right.
+            
+            <h2 className="hero-subtitle reveal delay-100" style={{ fontStyle: 'normal', fontWeight: '400', fontSize: 'clamp(1.2rem, 3vw, 1.8rem)', color: 'var(--text-primary)', marginBottom: 0 }}>
+              I build things that solve and feel right.
             </h2>
-            <p className="hero-meta small-caps reveal delay-300">
+            
+            <p className="hero-meta reveal delay-200" style={{ fontFamily: 'var(--font-body)', fontSize: '0.95rem', color: 'var(--text-secondary)', marginBottom: '1rem' }}>
               Product Design · UX Research · UI Design
             </p>
-            <a href="#contact" className="hero-cta reveal delay-400">Open to projects →</a>
+            
+            <a href="#contact" className="hero-cta reveal delay-300" style={{ display: 'inline-flex', marginTop: '1.5rem', marginBottom: '2rem' }}>
+              Open to projects &rarr;
+            </a>
+
+            <span className="small-caps tagline-bracket reveal delay-400" style={{ opacity: 0.6, fontSize: '0.8rem', marginTop: '0', fontFamily: 'monospace' }}>
+              [ Boosting engagement by 25% through design ]
+            </span>
           </div>
         </section>
 

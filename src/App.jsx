@@ -118,23 +118,28 @@ function App() {
         {/* --- HERO / INTRO SECTION --- */}
         <section id="hero" className="hero">
           <div className="container">
-            <h1 className="hero-title reveal delay-100">
-              <span className="font-serif">AI-Powered</span>
-              <span className="font-serif indent">UI/UX Designer</span>
+            <h1 className="hero-title reveal delay-100" style={{ gap: '0.5rem' }}>
+              <span className="font-serif" style={{ display: 'block' }}>AI-Powered</span>
+              <span className="font-serif" style={{ display: 'block' }}>UI/UX Designer</span>
             </h1>
-            <h2 className="hero-subtitle reveal delay-200" style={{ fontStyle: 'normal', fontWeight: '400' }}>
+            
+            <h2 className="hero-subtitle reveal delay-200" style={{ fontStyle: 'normal', fontWeight: '400', fontSize: '1.5rem', color: 'var(--text-primary)' }}>
               I build things that solve and feel right.
             </h2>
-            <p className="hero-meta reveal delay-300" style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
+            
+            <p className="hero-meta reveal delay-300" style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', marginTop: '0.5rem' }}>
               Product Design · UX Research · UI Design
             </p>
-            <div style={{ marginTop: 'var(--space-md)' }}>
-              <a href="#contact" className="hero-cta reveal delay-400">Open to projects &rarr;</a>
+            
+            <div style={{ marginTop: '2.5rem' }}>
+              <a href="#contact" className="hero-cta reveal delay-400" style={{ fontSize: '1.1rem' }}>Open to projects →</a>
             </div>
             
-            <span className="small-caps tagline-bracket reveal delay-400" style={{ display: 'block', marginTop: 'var(--space-xl)' }}>
-                [ Boosting engagement by 25% through design ]
-            </span>
+            <div className="reveal delay-400" style={{ marginTop: '4rem' }}>
+                <span className="tagline-bracket" style={{ fontFamily: 'monospace', fontSize: '0.85rem', padding: '0.4rem 0.8rem', border: '1px solid rgba(0,0,0,0.1)', borderRadius: '4px' }}>
+                  [ Boosting engagement by 25% through design ]
+                </span>
+            </div>
           </div>
         </section>
 

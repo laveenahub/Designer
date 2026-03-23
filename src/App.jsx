@@ -143,48 +143,67 @@ function App() {
           </div>
         </section>
 
-        {/* --- ABOUT SECTION --- */}
+        {/* --- ABOUT SECTION (POETIC MANIFESTO) --- */}
         <section id="about" className="section" style={{ paddingTop: 'var(--space-md)', paddingBottom: 'var(--space-md)' }}>
           <div className="container">
-            <span className="section-label reveal">About</span>
             
-            <p className="manifesto-line reveal">
-              I didn't start with Figma.<br/>
-              I started with a pencil.
-            </p>
+            <div className="about-grid">
+              
+              {/* LEFT COLUMN: Image */}
+              <div className="about-left reveal">
+                <div className="polaroid-card">
+                  <img src="/profile.jpg" alt="Laveena Portrait" className="polaroid-img" />
+                  <span className="polaroid-caption">lavee. 2024</span>
+                </div>
+              </div>
 
-            <p className="manifesto-line reveal">
-              Hello, I am Laveena.<br/>
-              But call me lavee.
-            </p>
+              {/* RIGHT COLUMN: Poetic Text */}
+              <div className="about-right">
+                <span className="section-label reveal" style={{ marginBottom: '3rem', color: 'var(--text-secondary)' }}>[ ABOUT ]</span>
+                
+                <div className="manifesto-wrap font-serif">
+                  
+                  <div className="manifesto-stanza reveal">
+                    <span>I didn't start with Figma.</span>
+                    <span className="manifesto-bold">I started with a pencil.</span>
+                  </div>
 
-            <p className="manifesto-line reveal" style={{ fontSize: 'clamp(1.5rem, 3.5vw, 2.8rem)' }}>
-              Before I knew what design even was - I was drawing characters, doodling art, crafting things with my hands.
-            </p>
-            
-            <p className="manifesto-line reveal">
-              That love grew into ↓
-            </p>
+                  <div className="manifesto-stanza reveal delay-100">
+                    <span className="manifesto-muted manifesto-shift-1">Hello, I am Laveena.</span>
+                    <span className="manifesto-bold manifesto-shift-1">But call me lavee.</span>
+                  </div>
 
-            <p className="manifesto-line reveal" style={{ fontSize: 'clamp(1.2rem, 3vw, 2.2rem)' }}>
-              &rarr; Business cards. Banners. Posters.<br/>
-              &rarr; Then screens. Flows. Experiences.<br/>
-              <span className="font-serif italic text-secondary">&rarr; Then a full passion for Product Design.</span>
-            </p>
-            
-            <p className="manifesto-line reveal">
-              Computer Science gave me logic.<br/>
-              Design gave me feeling.
-            </p>
+                  <div className="manifesto-stanza reveal delay-200">
+                    <span style={{ maxWidth: '600px', lineHeight: '1.4' }}>
+                      Before I knew what design even was - I was drawing characters, doodling art, crafting things with my hands.
+                    </span>
+                  </div>
 
-            <p className="manifesto-line reveal">
-              Together - I build things that solve AND feel right.
-            </p>
-            
-            <p className="manifesto-line reveal">
-              Because I believe one thing deeply -<br/>
-              <span style={{ fontStyle: 'italic', color: 'var(--text-secondary)' }}>Design should solve. Not decorate.</span>
-            </p>
+                  <div className="manifesto-stanza reveal delay-300">
+                    <span className="manifesto-muted">That love grew into &darr;</span>
+                    <span className="manifesto-shift-1">&rarr; Business cards. Banners. Posters.</span>
+                    <span className="manifesto-shift-1">&rarr; Then screens. Flows. Experiences.</span>
+                    <span className="manifesto-shift-2">&rarr; Then a full passion for Product Design.</span>
+                  </div>
+
+                  <div className="manifesto-stanza reveal delay-100">
+                    <span>Computer Science gave me logic.</span>
+                    <span className="manifesto-shift-1">Design gave me feeling.</span>
+                  </div>
+
+                  <div className="manifesto-stanza reveal delay-200">
+                    <span style={{ fontStyle: 'italic', opacity: 0.8 }}>Together - I build things that solve AND feel right.</span>
+                  </div>
+
+                  <div className="manifesto-stanza reveal delay-300">
+                    <span className="manifesto-muted">Because I believe one thing deeply -</span>
+                    <span className="manifesto-bold">Design should solve. Not decorate.</span>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
           </div>
         </section>
 

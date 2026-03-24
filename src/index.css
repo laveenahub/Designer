@@ -488,6 +488,65 @@ ul {
     opacity: 0.5;
 }
 
+/* --- Testimonial Carousel --- */
+.testimonial-carousel {
+    max-width: 900px;
+    margin-top: 2rem;
+}
+
+.testimonial-track {
+    min-height: 220px;
+}
+
+.testimonial-slide {
+    animation: testimonialFade 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+@keyframes testimonialFade {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.carousel-btn {
+    background: transparent;
+    border: 1px solid rgba(0,0,0,0.1);
+    color: var(--text-primary);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.carousel-btn:hover {
+    background: var(--text-primary);
+    color: var(--bg-color);
+    border-color: var(--text-primary);
+    transform: scale(1.05);
+}
+
+.testimonial-dots {
+    display: flex;
+    gap: 0.6rem;
+}
+
+.testimonial-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.testimonial-dot.active {
+    background-color: var(--text-primary);
+}
+
 /* ==========================================================================
    Contact CTA Section
    ========================================================================== */

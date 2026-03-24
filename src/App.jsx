@@ -7,6 +7,25 @@ function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
   const [currentPage, setCurrentPage] = useState('home')
+  const [activeTestimonial, setActiveTestimonial] = useState(0)
+
+  const testimonials = [
+    {
+      text: "Laveena transformed our engagement metrics. She doesn't just design screens, she crafts highly thoughtful user journeys that make total aesthetic sense.",
+      author: "Lead Manager, Socialveins"
+    },
+    {
+      text: "An incredible eye for visual hierarchy. What took us weeks to untangle, her interface solved naturally within a single sprint.",
+      author: "Senior Product Head, Conscent.ai"
+    },
+    {
+      text: "Our user retention skyrocketed post-launch. Laveena brought a depth of research and structural polish we rarely see from junior talent.",
+      author: "Director of Experience, Zoomcar"
+    }
+  ]
+
+  const nextTestimonial = () => setActiveTestimonial((prev) => (prev + 1) % testimonials.length)
+  const prevTestimonial = () => setActiveTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length)
 
   useEffect(() => {
     // Basic hash routing
@@ -264,41 +283,36 @@ function App() {
           <div className="container">
             <span className="section-label reveal">Endorsements</span>
             
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: 'var(--space-md)' }}>
-                <div className="reveal">
-                    <p className="manifesto-line" style={{ fontSize: 'clamp(1.2rem, 2.5vw, 1.8rem)', fontStyle: 'italic', marginBottom: '1rem' }}>
-                    "Laveena transformed our engagement metrics. She doesn't just design screens, she crafts highly thoughtful user journeys that make total aesthetic sense."
-                    </p>
-                    <p className="project-stat" style={{ fontFamily: 'var(--font-body)', color: 'var(--text-secondary)' }}>
-                    — Lead Manager, Socialveins
-                    </p>
+            <div className="testimonial-carousel reveal">
+                <div className="testimonial-track">
+                    {testimonials.map((item, idx) => (
+                        <div 
+                            key={idx} 
+                            className={`testimonial-slide ${idx === activeTestimonial ? 'active' : ''}`}
+                            style={{ display: idx === activeTestimonial ? 'block' : 'none' }}
+                        >
+                            <p className="manifesto-line" style={{ fontSize: 'clamp(1.4rem, 2.5vw, 2rem)', fontStyle: 'italic', marginBottom: '1.5rem', lineHeight: '1.3' }}>
+                                "{item.text}"
+                            </p>
+                            <p className="project-stat" style={{ fontFamily: 'var(--font-body)', color: 'var(--text-secondary)', fontSize: '1rem' }}>
+                                &mdash; {item.author}
+                            </p>
+                        </div>
+                    ))}
                 </div>
 
-                <div className="reveal delay-100">
-                    <p className="manifesto-line" style={{ fontSize: 'clamp(1.2rem, 2.5vw, 1.8rem)', fontStyle: 'italic', marginBottom: '1rem' }}>
-                    "An incredible eye for visual hierarchy. What took us weeks to untangle, her interface solved naturally within a single sprint."
-                    </p>
-                    <p className="project-stat" style={{ fontFamily: 'var(--font-body)', color: 'var(--text-secondary)' }}>
-                    — Senior Product Head, Conscent.ai
-                    </p>
-                </div>
-
-                <div className="reveal delay-200">
-                    <p className="manifesto-line" style={{ fontSize: 'clamp(1.2rem, 2.5vw, 1.8rem)', fontStyle: 'italic', marginBottom: '1rem' }}>
-                    "Our user retention skyrocketed post-launch. Laveena brought a depth of research and structural polish we rarely see from junior talent."
-                    </p>
-                    <p className="project-stat" style={{ fontFamily: 'var(--font-body)', color: 'var(--text-secondary)' }}>
-                    — Director of Experience, Zoomcar
-                    </p>
-                </div>
-
-                <div className="reveal delay-300">
-                    <p className="manifesto-line" style={{ fontSize: 'clamp(1.2rem, 2.5vw, 1.8rem)', fontStyle: 'italic', marginBottom: '1rem' }}>
-                    "She treats every user flow like a conversation. Brilliant UX architecture disguised behind completely effortless minimal UI."
-                    </p>
-                    <p className="project-stat" style={{ fontFamily: 'var(--font-body)', color: 'var(--text-secondary)' }}>
-                    — Co-Founder, Designerrs Academy
-                    </p>
+                <div className="testimonial-controls" style={{ marginTop: '3rem', display: 'flex', gap: '1rem', alignItems: 'center' }}>
+                    <button onClick={prevTestimonial} className="carousel-btn" aria-label="Previous testimonial">&larr;</button>
+                    <div className="testimonial-dots">
+                        {testimonials.map((_, idx) => (
+                            <div 
+                                key={idx} 
+                                onClick={() => setActiveTestimonial(idx)}
+                                className={`testimonial-dot ${idx === activeTestimonial ? 'active' : ''}`}
+                            />
+                        ))}
+                    </div>
+                    <button onClick={nextTestimonial} className="carousel-btn" aria-label="Next testimonial">&rarr;</button>
                 </div>
             </div>
           </div>

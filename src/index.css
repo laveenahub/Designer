@@ -55,7 +55,7 @@ body {
 }
 
 @media (pointer: fine) {
-    a, button {
+    a, button, .premium-card {
         cursor: none !important;
     }
 }
@@ -84,14 +84,28 @@ body:hover .custom-cursor {
 }
 
 .custom-cursor.hover {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     background: rgba(0, 0, 0, 0.05);
     border-color: rgba(0, 0, 0, 0.12);
 }
 
-.custom-cursor.hidden {
-    opacity: 0 !important;
+.custom-cursor.card-hover {
+    width: 100px;
+    height: 100px;
+    background: rgba(0, 0, 0, 0.04);
+    border-color: rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.custom-cursor.card-hover::after {
+    content: 'View →';
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    position: absolute;
 }
 
 a {

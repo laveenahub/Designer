@@ -104,9 +104,9 @@ function App() {
       const cursorElement = document.querySelector('.custom-cursor');
       if (cursorElement) {
         if (isSpecialized) {
-          cursorElement.classList.add('hidden');
+          cursorElement.classList.add('card-hover');
         } else {
-          cursorElement.classList.remove('hidden');
+          cursorElement.classList.remove('card-hover');
         }
       }
     }

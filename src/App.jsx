@@ -100,15 +100,6 @@ function App() {
       const isInteractive = target.closest('a') || target.closest('button') || target.tagName === 'A' || target.tagName === 'BUTTON';
       setIsHovering(!!isInteractive);
       
-      const isSpecialized = target.closest('.premium-card');
-      const cursorElement = document.querySelector('.custom-cursor');
-      if (cursorElement) {
-        if (isSpecialized) {
-          cursorElement.classList.add('card-hover');
-        } else {
-          cursorElement.classList.remove('card-hover');
-        }
-      }
     }
     
     window.addEventListener('mousemove', handleMouseMove)

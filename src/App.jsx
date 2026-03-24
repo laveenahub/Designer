@@ -145,7 +145,10 @@ function App() {
       />
       <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
         <div className="container nav-container">
-          <a href="#" className="logo">Lavee.</a>
+          <a href="#" className="logo" style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', letterSpacing: '0.1em' }}>
+            <span className="seal-stamp">L</span>
+            <span>Lavee.</span>
+          </a>
           
           <div className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
             <a href="#about" onClick={handleNavClick}>About</a>
@@ -396,7 +399,26 @@ function App() {
             <a href="mailto:contact@laveenachetwani.online" className="footer-email">
               contact@laveenachetwani.online
             </a>
+            
+            <div className="footer-socials">
+              <a href="https://instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+              </a>
+              <a href="https://twitter.com" target="_blank" rel="noreferrer" aria-label="X (Twitter)">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4l11.733 16h4.267l-11.733 -16zM4 20l6.768 -9.232M13.232 8.232l6.768 -9.232"></path></svg>
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+              </a>
+              <a href="#" aria-label="Magic">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 3l1.912 5.813a2 2 0 001.275 1.275L21 12l-5.813 1.912a2 2 0 00-1.275 1.275L12 21l-1.912-5.813a2 2 0 00-1.275-1.275L3 12l5.813-1.912a2 2 0 001.275-1.275L12 3z"></path></svg>
+              </a>
+            </div>
           </div>
+        </div>
+
+        <div className="footer-bottom">
+          <p>Built with Anti-gravity & fueled with coffee ☕</p>
         </div>
       </footer>
     </>

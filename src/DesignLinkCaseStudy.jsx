@@ -49,7 +49,7 @@ const DesignLinkCaseStudy = () => {
           <div className="container">
             <h1 className="hero-title reveal" style={{ fontSize: 'clamp(2.5rem, 6vw, 5rem)', lineHeight: '1.05', color: '#1A1A1A', fontFamily: "'Inter', sans-serif", fontWeight: '700' }}>
               Turning forgotten portfolios into<br/>
-              <span className="font-serif italic" style={{ fontWeight: '400' }}>meaningful connections</span><br/>
+              <span className="font-serif" style={{ fontWeight: '400' }}>meaningful connections</span><br/>
               between creative talent<br/>
               and top employers
             </h1>
@@ -188,7 +188,7 @@ const DesignLinkCaseStudy = () => {
                 "\"The 'black hole' is real. A lack of application feedback is my biggest frustration.\"",
                 "\"I can't tell if a 'pretty' portfolio means they have real-world skills.\" (Recruiter)",
                 "\"I'm tired of juggling 3 platforms just to apply for one job. I want one system.\""].map((quote, i) => (
-                <div key={i} style={{ backgroundColor: '#fff', padding: '3rem', borderRadius: '16px', boxShadow: '0 10px 30px rgba(0,0,0,0.03)', fontSize: '1.2rem', color: '#1A1A1A', fontStyle: 'italic', lineHeight: '1.6' }}>
+                <div key={i} style={{ backgroundColor: '#fff', padding: '3rem', borderRadius: '16px', boxShadow: '0 10px 30px rgba(0,0,0,0.03)', fontSize: '1.2rem', color: '#1A1A1A', lineHeight: '1.6' }}>
                   {quote}
                 </div>
               ))}
@@ -212,7 +212,7 @@ const DesignLinkCaseStudy = () => {
               <div style={{ padding: '3rem', border: '1px solid rgba(0,0,0,0.1)', borderRadius: '16px' }}>
                 <div style={{ textTransform: 'uppercase', color: '#0042D0', fontWeight: '700', fontSize: '0.85rem', marginBottom: '0.5rem' }}>Persona 1 — Riya Sharma</div>
                 <div style={{ color: '#5a5a5a', fontSize: '0.9rem', marginBottom: '2rem' }}>Design Student · 21 · Female · Bangalore</div>
-                <div style={{ fontSize: '1.2rem', fontStyle: 'italic', marginBottom: '2rem', color: '#1A1A1A' }}>"I used both LinkedIn and Behance, but they're not connected."</div>
+                <div style={{ fontSize: '1.2rem', marginBottom: '2rem', color: '#1A1A1A' }}>"I used both LinkedIn and Behance, but they're not connected."</div>
                 
                 <div style={{ fontWeight: '700', marginBottom: '0.5rem' }}>Goals</div>
                 <ul style={{ color: '#5a5a5a', fontSize: '0.95rem', marginBottom: '1.5rem', listStyle: 'none', paddingLeft: '1rem' }}>
@@ -230,7 +230,7 @@ const DesignLinkCaseStudy = () => {
               <div style={{ padding: '3rem', border: '1px solid rgba(0,0,0,0.1)', borderRadius: '16px' }}>
                 <div style={{ textTransform: 'uppercase', color: '#0042D0', fontWeight: '700', fontSize: '0.85rem', marginBottom: '0.5rem' }}>Persona 2 — Nisha Kapoor</div>
                 <div style={{ color: '#5a5a5a', fontSize: '0.9rem', marginBottom: '2rem' }}>Sr. Hiring Manager · 47 · Female · Delhi</div>
-                <div style={{ fontSize: '1.2rem', fontStyle: 'italic', marginBottom: '2rem', color: '#1A1A1A' }}>"LinkedIn isn't built for visual creatives."</div>
+                <div style={{ fontSize: '1.2rem', marginBottom: '2rem', color: '#1A1A1A' }}>"LinkedIn isn't built for visual creatives."</div>
                 
                 <div style={{ fontWeight: '700', marginBottom: '0.5rem' }}>Goals</div>
                 <ul style={{ color: '#5a5a5a', fontSize: '0.95rem', marginBottom: '1.5rem', listStyle: 'none', paddingLeft: '1rem' }}>
@@ -479,7 +479,7 @@ const DesignLinkCaseStudy = () => {
                 </span>
                 <a href="mailto:contact@laveenachetwani.online" className="giant-cta reveal" style={{ fontSize: 'clamp(4rem, 12vw, 10rem)', lineHeight: '0.85' }}>
                     design that<br/>
-                    <span className="font-serif italic text-secondary">connects.</span>
+                    <span className="font-serif text-secondary">connects.</span>
                 </a>
                 
                 <p className="reveal delay-100" style={{ fontSize: '1.5rem', color: '#1A1A1A', marginTop: 'var(--space-md)', marginBottom: 'var(--space-md)' }}>

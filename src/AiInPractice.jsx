@@ -110,7 +110,7 @@ const AiInPractice = () => {
                   <span style={{ fontSize: '3rem', opacity: '0.5' }}>▶</span>
                 </div>
               </div>
-              <div style={{ textAlign: 'center', fontStyle: 'italic', color: '#5a5a5a', fontSize: '0.9rem', marginBottom: '4rem' }}>
+              <div style={{ textAlign: 'center', color: '#5a5a5a', fontSize: '0.9rem', marginBottom: '4rem' }}>
                 One image. One prompt. One cinematic result.
               </div>
 
@@ -182,7 +182,7 @@ const AiInPractice = () => {
                 <p style={{ marginBottom: '2rem' }}>
                   So I built it.
                 </p>
-                <p style={{ fontStyle: 'italic', fontSize: '1.1rem' }}>
+                <p style={{ fontSize: '1.1rem' }}>
                   The eye follows your mouse but stays politely in its<br/>own eyeball — because boundaries are important.
                 </p>
               </div>

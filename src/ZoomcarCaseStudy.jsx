@@ -49,7 +49,7 @@ const ZoomcarCaseStudy = () => {
           <div className="container">
             <h1 className="hero-title reveal" style={{ fontSize: 'clamp(3rem, 7vw, 6rem)', lineHeight: '1' }}>
               Widget That Drove a<br/>
-              <span className="font-serif italic" style={{ color: '#2E7D32' }}>40% Listing Extension</span><br/>
+              <span className="font-serif" style={{ color: '#2E7D32' }}>40% Listing Extension</span><br/>
               Rate at Zoomcar
             </h1>
             
@@ -93,7 +93,7 @@ const ZoomcarCaseStudy = () => {
             <span className="section-label reveal">Context</span>
             <p className="manifesto-line reveal" style={{ fontSize: 'clamp(1.5rem, 3vw, 2.5rem)' }}>
               A listing = car availability dates.<br/>
-              <span className="font-serif italic" style={{ color: '#2E7D32' }}>No listing = no bookings.</span>
+              <span className="font-serif" style={{ color: '#2E7D32' }}>No listing = no bookings.</span>
             </p>
           </div>
         </section>
@@ -115,7 +115,7 @@ const ZoomcarCaseStudy = () => {
         <section className="section">
           <div className="container manifesto-wrap">
             <span className="section-label reveal">Goal</span>
-            <p className="manifesto-line reveal font-serif italic" style={{ fontSize: 'clamp(1.5rem, 3vw, 2.2rem)', color: 'var(--text-primary)' }}>
+            <p className="manifesto-line reveal font-serif" style={{ fontSize: 'clamp(1.5rem, 3vw, 2.2rem)', color: 'var(--text-primary)' }}>
               Empower hosts with clearer visibility and control — so they earn more, lose less, and stay on the platform.
             </p>
             <div className="reveal small-caps" style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap', marginTop: '2rem' }}>
@@ -131,7 +131,7 @@ const ZoomcarCaseStudy = () => {
           <div className="container">
             <span className="section-label reveal">Current Flow</span>
             <div className="reveal project-image-wrap" style={{ aspectRatio: '21/9', background: '#e0ded8', borderRadius: '16px' }}></div>
-            <p className="reveal" style={{ marginTop: '1rem', color: 'var(--text-secondary)', fontStyle: 'italic' }}>
+            <p className="reveal" style={{ marginTop: '1rem', color: 'var(--text-secondary)' }}>
               The Manage Your Cars tab buried listing controls with no status visibility.
             </p>
           </div>
@@ -173,7 +173,7 @@ const ZoomcarCaseStudy = () => {
                 </div>
               ))}
             </div>
-            <p className="reveal" style={{ marginTop: '1rem', color: 'var(--text-secondary)', fontStyle: 'italic' }}>
+            <p className="reveal" style={{ marginTop: '1rem', color: 'var(--text-secondary)' }}>
               40+ permutations mapped. Each state shows dynamic controls relevant to the host's current situation.
             </p>
           </div>
@@ -233,7 +233,7 @@ const ZoomcarCaseStudy = () => {
             <div className="container">
                 <a href="mailto:contact@laveenachetwani.online" className="giant-cta reveal">
                     Found this<br/>
-                    <span className="font-serif italic text-secondary">interesting?</span><br/>
+                    <span className="font-serif text-secondary">interesting?</span><br/>
                     Let's talk.
                 </a>
                 

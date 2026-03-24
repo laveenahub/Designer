@@ -322,7 +322,7 @@ function App() {
                             className={`testimonial-slide ${idx === activeTestimonial ? 'active' : ''}`}
                             style={{ display: idx === activeTestimonial ? 'block' : 'none' }}
                         >
-                            <p className="manifesto-line" style={{ fontSize: 'clamp(1.4rem, 2.5vw, 2rem)', fontStyle: 'italic', marginBottom: '1.5rem', lineHeight: '1.3' }}>
+                            <p className="manifesto-line" style={{ fontSize: 'clamp(1.4rem, 2.5vw, 2rem)', marginBottom: '1.5rem', lineHeight: '1.3' }}>
                                 "{item.text}"
                             </p>
                             <p className="project-stat" style={{ fontFamily: 'var(--font-body)', color: 'var(--text-secondary)', fontSize: '1rem' }}>

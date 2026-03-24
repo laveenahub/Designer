@@ -8,6 +8,8 @@ function App() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [currentPage, setCurrentPage] = useState('home')
   const [activeTestimonial, setActiveTestimonial] = useState(0)
+  const [mousePos, setMousePos] = useState({ x: -100, y: -100 })
+  const [isHovering, setIsHovering] = useState(false)
 
   const testimonials = [
     {
@@ -90,6 +92,29 @@ function App() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [currentPage]) // Added currentPage to dependency array for clarity, though it's checked at the start
 
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      setMousePos({ x: e.clientX, y: e.clientY })
+      
+      const target = e.target;
+      const isInteractive = target.closest('a') || target.closest('button') || target.tagName === 'A' || target.tagName === 'BUTTON';
+      setIsHovering(!!isInteractive);
+      
+      const isSpecialized = target.closest('.premium-card');
+      const cursorElement = document.querySelector('.custom-cursor');
+      if (cursorElement) {
+        if (isSpecialized) {
+          cursorElement.classList.add('hidden');
+        } else {
+          cursorElement.classList.remove('hidden');
+        }
+      }
+    }
+    
+    window.addEventListener('mousemove', handleMouseMove)
+    return () => window.removeEventListener('mousemove', handleMouseMove)
+  }, [])
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
   }
@@ -112,6 +137,12 @@ function App() {
 
   return (
     <>
+      <div 
+        className={`custom-cursor ${isHovering ? 'hover' : ''}`} 
+        style={{ 
+          transform: `translate3d(${mousePos.x}px, ${mousePos.y}px, 0) translate(-50%, -50%)` 
+        }} 
+      />
       <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
         <div className="container nav-container">
           <a href="#" className="logo">Lavee.</a>

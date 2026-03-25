@@ -4,10 +4,20 @@ import DesignLinkCaseStudy from './DesignLinkCaseStudy'
 import AiInPractice from './AiInPractice'
 import CraftConnectCaseStudy from './CraftConnectCaseStudy'
 import LoadingScreen from './LoadingScreen'
+import ScrollToTop from './ScrollToTop'
 
 function App() {
   const [isLoading, setIsLoading] = useState(true)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+  useEffect(() => {
+    // Disable automatic browser scroll memory
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual';
+    }
+    // Force scroll to top on page load
+    window.scrollTo(0, 0);
+  }, []);
   const [isScrolled, setIsScrolled] = useState(false)
   const [currentPage, setCurrentPage] = useState('home')
   const [activeTestimonial, setActiveTestimonial] = useState(0)
@@ -345,6 +355,7 @@ function App() {
         )}
 
         {renderContent()}
+        <ScrollToTop />
       </div>
     </>
   )

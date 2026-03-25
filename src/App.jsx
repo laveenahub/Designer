@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
-import ZoomcarCaseStudy from './ZoomcarCaseStudy'
 import DesignLinkCaseStudy from './DesignLinkCaseStudy'
 import AiInPractice from './AiInPractice'
+import CraftConnectCaseStudy from './CraftConnectCaseStudy'
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -32,13 +32,14 @@ function App() {
   useEffect(() => {
     // Basic hash routing
     const handleHashChange = () => {
-      if (window.location.hash === '#zoomcar' || window.location.hash === '#/zoomcar') {
-        setCurrentPage('zoomcar')
-        window.scrollTo(0, 0)
-      } else if (window.location.hash === '#designlink' || window.location.hash === '#/designlink') {
+      const hash = window.location.hash;
+      if (hash === '#designlink' || hash === '#/designlink') {
         setCurrentPage('designlink')
         window.scrollTo(0, 0)
-      } else if (window.location.hash === '#ai-in-practice' || window.location.hash === '#/ai-in-practice') {
+      } else if (hash === '#craftconnect' || hash === '#/craftconnect') {
+        setCurrentPage('craftconnect')
+        window.scrollTo(0, 0)
+      } else if (hash === '#ai-in-practice' || hash === '#/ai-in-practice') {
         setCurrentPage('ai-in-practice')
         window.scrollTo(0, 0)
       } else {
@@ -73,88 +74,38 @@ function App() {
         const elementTop = element.getBoundingClientRect().top;
         if (elementTop < windowHeight - revealPoint) {
           element.classList.add('active');
-        } else {
-          // element.classList.remove('active'); // don't remove, keep it revealed
         }
       });
     }
 
-    // Run once on mount to check initial position
     handleScroll()
-
-    // Quick timeout to trigger initial reveals smoothly
-    setTimeout(() => {
-      handleScroll()
-    }, 100)
-
+    setTimeout(() => { handleScroll() }, 100)
     window.addEventListener('scroll', handleScroll)
-
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [currentPage]) // Added currentPage to dependency array for clarity, though it's checked at the start
+  }, [currentPage])
 
   useEffect(() => {
     const handleMouseMove = (e) => {
       setMousePos({ x: e.clientX, y: e.clientY })
-
       const target = e.target;
       const isInteractive = target.closest('a') || target.closest('button') || target.tagName === 'A' || target.tagName === 'BUTTON';
       setIsHovering(!!isInteractive);
-
     }
-
     window.addEventListener('mousemove', handleMouseMove)
     return () => window.removeEventListener('mousemove', handleMouseMove)
   }, [])
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen)
-  }
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
+  const handleNavClick = () => setIsMenuOpen(false)
 
-  const handleNavClick = () => {
-    setIsMenuOpen(false)
-  }
+  const renderContent = () => {
+    if (currentPage === 'designlink') return <DesignLinkCaseStudy />;
+    if (currentPage === 'craftconnect') {
+      return <CraftConnectCaseStudy />;
+    }
+    if (currentPage === 'ai-in-practice') return <AiInPractice />;
 
-  if (currentPage === 'zoomcar') {
-    return <ZoomcarCaseStudy />;
-  }
-
-  if (currentPage === 'designlink') {
-    return <DesignLinkCaseStudy />;
-  }
-
-  if (currentPage === 'ai-in-practice') {
-    return <AiInPractice />;
-  }
-
-  return (
-    <>
-      <div
-        className={`custom-cursor ${isHovering ? 'hover' : ''}`}
-        style={{
-          transform: `translate3d(${mousePos.x}px, ${mousePos.y}px, 0) translate(-50%, -50%)`
-        }}
-      />
-      <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
-        <div className="container nav-container">
-          <a href="#" className="logo">Lavee.</a>
-
-          <div className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
-            <a href="#about" onClick={handleNavClick}>About</a>
-            <a href="#work" onClick={handleNavClick}>Work</a>
-            <a href="#/ai-in-practice" onClick={handleNavClick}>AI in Practise</a>
-            <a href="https://drive.google.com/file/d/1_DaxoUDhjx78x6eKOnqN8CNqCCWAeuUz/view?usp=drive_link" target="_blank" rel="noreferrer" title="Opens PDF ↗">Resume</a>
-            <a href="#contact" onClick={handleNavClick}>Contact</a>
-          </div>
-
-          <div
-            className="mobile-menu-btn"
-            onClick={toggleMenu}
-          >
-            {isMenuOpen ? '[ CLOSE ]' : '[ MENU ]'}
-          </div>
-        </div>
-      </nav>
-
+    return (
       <main>
         {/* --- HERO / INTRO SECTION --- */}
         <section id="hero" className="hero">
@@ -187,15 +138,12 @@ function App() {
         {/* --- ABOUT SECTION --- */}
         <section id="about" className="section" style={{ paddingTop: 'var(--space-md)', paddingBottom: 'var(--space-md)' }}>
           <div className="container about-editorial-grid">
-
-            {/* Left Column: Portrait */}
             <div className="about-photo-column reveal">
               <div className="about-photo-wrapper">
                 <img src="/profile.jpg" alt="Laveena Chetwani" className="about-photo" />
               </div>
             </div>
 
-            {/* Right Column: Poetic Content */}
             <div className="about-text-content">
               <div className="reveal" style={{ fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--text-secondary)', marginBottom: '1rem', fontFamily: 'var(--font-body)' }}>
                 ABOUT
@@ -239,7 +187,6 @@ function App() {
                 <span style={{ fontWeight: 'bold', display: 'block' }}>Design should solve. Not decorate.</span>
               </div>
             </div>
-
           </div>
         </section>
 
@@ -249,7 +196,6 @@ function App() {
             <span className="section-label reveal">Selected Work</span>
 
             <div className="premium-projects">
-
               {/* DESIGNLINK CARD */}
               <a href="#/designlink" className="premium-card reveal">
                 <div className="premium-card-left">
@@ -295,7 +241,6 @@ function App() {
                   </div>
                 </div>
               </a>
-
             </div>
           </div>
         </section>
@@ -353,9 +298,39 @@ function App() {
             </div>
           </div>
         </section>
-
       </main>
+    );
+  }
 
+  return (
+    <>
+      <div
+        className={`custom-cursor ${isHovering ? 'hover' : ''}`}
+        style={{
+          transform: `translate3d(${mousePos.x}px, ${mousePos.y}px, 0) translate(-50%, -50%)`
+        }}
+      />
+      {currentPage === 'home' && (
+        <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
+          <div className="container nav-container">
+            <a href="#" className="logo">Lavee.</a>
+
+            <div className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
+              <a href="#about" onClick={handleNavClick}>About</a>
+              <a href="#work" onClick={handleNavClick}>Work</a>
+              <a href="#/ai-in-practice" onClick={handleNavClick}>AI in Practise</a>
+              <a href="https://drive.google.com/file/d/1_DaxoUDhjx78x6eKOnqN8CNqCCWAeuUz/view?usp=drive_link" target="_blank" rel="noreferrer" title="Opens PDF ↗">Resume</a>
+              <a href="#contact" onClick={handleNavClick}>Contact</a>
+            </div>
+
+            <div className="mobile-menu-btn" onClick={toggleMenu}>
+              {isMenuOpen ? '[ CLOSE ]' : '[ MENU ]'}
+            </div>
+          </div>
+        </nav>
+      )}
+
+      {renderContent()}
     </>
   )
 }

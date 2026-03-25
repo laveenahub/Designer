@@ -1,5 +1,9 @@
 @charset "utf-8";
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @font-face {
     font-family: 'Glyseric';
     src: url('/Glyseric-BF669db9a6082d6.otf') format('opentype');

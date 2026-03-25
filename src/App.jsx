@@ -1,9 +1,12 @@
 import { useEffect, useState } from 'react'
+import { AnimatePresence } from 'framer-motion'
 import DesignLinkCaseStudy from './DesignLinkCaseStudy'
 import AiInPractice from './AiInPractice'
 import CraftConnectCaseStudy from './CraftConnectCaseStudy'
+import LoadingScreen from './LoadingScreen'
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
   const [currentPage, setCurrentPage] = useState('home')
@@ -304,33 +307,45 @@ function App() {
 
   return (
     <>
-      <div
-        className={`custom-cursor ${isHovering ? 'hover' : ''}`}
-        style={{
-          transform: `translate3d(${mousePos.x}px, ${mousePos.y}px, 0) translate(-50%, -50%)`
+      <AnimatePresence mode="wait">
+        {isLoading && <LoadingScreen onComplete={() => setIsLoading(false)} />}
+      </AnimatePresence>
+      
+      <div 
+        style={{ 
+          opacity: isLoading ? 0 : 1, 
+          transition: "opacity 0.5s ease-out",
+          pointerEvents: isLoading ? 'none' : 'auto'
         }}
-      />
-      {currentPage === 'home' && (
-        <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
-          <div className="container nav-container">
-            <a href="#" className="logo">Lavee.</a>
+      >
+        <div
+          className={`custom-cursor ${isHovering ? 'hover' : ''}`}
+          style={{
+            transform: `translate3d(${mousePos.x}px, ${mousePos.y}px, 0) translate(-50%, -50%)`
+          }}
+        />
+        {currentPage === 'home' && (
+          <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
+            <div className="container nav-container">
+              <a href="#" className="logo">Lavee.</a>
 
-            <div className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
-              <a href="#about" onClick={handleNavClick}>About</a>
-              <a href="#work" onClick={handleNavClick}>Work</a>
-              <a href="#/ai-in-practice" onClick={handleNavClick}>AI in Practise</a>
-              <a href="https://drive.google.com/file/d/1_DaxoUDhjx78x6eKOnqN8CNqCCWAeuUz/view?usp=drive_link" target="_blank" rel="noreferrer" title="Opens PDF ↗">Resume</a>
-              <a href="#contact" onClick={handleNavClick}>Contact</a>
+              <div className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
+                <a href="#about" onClick={handleNavClick}>About</a>
+                <a href="#work" onClick={handleNavClick}>Work</a>
+                <a href="#/ai-in-practice" onClick={handleNavClick}>AI in Practise</a>
+                <a href="https://drive.google.com/file/d/1_DaxoUDhjx78x6eKOnqN8CNqCCWAeuUz/view?usp=drive_link" target="_blank" rel="noreferrer" title="Opens PDF ↗">Resume</a>
+                <a href="#contact" onClick={handleNavClick}>Contact</a>
+              </div>
+
+              <div className="mobile-menu-btn" onClick={toggleMenu}>
+                {isMenuOpen ? '[ CLOSE ]' : '[ MENU ]'}
+              </div>
             </div>
+          </nav>
+        )}
 
-            <div className="mobile-menu-btn" onClick={toggleMenu}>
-              {isMenuOpen ? '[ CLOSE ]' : '[ MENU ]'}
-            </div>
-          </div>
-        </nav>
-      )}
-
-      {renderContent()}
+        {renderContent()}
+      </div>
     </>
   )
 }

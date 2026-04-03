@@ -19,6 +19,12 @@
     --bg-color: #F5F4F0;
     --text-primary: #1A1A1A;
     --text-secondary: #5a5a5a;
+    --color-text-primary: #1A1A1A;
+    --color-text-secondary: #5a5a5a;
+    --color-primary: #0042D0;
+    --color-accent-green: #2EAF77;
+    --color-accent-amber: #EF9F27;
+    --color-accent-purple: #7C6EE0;
     
     --font-heading: 'Glyseric', serif;
     --font-body: 'Inter', sans-serif;

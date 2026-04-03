@@ -1,499 +1,396 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const DesignLinkCaseStudy = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-
   useEffect(() => {
-    // Scroll handling for animations and navbar
-    const handleScroll = () => {
-      // Navbar scroll effect
-      if (window.scrollY > 30) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-
-      // Scroll Reveal elements
-      const reveals = document.querySelectorAll('.reveal');
-      const windowHeight = window.innerHeight;
-      const revealPoint = 100;
-
-      reveals.forEach((element) => {
-        const elementTop = element.getBoundingClientRect().top;
-        if (elementTop < windowHeight - revealPoint) {
-           element.classList.add('active');
-        }
-      });
-    };
-
-    handleScroll();
-    setTimeout(() => { handleScroll(); }, 100);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.scrollTo(0, 0);
   }, []);
 
   return (
-    <div style={{ minHeight: '100vh', fontFamily: "'Inter', sans-serif", backgroundColor: '#F5F4F0' }}>
-      <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`} style={{ backgroundColor: isScrolled ? 'rgba(245, 244, 240, 0.98)' : 'transparent' }}>
-        <div className="container nav-container">
-          <a href="#/" className="logo" style={{ color: 'var(--text-primary)' }}>Lavee.</a>
-          <div className="nav-links active">
-            <a href="#/" style={{ color: 'var(--text-primary)' }}>← Back to Home</a>
-          </div>
+    <div style={{ 
+      backgroundColor: '#fff', 
+      minHeight: '100vh', 
+      color: 'var(--color-text-primary, #1A1A1A)', 
+      fontFamily: "'Glyseric', 'Inter', sans-serif",
+      padding: 0,
+      margin: 0,
+      cursor: 'default'
+    }}>
+      {/* Navigation - Minimal back link */}
+      <nav style={{ 
+        position: 'fixed', 
+        top: 0, 
+        left: 0, 
+        width: '100%', 
+        padding: '1.5rem 2rem', 
+        zIndex: 100,
+        backgroundColor: 'rgba(255,255,255,0.9)',
+        backdropFilter: 'blur(10px)',
+        borderBottom: '0.5px solid rgba(0,0,0,0.05)'
+      }}>
+        <div style={{ maxWidth: '860px', margin: '0 auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <Link to="/" style={{ 
+            color: 'var(--color-primary, #0042D0)', 
+            textDecoration: 'none', 
+            fontWeight: '600', 
+            fontSize: '0.9rem',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '0.5rem'
+          }}>
+            ← Back
+          </Link>
+          <span style={{ fontSize: '0.7rem', fontWeight: '800', letterSpacing: '0.15em', opacity: 0.4, color: 'var(--color-text-primary)' }}>CASE STUDY: DESIGNLINK</span>
         </div>
       </nav>
 
-      <main style={{ paddingTop: '150px' }}>
-        {/* --- PAGE HEADER --- */}
-        <section className="section" style={{ paddingTop: 0, paddingBottom: 'var(--space-md)' }}>
-          <div className="container">
-            <h1 className="hero-title reveal" style={{ fontSize: 'clamp(2.5rem, 6vw, 5rem)', lineHeight: '1.05', color: '#1A1A1A', fontFamily: "'Inter', sans-serif", fontWeight: '700' }}>
-              Turning forgotten portfolios into<br/>
-              <span className="font-serif" style={{ fontWeight: '400' }}>meaningful connections</span><br/>
-              between creative talent<br/>
-              and top employers
+      <main style={{ 
+        maxWidth: '860px', 
+        margin: '0 auto', 
+        padding: '10rem 2rem 8rem',
+        boxSizing: 'border-box'
+      }}>
+        
+        {/* 1. Hero Section — 2-column grid */}
+        <section style={{ 
+          display: 'grid', 
+          gridTemplateColumns: 'minmax(0, 1.6fr) minmax(0, 1fr)', 
+          gap: '4rem', 
+          marginBottom: '8rem',
+          alignItems: 'start'
+        }}>
+          <div>
+            <h1 style={{ 
+              fontSize: 'clamp(2rem, 4.5vw, 3.2rem)', 
+              lineHeight: '1.1', 
+              fontWeight: '700', 
+              margin: 0,
+              letterSpacing: '-0.03em',
+              color: 'var(--color-text-primary)'
+            }}>
+              DesignLink is a <span style={{ color: 'var(--color-primary, #0042D0)' }}>portfolio-first hiring platform</span> designed to connect creative talent and top employers with a totally new mobile experience.
             </h1>
-            
-            <hr className="reveal delay-100" style={{ border: 'none', height: '2px', backgroundColor: '#F59E0B', margin: '3rem 0', width: '100%', maxWidth: '1000px' }} />
+          </div>
+          <div style={{ paddingTop: '0.6rem' }}>
+            <span style={{ 
+              display: 'block', 
+              fontSize: '0.7rem', 
+              fontWeight: '800', 
+              textTransform: 'uppercase', 
+              letterSpacing: '0.15em', 
+              color: 'var(--color-text-secondary)',
+              marginBottom: '1rem' 
+            }}>Project Overview</span>
+            <p style={{ 
+              fontSize: '1rem', 
+              lineHeight: '1.6', 
+              color: 'var(--color-text-secondary)',
+              margin: 0 
+            }}>
+              Connecting designers with top employers without resume filtering, focusing instead on visual evidence of skill and professional impact.
+            </p>
+          </div>
+        </section>
 
-            <div className="project-info reveal delay-200" style={{ display: 'flex', gap: '4rem', flexWrap: 'wrap', fontFamily: "'Inter', sans-serif" }}>
-              <div>
-                <div style={{ color: '#5a5a5a', fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.5rem' }}>Collaboration with</div>
-                <div style={{ fontWeight: '600', fontSize: '1.1rem', color: '#1A1A1A' }}>Designerrs Academy</div>
+        {/* 2. Three Screen Mockups — 3-column grid */}
+        <section style={{ 
+          display: 'grid', 
+          gridTemplateColumns: 'repeat(3, 1fr)', 
+          gap: '1.5rem', 
+          marginBottom: '10rem'
+        }}>
+          
+          {/* Card 1: Home Screen (light blue bg #f0f4ff) */}
+          <div style={{ 
+            backgroundColor: '#f0f4ff', 
+            borderRadius: '12px', 
+            padding: '2rem 1.25rem',
+            border: '0.5px solid rgba(0,0,0,0.03)',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            textAlign: 'center'
+          }}>
+            {/* Phone Frame */}
+            <div style={{ 
+              width: '100%', 
+              maxWidth: '220px',
+              aspectRatio: '9/18.5', 
+              backgroundColor: '#fff', 
+              borderRadius: '18px', 
+              boxShadow: '0 12px 35px rgba(0,66,208,0.06)',
+              overflow: 'hidden',
+              position: 'relative',
+              display: 'flex',
+              flexDirection: 'column',
+              border: '0.5px solid rgba(0,0,0,0.05)'
+            }}>
+              {/* Status Bar */}
+              <div style={{ height: '24px', padding: '4px 14px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '9px', fontWeight: '600' }}>
+                <span>9:41</span>
+                <span>📶 🪫</span>
               </div>
-              <div>
-                <div style={{ color: '#5a5a5a', fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.5rem' }}>Platform</div>
-                <div style={{ fontWeight: '600', fontSize: '1.1rem', color: '#1A1A1A' }}>Android</div>
-              </div>
-              <div>
-                <div style={{ color: '#5a5a5a', fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.5rem' }}>My Role</div>
-                <div style={{ fontWeight: '600', fontSize: '1.1rem', color: '#1A1A1A' }}>Product Designer</div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* --- HERO IMAGE --- */}
-        <section className="section" style={{ padding: '0 0 var(--space-xl) 0' }}>
-            <div className="container reveal delay-300">
-                <div style={{ width: '100%', aspectRatio: '21/9', backgroundColor: '#0042D0', borderRadius: '16px', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative' }}>
-                    <div style={{ display: 'flex', gap: '2rem' }}>
-                        <div style={{ width: '25%', height: '80%', background: '#fff', borderRadius: '24px', boxShadow: '0 20px 40px rgba(0,0,0,0.2)' }}></div>
-                        <div style={{ width: '25%', height: '80%', background: '#fff', borderRadius: '24px', boxShadow: '0 20px 40px rgba(0,0,0,0.2)', marginTop: '4rem' }}></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        {/* --- SECTION 1: PROJECT OVERVIEW --- */}
-        <section className="section">
-          <div className="container manifesto-wrap">
-            <span className="reveal" style={{ display: 'inline-block', backgroundColor: '#0042D0', color: '#fff', textTransform: 'uppercase', fontSize: '0.85rem', letterSpacing: '0.1em', fontWeight: 'bold', padding: '0.5rem 1rem', borderRadius: '20px', marginBottom: 'var(--space-md)' }}>
-              Project Overview
-            </span>
-            <p className="manifesto-line reveal" style={{ fontSize: 'clamp(1.5rem, 3vw, 2.5rem)', color: '#5a5a5a', fontFamily: "'Inter', sans-serif", fontWeight: '400' }}>
-              Traditional hiring platforms are failing creatives. They are built for text-based resumes —<br/>
-              <span style={{ color: '#1A1A1A', fontWeight: '600' }}>the wrong tool for visual talent.</span>
-            </p>
-
-            <div className="reveal" style={{ display: 'flex', flexWrap: 'wrap', gap: '2rem', marginTop: 'var(--space-md)', fontSize: '1.25rem', fontWeight: '700', color: '#1A1A1A' }}>
-              <span>Portfolio Visibility</span>
-              <span style={{ color: '#0042D0' }}>·</span>
-              <span>Lack of Transparency</span>
-              <span style={{ color: '#0042D0' }}>·</span>
-              <span>Hiring Inefficiency</span>
-            </div>
-            <p className="reveal" style={{ marginTop: '1.5rem', fontSize: '1.1rem', color: '#5a5a5a', maxWidth: '800px' }}>
-              Employers waste hours. Talented designers get overlooked by automated systems.
-            </p>
-
-            <p className="reveal" style={{ marginTop: 'var(--space-md)', fontSize: '1.5rem', fontWeight: '600', color: '#1A1A1A' }}>
-              Our solution is DesignLink — a portfolio-first hiring platform.
-            </p>
-            <div className="reveal" style={{ display: 'flex', flexWrap: 'wrap', gap: '2rem', marginTop: '1.5rem', fontSize: '1.25rem', fontWeight: '700', color: '#0042D0' }}>
-              <span>Portfolio-First</span>
-              <span style={{ color: '#1A1A1A' }}>·</span>
-              <span>Smart Matching</span>
-              <span style={{ color: '#1A1A1A' }}>·</span>
-              <span>Transparency</span>
-            </div>
-          </div>
-        </section>
-
-        {/* --- SECTION 2: DESIGN PROCESS --- */}
-        <section className="section">
-          <div className="container">
-            <span className="reveal" style={{ display: 'inline-block', backgroundColor: '#0042D0', color: '#fff', textTransform: 'uppercase', fontSize: '0.85rem', letterSpacing: '0.1em', fontWeight: 'bold', padding: '0.5rem 1rem', borderRadius: '20px', marginBottom: 'var(--space-md)' }}>
-              Design Process
-            </span>
-            <p className="reveal" style={{ fontSize: '1.25rem', color: '#5a5a5a', maxWidth: '800px', marginBottom: 'var(--space-md)' }}>
-              A comprehensive process to create a seamless hiring experience for both creative professionals and employers.
-            </p>
-
-            <div className="reveal" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '2rem' }}>
-              {[{step: 'Empathize', subs: ['Problem Statement', 'Project Goals', 'Target Audience']},
-                {step: 'Define', subs: ['User Flows', 'Site-Map', 'User Stories']},
-                {step: 'Ideate', subs: ['Wireframes', 'Visual Design']},
-                {step: 'Design', subs: ['Visual Concepts', 'UI Kit', 'Final Mockups']}
-              ].map((item, i) => (
-                <div key={i} style={{ flex: '1', minWidth: '200px' }}>
-                  <div style={{ fontSize: '1.5rem', fontWeight: '700', color: '#1A1A1A', display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem' }}>
-                    {item.step}
-                    {i < 3 && <span style={{ color: '#F59E0B' }}>&rarr;</span>}
-                  </div>
-                  <ul style={{ listStyle: 'none', padding: 0 }}>
-                    {item.subs.map((sub, j) => (
-                      <li key={j} style={{ color: '#0042D0', fontSize: '0.95rem', marginBottom: '0.5rem', fontWeight: '500' }}>{sub}</li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* --- SECTION 3: SECONDARY RESEARCH --- */}
-        <section className="section">
-          <div className="container">
-            <span className="reveal" style={{ display: 'inline-block', backgroundColor: '#0042D0', color: '#fff', textTransform: 'uppercase', fontSize: '0.85rem', letterSpacing: '0.1em', fontWeight: 'bold', padding: '0.5rem 1rem', borderRadius: '20px', marginBottom: 'var(--space-md)' }}>
-              Secondary Research
-            </span>
-            <p className="reveal" style={{ fontSize: '1.25rem', color: '#5a5a5a', maxWidth: '800px', marginBottom: 'var(--space-md)' }}>
-              Research into existing platforms revealed recurring themes in platform limitations and user pain points.
-            </p>
-
-            <div className="reveal" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
-              {["Resume-First Culture", "Disconnected Platforms", "The \"Black Hole\" Effect", "Skills vs. Style", "Platform Fatigue", "\"One-Size-Fits-All\" Fails"].map((theme, i) => (
-                <div key={i} style={{ border: '1px solid rgba(0,0,0,0.1)', padding: '2.5rem 2rem', borderRadius: '16px', display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                  <div style={{ width: '32px', height: '32px', border: '2px solid #0042D0', borderRadius: '8px' }}></div>
-                  <div style={{ fontWeight: '600', fontSize: '1.1rem', color: '#1A1A1A' }}>{theme}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* --- SECTION 4: PRIMARY RESEARCH --- */}
-        <section className="section" style={{ backgroundColor: '#f8f9fc', padding: 'var(--space-xl) 0' }}>
-          <div className="container">
-            <span className="reveal" style={{ display: 'inline-block', backgroundColor: '#0042D0', color: '#fff', textTransform: 'uppercase', fontSize: '0.85rem', letterSpacing: '0.1em', fontWeight: 'bold', padding: '0.5rem 1rem', borderRadius: '20px', marginBottom: 'var(--space-md)' }}>
-              Primary Research
-            </span>
-            <p className="reveal" style={{ fontSize: '1.25rem', color: '#5a5a5a', maxWidth: '800px', marginBottom: 'var(--space-lg)' }}>
-              One-on-one interviews with designers and recruiters revealed four recurring frustrations.
-            </p>
-
-            <div className="reveal" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem', position: 'relative' }}>
-              {["\"My portfolio is visual, but platforms only see my text resume. My work gets ignored.\"",
-                "\"The 'black hole' is real. A lack of application feedback is my biggest frustration.\"",
-                "\"I can't tell if a 'pretty' portfolio means they have real-world skills.\" (Recruiter)",
-                "\"I'm tired of juggling 3 platforms just to apply for one job. I want one system.\""].map((quote, i) => (
-                <div key={i} style={{ backgroundColor: '#fff', padding: '3rem', borderRadius: '16px', boxShadow: '0 10px 30px rgba(0,0,0,0.03)', fontSize: '1.2rem', color: '#1A1A1A', lineHeight: '1.6' }}>
-                  {quote}
-                </div>
-              ))}
               
-              {/* Center Logo Burst */}
-              <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', width: '80px', height: '80px', backgroundColor: '#0042D0', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <span style={{ color: '#fff', fontSize: '2rem' }}>✦</span>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* --- SECTION 5: USER PERSONAS --- */}
-        <section className="section">
-          <div className="container">
-            <span className="reveal" style={{ display: 'inline-block', backgroundColor: '#0042D0', color: '#fff', textTransform: 'uppercase', fontSize: '0.85rem', letterSpacing: '0.1em', fontWeight: 'bold', padding: '0.5rem 1rem', borderRadius: '20px', marginBottom: 'var(--space-md)' }}>
-              User Personas
-            </span>
-            
-            <div className="reveal" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: 'var(--space-md)' }}>
-              <div style={{ padding: '3rem', border: '1px solid rgba(0,0,0,0.1)', borderRadius: '16px' }}>
-                <div style={{ textTransform: 'uppercase', color: '#0042D0', fontWeight: '700', fontSize: '0.85rem', marginBottom: '0.5rem' }}>Persona 1 — Riya Sharma</div>
-                <div style={{ color: '#5a5a5a', fontSize: '0.9rem', marginBottom: '2rem' }}>Design Student · 21 · Female · Bangalore</div>
-                <div style={{ fontSize: '1.2rem', marginBottom: '2rem', color: '#1A1A1A' }}>"I used both LinkedIn and Behance, but they're not connected."</div>
+              {/* App Content */}
+              <div style={{ padding: '0.8rem', flex: 1, textAlign: 'left', overflow: 'hidden' }}>
+                {/* Logo */}
+                <div style={{ color: 'var(--color-primary, #0042D0)', fontSize: '1.2rem', fontWeight: 'bold', marginBottom: '0.8rem' }}>✦</div>
                 
-                <div style={{ fontWeight: '700', marginBottom: '0.5rem' }}>Goals</div>
-                <ul style={{ color: '#5a5a5a', fontSize: '0.95rem', marginBottom: '1.5rem', listStyle: 'none', paddingLeft: '1rem' }}>
-                  <li style={{ position: 'relative' }}><span style={{ position: 'absolute', left: '-1rem', color: '#F59E0B' }}>•</span> Showcase portfolio + resume</li>
-                  <li style={{ position: 'relative' }}><span style={{ position: 'absolute', left: '-1rem', color: '#F59E0B' }}>•</span> Receive clear application status</li>
-                </ul>
-
-                <div style={{ fontWeight: '700', marginBottom: '0.5rem' }}>Frustrations</div>
-                <ul style={{ color: '#5a5a5a', fontSize: '0.95rem', listStyle: 'none', paddingLeft: '1rem' }}>
-                  <li style={{ position: 'relative' }}><span style={{ position: 'absolute', left: '-1rem', color: '#0042D0' }}>×</span> Doesn't know if applications are seen</li>
-                  <li style={{ position: 'relative' }}><span style={{ position: 'absolute', left: '-1rem', color: '#0042D0' }}>×</span> Platforms separate resume and portfolio</li>
-                </ul>
-              </div>
-
-              <div style={{ padding: '3rem', border: '1px solid rgba(0,0,0,0.1)', borderRadius: '16px' }}>
-                <div style={{ textTransform: 'uppercase', color: '#0042D0', fontWeight: '700', fontSize: '0.85rem', marginBottom: '0.5rem' }}>Persona 2 — Nisha Kapoor</div>
-                <div style={{ color: '#5a5a5a', fontSize: '0.9rem', marginBottom: '2rem' }}>Sr. Hiring Manager · 47 · Female · Delhi</div>
-                <div style={{ fontSize: '1.2rem', marginBottom: '2rem', color: '#1A1A1A' }}>"LinkedIn isn't built for visual creatives."</div>
+                {/* Search */}
+                <div style={{ backgroundColor: '#f0f0f4', borderRadius: '8px', padding: '0.65rem', fontSize: '0.6rem', color: '#999', marginBottom: '1rem' }}>
+                  Search jobs, companies, skills...
+                </div>
                 
-                <div style={{ fontWeight: '700', marginBottom: '0.5rem' }}>Goals</div>
-                <ul style={{ color: '#5a5a5a', fontSize: '0.95rem', marginBottom: '1.5rem', listStyle: 'none', paddingLeft: '1rem' }}>
-                  <li style={{ position: 'relative' }}><span style={{ position: 'absolute', left: '-1rem', color: '#F59E0B' }}>•</span> Streamline evaluation via portfolio + resume integration</li>
-                  <li style={{ position: 'relative' }}><span style={{ position: 'absolute', left: '-1rem', color: '#F59E0B' }}>•</span> Assess candidates with skill tests</li>
-                </ul>
-
-                <div style={{ fontWeight: '700', marginBottom: '0.5rem' }}>Frustrations</div>
-                <ul style={{ color: '#5a5a5a', fontSize: '0.95rem', listStyle: 'none', paddingLeft: '1rem' }}>
-                  <li style={{ position: 'relative' }}><span style={{ position: 'absolute', left: '-1rem', color: '#0042D0' }}>×</span> Hard to compare portfolios side-by-side</li>
-                  <li style={{ position: 'relative' }}><span style={{ position: 'absolute', left: '-1rem', color: '#0042D0' }}>×</span> Can't filter by visual style</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* --- SECTION 6: COMPETITIVE ANALYSIS --- */}
-        <section className="section">
-          <div className="container">
-            <span className="reveal" style={{ display: 'inline-block', backgroundColor: '#0042D0', color: '#fff', textTransform: 'uppercase', fontSize: '0.85rem', letterSpacing: '0.1em', fontWeight: 'bold', padding: '0.5rem 1rem', borderRadius: '20px', marginBottom: 'var(--space-md)' }}>
-              Competitive Analysis
-            </span>
-            <p className="reveal" style={{ fontSize: '2rem', color: '#1A1A1A', maxWidth: '800px', marginBottom: 'var(--space-md)', fontWeight: '600' }}>
-              No single competitor solves the whole problem. The market is split into three categories.
-            </p>
-
-            <div className="reveal" style={{ display: 'flex', gap: '3rem', marginBottom: 'var(--space-lg)', color: '#0042D0', fontWeight: '600', textTransform: 'uppercase', fontSize: '0.85rem', letterSpacing: '0.05em' }}>
-              <span>✦ Portfolio Platforms</span>
-              <span>✦ Generalist Job Boards</span>
-              <span>✦ Project Platforms</span>
-            </div>
-
-            <div className="reveal" style={{ overflowX: 'auto' }}>
-              <table style={{ width: '100%', minWidth: '800px', borderCollapse: 'collapse', textAlign: 'left' }}>
-                <thead>
-                  <tr>
-                    <th style={{ padding: '1.5rem', borderBottom: '2px solid #E5E7EB' }}>Feature</th>
-                    <th style={{ padding: '1.5rem', borderBottom: '2px solid #0042D0', color: '#0042D0' }}>DesignLink</th>
-                    <th style={{ padding: '1.5rem', borderBottom: '2px solid #E5E7EB', color: '#5a5a5a' }}>LinkedIn</th>
-                    <th style={{ padding: '1.5rem', borderBottom: '2px solid #E5E7EB', color: '#5a5a5a' }}>Behance</th>
-                    <th style={{ padding: '1.5rem', borderBottom: '2px solid #E5E7EB', color: '#5a5a5a' }}>Krop</th>
-                    <th style={{ padding: '1.5rem', borderBottom: '2px solid #E5E7EB', color: '#5a5a5a' }}>99designs</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {[
-                    ['Unified Portfolio & Resume', '✓', '—', '—', '✓', '—'],
-                    ['Smart Job Matching', '✓', '✓', '—', '—', '✓'],
-                    ['Practical Skill Assessments', '✓', '✓', '—', '—', '—'],
-                    ['Real-Time App Tracking', '✓', '—', '—', '—', '—']
-                  ].map((row, idx) => (
-                    <tr key={idx}>
-                      <td style={{ padding: '1.5rem', borderBottom: '1px solid #E5E7EB', fontWeight: '500' }}>{row[0]}</td>
-                      <td style={{ padding: '1.5rem', borderBottom: '1px solid #E5E7EB', color: '#0042D0', fontWeight: '700' }}>{row[1]}</td>
-                      <td style={{ padding: '1.5rem', borderBottom: '1px solid #E5E7EB', color: row[2]==='✓'?'green':'#a0a0a0' }}>{row[2]}</td>
-                      <td style={{ padding: '1.5rem', borderBottom: '1px solid #E5E7EB', color: row[3]==='✓'?'green':'#a0a0a0' }}>{row[3]}</td>
-                      <td style={{ padding: '1.5rem', borderBottom: '1px solid #E5E7EB', color: row[4]==='✓'?'green':'#a0a0a0' }}>{row[4]}</td>
-                      <td style={{ padding: '1.5rem', borderBottom: '1px solid #E5E7EB', color: row[5]==='✓'?'green':'#a0a0a0' }}>{row[5]}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </section>
-
-        {/* --- SECTION 7: LEARNINGS --- */}
-        <section className="section">
-          <div className="container manifesto-wrap">
-            <span className="reveal" style={{ display: 'inline-block', backgroundColor: '#0042D0', color: '#fff', textTransform: 'uppercase', fontSize: '0.85rem', letterSpacing: '0.1em', fontWeight: 'bold', padding: '0.5rem 1rem', borderRadius: '20px', marginBottom: 'var(--space-md)' }}>
-              Learnings & Takeaways
-            </span>
-            <div className="reveal" style={{ display: 'flex', flexDirection: 'column', gap: '3rem', fontSize: '1.5rem', color: '#1A1A1A', lineHeight: '1.6' }}>
-              <p>The creative hiring process is deeply fragmented — users are forced to jump between portfolio sites, job boards, and skill platforms.</p>
-              <p>A major white space was identified. No competitor integrates practical skill tests or real-time application tracking. This is our key opportunity.</p>
-              <p>Prioritising the core all-in-one system is essential. Avoiding feature creep is critical to solving the main user pain point.</p>
-            </div>
-          </div>
-        </section>
-
-        {/* --- SECTION 8: WIREFRAMES --- */}
-        <section className="section" style={{ backgroundColor: '#f8f9fc', padding: 'var(--space-xl) 0' }}>
-          <div className="container">
-            <span className="reveal" style={{ display: 'inline-block', backgroundColor: '#0042D0', color: '#fff', textTransform: 'uppercase', fontSize: '0.85rem', letterSpacing: '0.1em', fontWeight: 'bold', padding: '0.5rem 1rem', borderRadius: '20px', marginBottom: 'var(--space-md)' }}>
-              Wireframes
-            </span>
-            <p className="reveal" style={{ fontSize: '1.25rem', color: '#5a5a5a', maxWidth: '800px', marginBottom: 'var(--space-lg)' }}>
-              Several iterations from low to high fidelity before arriving at the final version.
-            </p>
-
-            <div className="reveal" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '1rem', flexWrap: 'wrap' }}>
-              <div style={{ textAlign: 'center', flex: '1' }}>
-                <div style={{ aspectRatio: '9/16', background: '#e0ded8', borderRadius: '16px', marginBottom: '1.5rem' }}></div>
-                <div style={{ fontWeight: '600' }}>Sketching</div>
-              </div>
-              <div style={{ color: '#F59E0B', fontSize: '2rem' }}>&rarr;</div>
-              <div style={{ textAlign: 'center', flex: '1' }}>
-                <div style={{ aspectRatio: '9/16', background: '#e0ded8', borderRadius: '16px', marginBottom: '1.5rem' }}></div>
-                <div style={{ fontWeight: '600' }}>Mid-fidelity Wireframe</div>
-              </div>
-              <div style={{ color: '#F59E0B', fontSize: '2rem' }}>&rarr;</div>
-              <div style={{ textAlign: 'center', flex: '1' }}>
-                <div style={{ aspectRatio: '9/16', background: '#0042D0', borderRadius: '16px', marginBottom: '1.5rem' }}></div>
-                <div style={{ fontWeight: '600' }}>High-fidelity Wireframe</div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* --- SECTION 9: FINAL UI MOCKUPS --- */}
-        <section className="section" style={{ backgroundColor: '#0042D0', color: '#fff', padding: 'var(--space-xl) 0' }}>
-          <div className="container">
-            <span className="reveal" style={{ display: 'inline-block', backgroundColor: '#fff', color: '#0042D0', textTransform: 'uppercase', fontSize: '0.85rem', letterSpacing: '0.1em', fontWeight: 'bold', padding: '0.5rem 1rem', borderRadius: '20px', marginBottom: 'var(--space-lg)' }}>
-              Final UI Mockups
-            </span>
-
-            <div className="reveal" style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '5rem' }}>
-              
-              {/* Screen 1 */}
-              <div style={{ display: 'flex', gap: '3rem', alignItems: 'center', flexWrap: 'wrap' }}>
-                <div style={{ width: '300px', aspectRatio: '9/16', background: '#fff', borderRadius: '24px' }}></div>
-                <div style={{ flex: '1', minWidth: '300px' }}>
-                  <h3 style={{ fontSize: '1.5rem', marginBottom: '1.5rem' }}>Home Screen</h3>
-                  <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '1rem', color: '#E5E7EB' }}>
-                    <li>→ Jakub's Law</li>
-                    <li>→ Easy Scanning (F-Pattern)</li>
-                    <li>→ Social Proof Trust (Netflix/Tesla logos)</li>
-                  </ul>
+                {/* Stats */}
+                <div style={{ display: 'flex', gap: '0.3rem', marginBottom: '1.2rem' }}>
+                   <div style={{ backgroundColor: '#eef2ff', color: 'var(--color-primary, #0042D0)', padding: '3px 6px', borderRadius: '4px', fontSize: '0.52rem', fontWeight: '800' }}>247 Active Jobs</div>
+                   <div style={{ backgroundColor: '#eefcf6', color: 'var(--color-accent-green, #2EAF77)', padding: '3px 6px', borderRadius: '4px', fontSize: '0.52rem', fontWeight: '800' }}>89 New Today</div>
+                   <div style={{ backgroundColor: '#f5f3ff', color: 'var(--color-accent-purple, #7C6EE0)', padding: '3px 6px', borderRadius: '4px', fontSize: '0.52rem', fontWeight: '800' }}>1.2k Companies</div>
                 </div>
-              </div>
 
-              {/* Screen 2 */}
-              <div style={{ display: 'flex', gap: '3rem', alignItems: 'center', flexWrap: 'wrap', flexDirection: 'row-reverse' }}>
-                <div style={{ width: '300px', aspectRatio: '9/16', background: '#fff', borderRadius: '24px' }}></div>
-                <div style={{ flex: '1', minWidth: '300px', textAlign: 'right' }}>
-                  <h3 style={{ fontSize: '1.5rem', marginBottom: '1.5rem' }}>Send Assessment Screen</h3>
-                  <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '1rem', color: '#E5E7EB' }}>
-                    <li>→ Reduced Cognitive Load</li>
-                  </ul>
-                </div>
-              </div>
-
-              {/* Add more screens seamlessly following the pattern */}
-              <div style={{ display: 'flex', gap: '3rem', alignItems: 'center', flexWrap: 'wrap' }}>
-                <div style={{ width: '300px', aspectRatio: '9/16', background: '#fff', borderRadius: '24px' }}></div>
-                <div style={{ flex: '1', minWidth: '300px' }}>
-                  <h3 style={{ fontSize: '1.5rem', marginBottom: '1.5rem' }}>Job Details Screen</h3>
-                  <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '1rem', color: '#E5E7EB' }}>
-                    <li>→ Psychology</li>
-                    <li>→ Scarcity (F-Pattern)</li>
-                    <li>→ Jakub's Law</li>
-                  </ul>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </section>
-
-        {/* --- SECTION 10: ONBOARDING FLOW --- */}
-        <section className="section">
-          <div className="container">
-            <span className="reveal" style={{ display: 'inline-block', backgroundColor: '#0042D0', color: '#fff', textTransform: 'uppercase', fontSize: '0.85rem', letterSpacing: '0.1em', fontWeight: 'bold', padding: '0.5rem 1rem', borderRadius: '20px', marginBottom: 'var(--space-md)' }}>
-              Onboarding Flow
-            </span>
-            
-            <div className="reveal" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '3rem' }}>
-              {[
-                { step: "Step 1/6", desc: "Design category selection" },
-                { step: "Step 2/6", desc: "Job type (FT, PT, Freelance)" },
-                { step: "Step 3/6", desc: "Job scheme (On-site, Remote)" },
-                { step: "Step 4/6", desc: "Industry preference" },
-                { step: "Step 5/6", desc: "Location preference" },
-                { step: "Step 6/6", desc: "Salary range" }
-              ].map((item, i) => (
-                <div key={i}>
-                  <div style={{ fontSize: '1.5rem', fontWeight: '700', color: '#0042D0', marginBottom: '1rem' }}>{item.step}</div>
-                  <div style={{ display: 'flex', gap: '4px', marginBottom: '1.5rem' }}>
-                    {[...Array(6)].map((_, j) => (
-                      <div key={j} style={{ height: '4px', flex: '1', backgroundColor: j <= i ? '#F59E0B' : '#E5E7EB', borderRadius: '2px' }}></div>
-                    ))}
+                <div style={{ fontSize: '0.75rem', fontWeight: '800', marginBottom: '0.6rem', color: '#1A1A1A' }}>Featured Jobs</div>
+                
+                {/* Job Card */}
+                <div style={{ border: '0.5px solid #f0f0f0', borderRadius: '8px', padding: '0.65rem', backgroundColor: '#fff' }}>
+                  <div style={{ fontSize: '0.65rem', fontWeight: '800', color: '#1A1A1A' }}>Senior UX Designer</div>
+                  <div style={{ fontSize: '0.55rem', color: '#666', marginTop: '1px' }}>TechFlow Inc. · $120k–$150k</div>
+                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '3px', marginTop: '6px' }}>
+                     <span style={{ fontSize: '0.45rem', backgroundColor: '#f5f5f7', padding: '1px 4px', borderRadius: '2px', fontWeight: '600' }}>Full-time</span>
+                     <span style={{ fontSize: '0.45rem', backgroundColor: '#f5f5f7', padding: '1px 4px', borderRadius: '2px', fontWeight: '600' }}>Remote</span>
+                     <span style={{ fontSize: '0.45rem', backgroundColor: '#f5f5f7', padding: '1px 4px', borderRadius: '2px', fontWeight: '600' }}>Senior</span>
+                     <span style={{ fontSize: '0.45rem', backgroundColor: '#eefcf6', color: 'var(--color-accent-green, #2EAF77)', padding: '1px 4px', borderRadius: '2px', fontWeight: '800' }}>92% Match</span>
                   </div>
-                  <div style={{ aspectRatio: '9/16', background: '#f8f9fc', borderRadius: '16px', border: '1px solid rgba(0,0,0,0.05)', marginBottom: '1rem' }}></div>
-                  <div style={{ color: '#5a5a5a', fontWeight: '500' }}>{item.desc}</div>
                 </div>
-              ))}
+              </div>
+
+              {/* Bottom Nav */}
+              <div style={{ height: '44px', borderTop: '0.5px solid #f0f0f0', display: 'flex', justifyContent: 'space-around', alignItems: 'center', backgroundColor: '#fff', paddingBottom: '4px' }}>
+                <span style={{ fontSize: '12px', color: '#0042D0' }}>🏠</span>
+                <span style={{ fontSize: '12px', opacity: 0.15 }}>💼</span>
+                <span style={{ fontSize: '12px', opacity: 0.15 }}>💬</span>
+                <span style={{ fontSize: '12px', opacity: 0.15 }}>👤</span>
+              </div>
+            </div>
+
+            {/* Below Phone Stats */}
+            <div style={{ marginTop: '1.5rem' }}>
+               <div style={{ display: 'inline-flex', alignItems: 'center', gap: '5px', backgroundColor: '#eefcf6', color: '#2EAF77', padding: '4px 10px', borderRadius: '20px', fontSize: '0.65rem', fontWeight: '800', marginBottom: '8px' }}>
+                  <span style={{ width: '5px', height: '5px', backgroundColor: '#2EAF77', borderRadius: '50%' }}></span> Online
+               </div>
+               <div style={{ fontSize: '0.75rem', fontWeight: '800', color: '#0042D0', marginBottom: '4px' }}>designlink.com</div>
+               <p style={{ fontSize: '0.7rem', color: '#666', margin: 0, lineHeight: '1.4', maxWidth: '160px' }}>
+                 We have more than 100+ active jobs for creatives this year!
+               </p>
             </div>
           </div>
-        </section>
 
-        {/* --- SECTION 11: DESIGN SYSTEM --- */}
-        <section className="section" style={{ backgroundColor: '#f8f9fc', padding: 'var(--space-xl) 0' }}>
-          <div className="container">
-            <span className="reveal" style={{ display: 'inline-block', backgroundColor: '#0042D0', color: '#fff', textTransform: 'uppercase', fontSize: '0.85rem', letterSpacing: '0.1em', fontWeight: 'bold', padding: '0.5rem 1rem', borderRadius: '20px', marginBottom: 'var(--space-md)' }}>
-              Design System
-            </span>
-            
-            <div className="reveal" style={{ display: 'flex', gap: '3rem', flexWrap: 'wrap', marginBottom: 'var(--space-lg)' }}>
-              <div style={{ flex: '1', minWidth: '200px' }}>
-                <div style={{ height: '100px', backgroundColor: '#0042D0', borderRadius: '12px', marginBottom: '1rem' }}></div>
-                <div style={{ fontWeight: '700' }}>Primary Blue</div>
-                <div style={{ color: '#5a5a5a', fontSize: '0.9rem' }}>#0042D0 — Professional and calm</div>
+          {/* Card 2: Status Screen (white bg) */}
+          <div style={{ 
+            backgroundColor: '#fff', 
+            borderRadius: '12px', 
+            padding: '2rem 1.25rem',
+            border: '0.5px solid rgba(0,0,0,0.08)',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center'
+          }}>
+            <div style={{ 
+              width: '100%', 
+              maxWidth: '220px',
+              aspectRatio: '9/18.5', 
+              backgroundColor: '#fff', 
+              borderRadius: '18px', 
+              boxShadow: '0 15px 45px rgba(0,0,0,0.04)',
+              overflow: 'hidden',
+              display: 'flex',
+              flexDirection: 'column',
+              border: '0.5px solid #eee'
+            }}>
+              <div style={{ height: '24px', padding: '4px 14px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '9px', fontWeight: '600' }}>
+                <span>9:41</span>
+                <span>🔋</span>
               </div>
-              <div style={{ flex: '1', minWidth: '200px' }}>
-                <div style={{ height: '100px', backgroundColor: '#E5E7EB', borderRadius: '12px', marginBottom: '1rem' }}></div>
-                <div style={{ fontWeight: '700' }}>Neutral Gray</div>
-                <div style={{ color: '#5a5a5a', fontSize: '0.9rem' }}>#E5E7EB — Clean and supportive</div>
-              </div>
-              <div style={{ flex: '1', minWidth: '200px' }}>
-                <div style={{ height: '100px', backgroundColor: '#1E293B', borderRadius: '12px', marginBottom: '1rem' }}></div>
-                <div style={{ fontWeight: '700' }}>Dark Charcoal</div>
-                <div style={{ color: '#5a5a5a', fontSize: '0.9rem' }}>#1E293B — Strong and clear</div>
-              </div>
-            </div>
-
-            <div className="reveal" style={{ borderTop: '1px solid rgba(0,0,0,0.1)', paddingTop: 'var(--space-md)' }}>
-              <h3 style={{ fontSize: '1.2rem', marginBottom: '1.5rem', color: '#0042D0' }}>Typography - Inter</h3>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid rgba(0,0,0,0.05)', paddingBottom: '0.5rem' }}>
-                  <span style={{ fontSize: '24px', fontWeight: '600' }}>Heading</span>
-                  <span style={{ color: '#5a5a5a' }}>Semi-bold 24</span>
+              <div style={{ padding: '0.8rem', flex: 1 }}>
+                <div style={{ fontSize: '0.85rem', fontWeight: '800', marginBottom: '1.2rem', display: 'flex', alignItems: 'center', gap: '6px', color: '#1A1A1A' }}>
+                  <span style={{ fontSize: '1rem', fontWeight: 'normal' }}>←</span> Application Status
                 </div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid rgba(0,0,0,0.05)', paddingBottom: '0.5rem' }}>
-                  <span style={{ fontSize: '18px', fontWeight: '400' }}>Sub-Heading</span>
-                  <span style={{ color: '#5a5a5a' }}>Regular 18</span>
-                </div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid rgba(0,0,0,0.05)', paddingBottom: '0.5rem' }}>
-                  <span style={{ fontSize: '16px', fontWeight: '600' }}>Body (Primary)</span>
-                  <span style={{ color: '#5a5a5a' }}>Semi-bold 16</span>
-                </div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid rgba(0,0,0,0.05)', paddingBottom: '0.5rem' }}>
-                  <span style={{ fontSize: '16px', fontWeight: '400' }}>Body (Secondary)</span>
-                  <span style={{ color: '#5a5a5a' }}>Regular 16</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* --- SECTION 12: CONCLUSION / CTA --- */}
-        <section id="contact" className="section contact-cta">
-            <div className="container">
-                <span className="reveal" style={{ display: 'inline-block', backgroundColor: '#0042D0', color: '#fff', textTransform: 'uppercase', fontSize: '0.85rem', letterSpacing: '0.1em', fontWeight: 'bold', padding: '0.5rem 1rem', borderRadius: '20px', marginBottom: 'var(--space-md)' }}>
-                  Thank You
-                </span>
-                <a href="mailto:contact@laveenachetwani.online" className="giant-cta reveal" style={{ fontSize: 'clamp(4rem, 12vw, 10rem)', lineHeight: '0.85' }}>
-                    design that<br/>
-                    <span className="font-serif text-secondary">connects.</span>
-                </a>
                 
-                <p className="reveal delay-100" style={{ fontSize: '1.5rem', color: '#1A1A1A', marginTop: 'var(--space-md)', marginBottom: 'var(--space-md)' }}>
-                  A portfolio-first world is possible. This is what it looks like.
-                </p>
-
-                <div className="contact-details reveal delay-200">
-                    <a href="mailto:laveenaa.designn@gmail.com">laveenaa.designn@gmail.com</a>
-                    <a href="https://linkedin.com/in/laveena-chetwani" target="_blank" rel="noreferrer">LinkedIn: laveena-chetwani</a>
+                <div style={{ backgroundColor: '#fff', borderRadius: '8px', padding: '0.8rem', marginBottom: '1.2rem', border: '0.5px solid #f0f0f0', boxShadow: '0 2px 8px rgba(0,0,0,0.02)' }}>
+                  <div style={{ fontSize: '0.65rem', fontWeight: '800', color: '#1A1A1A' }}>TechFlow Inc.</div>
+                  <div style={{ fontSize: '0.55rem', color: '#666', marginTop: '1px' }}>Senior UI/UX Designer</div>
+                  <div style={{ fontSize: '0.55rem', color: '#0042D0', marginTop: '1px', fontWeight: 'bold' }}>$85K–$120K</div>
+                  <div style={{ fontSize: '0.55rem', color: '#aaa', marginTop: '8px' }}>Applied 5 days ago</div>
                 </div>
+
+                {/* Vertical Timeline */}
+                <div style={{ position: 'relative', paddingLeft: '1.2rem', marginTop: '0.5rem' }}>
+                  <div style={{ position: 'absolute', left: '6px', top: '8px', bottom: '8px', width: '1px', backgroundColor: '#f0f0f0' }}></div>
+                  
+                  {/* Step 1 */}
+                  <div style={{ marginBottom: '1.5rem', position: 'relative' }}>
+                    <div style={{ position: 'absolute', left: '-1.25rem', top: '2px', width: '7px', height: '7px', backgroundColor: '#2EAF77', borderRadius: '50%', zIndex: 1 }}></div>
+                    <div style={{ fontSize: '0.68rem', fontWeight: '800', color: '#1A1A1A' }}>Application Submitted</div>
+                    <div style={{ fontSize: '0.55rem', color: '#2EAF77', fontWeight: '700', marginTop: '1px' }}>Completed</div>
+                  </div>
+
+                  {/* Step 2 */}
+                  <div style={{ marginBottom: '1.5rem', position: 'relative' }}>
+                    <div style={{ position: 'absolute', left: '-1.25rem', top: '2px', width: '7px', height: '7px', backgroundColor: '#2EAF77', borderRadius: '50%', zIndex: 1 }}></div>
+                    <div style={{ fontSize: '0.68rem', fontWeight: '800', color: '#1A1A1A' }}>Application Under Review</div>
+                    <div style={{ fontSize: '0.55rem', color: '#2EAF77', fontWeight: '700', marginTop: '1px' }}>Completed</div>
+                  </div>
+
+                  {/* Step 3 */}
+                  <div style={{ position: 'relative' }}>
+                    <div style={{ position: 'absolute', left: '-1.25rem', top: '2px', width: '7px', height: '7px', backgroundColor: '#EF9F27', borderRadius: '50%', zIndex: 1 }}></div>
+                    <div style={{ fontSize: '0.68rem', fontWeight: '800', color: '#1A1A1A' }}>Interview Scheduled</div>
+                    <div style={{ fontSize: '0.55rem', color: '#EF9F27', fontWeight: '700', marginTop: '1px' }}>In Progress</div>
+                  </div>
+                </div>
+              </div>
+
+               {/* Bottom Nav Jobs Active */}
+               <div style={{ height: '44px', borderTop: '0.5px solid #f0f0f0', display: 'flex', justifyContent: 'space-around', alignItems: 'center', backgroundColor: '#fff', paddingBottom: '4px' }}>
+                <span style={{ fontSize: '12px', opacity: 0.15 }}>🏠</span>
+                <span style={{ fontSize: '12px', color: '#0042D0', fontWeight: 'bold' }}>💼</span>
+                <span style={{ fontSize: '12px', opacity: 0.15 }}>💬</span>
+                <span style={{ fontSize: '12px', opacity: 0.15 }}>👤</span>
+              </div>
             </div>
+            
+            <div style={{ marginTop: '1.5rem', color: '#aaa', fontSize: '0.7rem', fontWeight: '700' }}>
+               [20+] real-time tracked applications
+            </div>
+          </div>
+
+          {/* Card 3: Dark Mode Experience (dark #111 bg) */}
+          <div style={{ 
+            backgroundColor: '#111', 
+            borderRadius: '12px', 
+            padding: '2rem 1.25rem',
+            border: '0.5px solid rgba(255,255,255,0.05)',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            color: '#fff'
+          }}>
+             <div style={{ 
+              width: '100%', 
+              maxWidth: '220px',
+              aspectRatio: '9/18.5', 
+              backgroundColor: '#000', 
+              borderRadius: '18px', 
+              boxShadow: '0 20px 50px rgba(0,0,0,0.6)',
+              overflow: 'hidden',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center',
+              alignItems: 'center',
+              padding: '1.5rem',
+              border: '0.5px solid rgba(255,255,255,0.1)'
+            }}>
+              {/* App Icon */}
+              <div style={{ width: '56px', height: '56px', backgroundColor: 'var(--color-primary, #0042D0)', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.8rem', marginBottom: '0.8rem', boxShadow: '0 8px 16px rgba(0,66,208,0.3)' }}>
+                ✦
+              </div>
+              <div style={{ fontSize: '0.9rem', fontWeight: '800', marginBottom: '0.3rem' }}>DesignLink</div>
+              <div style={{ fontSize: '0.6rem', opacity: 0.4, textAlign: 'center', maxWidth: '120px', lineHeight: '1.3' }}>Portfolio-first. Talent, unfiltered.</div>
+              
+              {/* App Grid (iOS style container) */}
+              <div style={{ marginTop: '2.5rem', width: '100%', backgroundColor: '#1c1c1e', borderRadius: '15px', padding: '1.2rem 0.6rem', display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0.6rem' }}>
+                 {[
+                   { icon: '✦', color: '#0042D0', label: 'DesignLink' },
+                   { icon: '📷', color: '#333', label: 'Camera' },
+                   { icon: '👤', color: 'transparent', label: 'Contacts', border: '1px solid #444' },
+                   { icon: '☁️', color: '#0ea5e9', label: 'Weather' },
+                   { icon: '📝', color: '#eab308', label: 'Notes' },
+                   { icon: '➗', color: '#f97316', label: 'Calculator' }
+                 ].map((app, i) => (
+                   <div key={i} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                      <div style={{ width: '28px', height: '28px', backgroundColor: app.color, borderRadius: '6px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '14px', border: app.border }}>
+                        {app.icon}
+                      </div>
+                      <span style={{ fontSize: '6px', color: '#777', marginTop: '5px', fontWeight: '700' }}>{app.label}</span>
+                   </div>
+                 ))}
+              </div>
+            </div>
+            
+            <div style={{ marginTop: '1.5rem', opacity: 0.3, fontSize: '0.7rem', fontWeight: '800' }}>
+               Dark mode experience
+            </div>
+          </div>
+
         </section>
+
+        {/* 3. Context + Facts Section — 3-column with top border */}
+        <section style={{ 
+          display: 'grid', 
+          gridTemplateColumns: '1.2fr 0.8fr 1fr', 
+          gap: '2rem', 
+          paddingTop: '3rem',
+          borderTop: '0.5px solid #eee'
+        }}>
+          {/* Left: Context */}
+          <div>
+            <span style={{ 
+              display: 'block', 
+              fontSize: '0.7rem', 
+              fontWeight: '800', 
+              textTransform: 'uppercase', 
+              letterSpacing: '0.15em', 
+              color: 'var(--color-primary, #0042D0)',
+              marginBottom: '1rem' 
+            }}>Key Task</span>
+            <h2 style={{ fontSize: '2rem', fontWeight: '700', marginBottom: '1.5rem', color: 'var(--color-text-primary)', letterSpacing: '-0.02em' }}>Context</h2>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem' }}>
+              <p style={{ fontSize: '0.9rem', lineHeight: '1.7', color: 'var(--color-text-secondary)', margin: 0 }}>
+                The current creative hiring landscape is fragmented. Designers are forced to jump between portfolio hosting sites, professional networking platforms, and complex application portals that often fail to value visual work and actual craftsmanship.
+              </p>
+              <p style={{ fontSize: '0.9rem', lineHeight: '1.7', color: 'var(--color-text-secondary)', margin: 0 }}>
+                DesignLink bridges this gap by offering a singular mobile-first home where talent can showcase their portfolios, apply for roles, track statuses in real-time, and undergo verified skill assessments in one seamless app experience.
+              </p>
+            </div>
+          </div>
+
+          {/* Middle: Whitespace */}
+          <div></div>
+
+          {/* Right: Facts */}
+          <div>
+            <span style={{ 
+              display: 'block', 
+              fontSize: '0.7rem', 
+              fontWeight: '800', 
+              textTransform: 'uppercase', 
+              letterSpacing: '0.15em', 
+              color: 'var(--color-text-secondary)',
+              marginBottom: '1.5rem' 
+            }}>Facts</span>
+            
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+               <div style={{ display: 'flex', alignItems: 'center', gap: '1.2rem' }}>
+                  <span style={{ fontSize: '2rem', fontWeight: '700', color: 'var(--color-text-primary)' }}>2025</span>
+                  <span style={{ fontSize: '0.7rem', color: '#aaa', textTransform: 'uppercase', lineHeight: '1.2', fontWeight: '700', letterSpacing: '0.05em' }}>Year<br/>Founded</span>
+               </div>
+               <div style={{ display: 'flex', alignItems: 'center', gap: '1.2rem' }}>
+                  <span style={{ fontSize: '2rem', fontWeight: '700', color: 'var(--color-text-primary)' }}>50k+</span>
+                  <span style={{ fontSize: '0.7rem', color: '#aaa', textTransform: 'uppercase', lineHeight: '1.2', fontWeight: '700', letterSpacing: '0.05em' }}>Total<br/>Students</span>
+               </div>
+               <div style={{ display: 'flex', alignItems: 'center', gap: '1.2rem' }}>
+                  <span style={{ fontSize: '2rem', fontWeight: '700', color: 'var(--color-text-primary)' }}>55+</span>
+                  <span style={{ fontSize: '0.7rem', color: '#aaa', textTransform: 'uppercase', lineHeight: '1.2', fontWeight: '700', letterSpacing: '0.05em' }}>Countries</span>
+               </div>
+            </div>
+          </div>
+        </section>
+
       </main>
-
+      
+      {/* Footer Branding */}
+      <footer style={{ paddingBottom: '5rem', textAlign: 'center' }}>
+         <div style={{ fontSize: '0.7rem', opacity: 0.2, letterSpacing: '0.2em', fontWeight: '800', color: 'var(--color-text-primary)' }}>DESIGNLINK CASE STUDY • PRESENTATION 2024</div>
+      </footer>
     </div>
   );
 };

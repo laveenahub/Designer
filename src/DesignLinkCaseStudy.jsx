@@ -1,4 +1,28 @@
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+
+// Utility for Section Badges
+const SectionBadge = ({ children }) => (
+  <div style={{ display: 'flex', marginBottom: '1.5rem' }}>
+    <span style={{ 
+      display: 'inline-block',
+      backgroundColor: '#0042D0', 
+      color: '#fff', 
+      padding: '6px 16px', 
+      borderRadius: '20px', 
+      fontWeight: 'bold',
+      fontSize: '0.85rem',
+      textTransform: 'uppercase',
+      letterSpacing: '0.1em'
+    }}>
+      {children}
+    </span>
+  </div>
+);
+
+const Divider = () => (
+  <hr style={{ border: 'none', borderTop: '1px solid #E5E7EB', margin: '4rem 0' }} />
+);
 
 const DesignLinkCaseStudy = () => {
   useEffect(() => {
@@ -7,15 +31,14 @@ const DesignLinkCaseStudy = () => {
 
   return (
     <div style={{ 
-      backgroundColor: '#fff', 
+      backgroundColor: '#F5F4F1', 
       minHeight: '100vh', 
-      color: 'var(--color-text-primary, #1A1A1A)', 
-      fontFamily: "'Glyseric', 'Inter', sans-serif",
+      color: '#1E293B', 
+      fontFamily: "'Inter', sans-serif", // Base font
       padding: 0,
-      margin: 0,
-      cursor: 'default'
+      margin: 0
     }}>
-      {/* Navigation - Minimal back link */}
+      {/* Navigation */}
       <nav style={{ 
         position: 'fixed', 
         top: 0, 
@@ -23,13 +46,13 @@ const DesignLinkCaseStudy = () => {
         width: '100%', 
         padding: '1.5rem 2rem', 
         zIndex: 100,
-        backgroundColor: 'rgba(255,255,255,0.9)',
+        backgroundColor: 'rgba(245, 244, 241, 0.9)',
         backdropFilter: 'blur(10px)',
-        borderBottom: '0.5px solid rgba(0,0,0,0.05)'
+        borderBottom: '1px solid #E5E7EB'
       }}>
         <div style={{ maxWidth: '860px', margin: '0 auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <a href="#/" style={{ 
-            color: 'var(--color-primary, #0042D0)', 
+            color: '#0042D0', 
             textDecoration: 'none', 
             fontWeight: '600', 
             fontSize: '0.9rem',
@@ -37,359 +60,548 @@ const DesignLinkCaseStudy = () => {
             alignItems: 'center',
             gap: '0.5rem'
           }}>
-            ← Back
+            ← Back to Portfolio
           </a>
-          <span style={{ fontSize: '0.7rem', fontWeight: '800', letterSpacing: '0.15em', opacity: 0.4, color: 'var(--color-text-primary)' }}>CASE STUDY: DESIGNLINK</span>
+          <span style={{ fontSize: '0.7rem', fontWeight: '800', letterSpacing: '0.15em', color: '#1E293B', opacity: 0.5 }}>UX CASE STUDY</span>
         </div>
       </nav>
 
       <main style={{ 
         maxWidth: '860px', 
         margin: '0 auto', 
-        padding: '10rem 2rem 8rem',
+        padding: '10rem 2rem 6rem',
         boxSizing: 'border-box'
       }}>
         
-        {/* 1. Hero Section — 2-column grid */}
-        <section style={{ 
-          display: 'grid', 
-          gridTemplateColumns: 'minmax(0, 1.6fr) minmax(0, 1fr)', 
-          gap: '4rem', 
-          marginBottom: '8rem',
-          alignItems: 'start'
-        }}>
-          <div>
-            <h1 style={{ 
-              fontSize: 'clamp(2rem, 4.5vw, 3.2rem)', 
-              lineHeight: '1.1', 
-              fontWeight: '700', 
-              margin: 0,
-              letterSpacing: '-0.03em',
-              color: 'var(--color-text-primary)'
-            }}>
-              DesignLink is a <span style={{ color: 'var(--color-primary, #0042D0)' }}>portfolio-first hiring platform</span> designed to connect creative talent and top employers with a totally new mobile experience.
-            </h1>
+        {/* --- SECTION 1: HERO / TITLE --- */}
+        <section style={{ marginBottom: '8rem' }}>
+          <h1 style={{ 
+            fontFamily: "'Glyseric', serif",
+            fontSize: 'clamp(2.5rem, 5vw, 4.2rem)',
+            lineHeight: '1.05',
+            fontWeight: 'normal',
+            color: '#1E293B',
+            marginBottom: '3rem',
+            letterSpacing: '-0.02em'
+          }}>
+            Turning forgotten portfolios into meaningful connections between creative talent and top employers
+          </h1>
+          
+          <hr style={{ border: 'none', borderTop: '2px solid #EF9F27', width: '100px', margin: '0 0 2rem 0' }} />
+          
+          <div style={{ display: 'flex', gap: '4rem', flexWrap: 'wrap' }}>
+            <div>
+              <div style={{ fontSize: '0.75rem', textTransform: 'uppercase', color: '#666', letterSpacing: '0.1em', fontWeight: 'bold', marginBottom: '0.5rem' }}>Collaboration with</div>
+              <div style={{ fontSize: '1.1rem', fontWeight: '600' }}>Designerrs Academy</div>
+            </div>
+            <div>
+              <div style={{ fontSize: '0.75rem', textTransform: 'uppercase', color: '#666', letterSpacing: '0.1em', fontWeight: 'bold', marginBottom: '0.5rem' }}>Platform</div>
+              <div style={{ fontSize: '1.1rem', fontWeight: '600' }}>Android</div>
+            </div>
+            <div>
+              <div style={{ fontSize: '0.75rem', textTransform: 'uppercase', color: '#666', letterSpacing: '0.1em', fontWeight: 'bold', marginBottom: '0.5rem' }}>My Role</div>
+              <div style={{ fontSize: '1.1rem', fontWeight: '600' }}>Product Designer</div>
+            </div>
           </div>
-          <div style={{ paddingTop: '0.6rem' }}>
-            <span style={{ 
-              display: 'block', 
-              fontSize: '0.7rem', 
-              fontWeight: '800', 
-              textTransform: 'uppercase', 
-              letterSpacing: '0.15em', 
-              color: 'var(--color-text-secondary)',
-              marginBottom: '1rem' 
-            }}>Project Overview</span>
-            <p style={{ 
-              fontSize: '1rem', 
-              lineHeight: '1.6', 
-              color: 'var(--color-text-secondary)',
-              margin: 0 
-            }}>
-              Connecting designers with top employers without resume filtering, focusing instead on visual evidence of skill and professional impact.
+        </section>
+
+        {/* --- SECTION 2: PROJECT OVERVIEW --- */}
+        <section>
+          <SectionBadge>Project Overview</SectionBadge>
+          
+          <p style={{ fontSize: '1.25rem', lineHeight: '1.6', marginBottom: '1.5rem', color: '#333' }}>
+            Traditional hiring platforms are failing creatives. They are built for text-based resumes, which is the wrong tool for evaluating visual talent and showcasing creative portfolios. This creates a frustrating and inefficient process for both sides, leading to three core issues:
+          </p>
+          
+          <div style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap', marginBottom: '2.5rem', fontWeight: '800', color: '#1E293B', fontSize: '1.1rem' }}>
+            <span>Portfolio Visibility</span>
+            <span style={{ color: '#0042D0' }}>·</span>
+            <span>Lack of Transparency</span>
+            <span style={{ color: '#0042D0' }}>·</span>
+            <span>Hiring Inefficiency</span>
+          </div>
+          
+          <p style={{ fontSize: '1.25rem', lineHeight: '1.6', marginBottom: '1.5rem', color: '#333' }}>
+            Employers waste hours trying to find quality portfolios, while talented designers are overlooked by automated systems. Our solution is DesignLink, a portfolio-first hiring platform.
+          </p>
+          
+          <div style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap', fontWeight: '800', color: '#0042D0', fontSize: '1.1rem' }}>
+            <span>Portfolio-First</span>
+            <span style={{ color: '#1E293B' }}>·</span>
+            <span>Smart Matching</span>
+            <span style={{ color: '#1E293B' }}>·</span>
+            <span>Transparency</span>
+          </div>
+        </section>
+
+        <Divider />
+
+        {/* --- SECTION 3: DESIGN PROCESS --- */}
+        <section>
+          <SectionBadge>Design Process</SectionBadge>
+          <p style={{ fontSize: '1.1rem', marginBottom: '3rem', color: '#555' }}>
+            A structured approach was critical to ensuring the platform effectively addresses the nuances of creative hiring.
+          </p>
+          
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1.5rem', alignItems: 'stretch' }}>
+            {[
+              { step: 'Empathize', subs: ['Problem Statement', 'Project Goals', 'Target Audience'] },
+              { step: 'Define', subs: ['User Flows', 'Site-Map', 'User Stories'] },
+              { step: 'Ideate', subs: ['Wireframes', 'Visual Design'] },
+              { step: 'Design', subs: ['Visual Concepts', 'UI Kit', 'Final Mockups'] }
+            ].map((item, i) => (
+              <div key={i} style={{ flex: '1', minWidth: '180px', backgroundColor: '#fff', border: '1px solid #E5E7EB', borderRadius: '12px', padding: '1.5rem', position: 'relative' }}>
+                <div style={{ fontSize: '1.2rem', fontWeight: '800', color: '#0042D0', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
+                  {item.step}
+                </div>
+                <ul style={{ padding: 0, margin: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                  {item.subs.map((sub, j) => (
+                    <li key={j} style={{ fontSize: '0.9rem', color: '#555', fontWeight: '500' }}>{sub}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <Divider />
+
+        {/* --- SECTION 4: SECONDARY RESEARCH --- */}
+        <section>
+          <SectionBadge>Secondary Research</SectionBadge>
+          <p style={{ fontSize: '1.1rem', marginBottom: '3rem', color: '#555' }}>
+            To understand the competitive landscape and user sentiment without direct interviews, we analyzed industry discussions and existing platform pain points.
+          </p>
+          
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
+            {[
+              "Resume-First Culture",
+              "Disconnected Platforms",
+              "The \"Black Hole\" Effect",
+              "Skills vs. Style",
+              "Platform Fatigue",
+              "\"One-Size-Fits-All\" Fails"
+            ].map((label, i) => (
+              <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '1.5rem', backgroundColor: '#fff', border: '1px solid #E5E7EB', borderRadius: '12px' }}>
+                <div style={{ width: '24px', height: '24px', borderRadius: '4px', backgroundColor: '#0042D0', display: 'flex', flexShrink: 0, opacity: 0.1 }}></div>
+                <span style={{ fontWeight: '700', fontSize: '1.05rem', color: '#1E293B' }}>{label}</span>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <Divider />
+
+        {/* --- SECTION 5: PRIMARY RESEARCH --- */}
+        <section>
+          <SectionBadge>Primary Research</SectionBadge>
+          <p style={{ fontSize: '1.1rem', marginBottom: '3rem', color: '#555' }}>
+            We conducted hypothetical one-on-one interviews with designers and recruiters to uncover specific usability and workflow barriers.
+          </p>
+          
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
+            {[
+              "\"My portfolio is visual, but platforms only see my text resume. My work gets ignored.\"",
+              "\"The 'black hole' is real. A lack of application feedback is my biggest frustration.\"",
+              "\"I can't tell if a 'pretty' portfolio means they have real-world skills.\" (Recruiter)",
+              "\"I'm tired of juggling 3 platforms just to apply for one job. I want one system.\""
+            ].map((quote, i) => (
+              <div key={i} style={{ padding: '2rem', backgroundColor: '#1E293B', color: '#fff', borderRadius: '12px', fontSize: '1.15rem', fontStyle: 'italic', lineHeight: '1.6' }}>
+                {quote}
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <Divider />
+
+        {/* --- SECTION 6: USER PERSONAS --- */}
+        <section>
+          <SectionBadge>User Personas</SectionBadge>
+          
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem', marginTop: '2rem' }}>
+            {/* Persona 1 */}
+            <div style={{ backgroundColor: '#fff', padding: '2rem', borderRadius: '12px', border: '1px solid #E5E7EB' }}>
+              <h3 style={{ fontFamily: "'Glyseric', serif", fontSize: '1.8rem', margin: '0 0 0.5rem 0' }}>Persona 1 — Riya Sharma</h3>
+              <div style={{ color: '#0042D0', fontWeight: '700', fontSize: '0.85rem', textTransform: 'uppercase', marginBottom: '2rem' }}>Design Student · 21 · Female · Bangalore</div>
+              
+              <div style={{ fontWeight: '800', marginBottom: '0.8rem', fontSize: '1rem' }}>Goals</div>
+              <ul style={{ paddingLeft: '1.2rem', marginBottom: '2rem', color: '#555', fontSize: '0.95rem', lineHeight: '1.5' }}>
+                <li style={{ marginBottom: '0.5rem' }}>Showcase portfolio + resume simultaneously.</li>
+                <li>Receive clear application status and feedback.</li>
+              </ul>
+              
+              <div style={{ fontWeight: '800', marginBottom: '0.8rem', fontSize: '1rem' }}>Frustrations</div>
+              <ul style={{ paddingLeft: '1.2rem', marginBottom: '2rem', color: '#555', fontSize: '0.95rem', lineHeight: '1.5' }}>
+                <li style={{ marginBottom: '0.5rem' }}>Doesn't know if applications are actually seen.</li>
+                <li>Platforms completely separate her visual work from her experience.</li>
+              </ul>
+
+              <div style={{ padding: '1.5rem', backgroundColor: '#F5F4F1', borderRadius: '8px', fontStyle: 'italic', color: '#1E293B', fontWeight: '500' }}>
+                "I used both LinkedIn and Behance, but they're not connected."
+              </div>
+            </div>
+
+            {/* Persona 2 */}
+            <div style={{ backgroundColor: '#fff', padding: '2rem', borderRadius: '12px', border: '1px solid #E5E7EB' }}>
+              <h3 style={{ fontFamily: "'Glyseric', serif", fontSize: '1.8rem', margin: '0 0 0.5rem 0' }}>Persona 2 — Nisha Kapoor</h3>
+              <div style={{ color: '#0042D0', fontWeight: '700', fontSize: '0.85rem', textTransform: 'uppercase', marginBottom: '2rem' }}>Sr. Hiring Manager · 47 · Female · Delhi</div>
+              
+              <div style={{ fontWeight: '800', marginBottom: '0.8rem', fontSize: '1rem' }}>Goals</div>
+              <ul style={{ paddingLeft: '1.2rem', marginBottom: '2rem', color: '#555', fontSize: '0.95rem', lineHeight: '1.5' }}>
+                <li style={{ marginBottom: '0.5rem' }}>Streamline evaluation by integrating portfolio with a standard resume.</li>
+                <li>Assess candidates through objective skill tests.</li>
+              </ul>
+              
+              <div style={{ fontWeight: '800', marginBottom: '0.8rem', fontSize: '1rem' }}>Frustrations</div>
+              <ul style={{ paddingLeft: '1.2rem', marginBottom: '2rem', color: '#555', fontSize: '0.95rem', lineHeight: '1.5' }}>
+                <li style={{ marginBottom: '0.5rem' }}>Hard to compare scattered portfolios side-by-side.</li>
+                <li>Cannot efficiently filter candidates by their specific visual style.</li>
+              </ul>
+
+              <div style={{ padding: '1.5rem', backgroundColor: '#F5F4F1', borderRadius: '8px', fontStyle: 'italic', color: '#1E293B', fontWeight: '500' }}>
+                "LinkedIn isn't built for visual creatives."
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <Divider />
+
+        {/* --- SECTION 7: COMPETITIVE ANALYSIS --- */}
+        <section>
+          <SectionBadge>Competitive Analysis</SectionBadge>
+          <p style={{ fontSize: '1.2rem', fontWeight: '600', marginBottom: '2rem', color: '#1E293B' }}>
+            No single competitor solves the whole problem. The market is split into three main categories.
+          </p>
+
+          <div style={{ display: 'flex', gap: '1rem', marginBottom: '3rem' }}>
+            <div style={{ flex: 1, backgroundColor: '#fff', border: '1px solid #E5E7EB', padding: '1.5rem', borderRadius: '12px', textAlign: 'center', fontWeight: '800' }}>Portfolio Platforms</div>
+            <div style={{ flex: 1, backgroundColor: '#fff', border: '1px solid #E5E7EB', padding: '1.5rem', borderRadius: '12px', textAlign: 'center', fontWeight: '800' }}>Generalist Job Boards</div>
+            <div style={{ flex: 1, backgroundColor: '#fff', border: '1px solid #E5E7EB', padding: '1.5rem', borderRadius: '12px', textAlign: 'center', fontWeight: '800' }}>Project Platforms</div>
+          </div>
+
+          <div style={{ overflowX: 'auto', backgroundColor: '#fff', borderRadius: '12px', border: '1px solid #E5E7EB', padding: '2rem' }}>
+            <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
+              <thead>
+                <tr>
+                  <th style={{ padding: '1rem', borderBottom: '2px solid #1E293B' }}>Feature</th>
+                  <th style={{ padding: '1rem', borderBottom: '2px solid #0042D0', color: '#0042D0' }}>DesignLink</th>
+                  <th style={{ padding: '1rem', borderBottom: '2px solid #E5E7EB' }}>LinkedIn</th>
+                  <th style={{ padding: '1rem', borderBottom: '2px solid #E5E7EB' }}>Behance</th>
+                  <th style={{ padding: '1rem', borderBottom: '2px solid #E5E7EB' }}>Krop</th>
+                  <th style={{ padding: '1rem', borderBottom: '2px solid #E5E7EB' }}>99designs</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  ['Unified Portfolio & Resume', '✓', '—', '—', '✓', '—'],
+                  ['Smart Job Matching', '✓', '✓', '—', '—', '✓'],
+                  ['Practical Skill Assessments', '✓', '✓', '—', '—', '—'],
+                  ['Real-Time App Tracking', '✓', '—', '—', '—', '—']
+                ].map((row, idx) => (
+                  <tr key={idx}>
+                    <td style={{ padding: '1rem', borderBottom: '1px solid #E5E7EB', fontWeight: '600' }}>{row[0]}</td>
+                    <td style={{ padding: '1rem', borderBottom: '1px solid #E5E7EB', color: '#0042D0', fontWeight: '800', backgroundColor: '#f0f4ff' }}>{row[1]}</td>
+                    <td style={{ padding: '1rem', borderBottom: '1px solid #E5E7EB', color: row[2]==='✓'?'#2EAF77':'#aaa', fontWeight: 'bold' }}>{row[2]}</td>
+                    <td style={{ padding: '1rem', borderBottom: '1px solid #E5E7EB', color: row[3]==='✓'?'#2EAF77':'#aaa', fontWeight: 'bold' }}>{row[3]}</td>
+                    <td style={{ padding: '1rem', borderBottom: '1px solid #E5E7EB', color: row[4]==='✓'?'#2EAF77':'#aaa', fontWeight: 'bold' }}>{row[4]}</td>
+                    <td style={{ padding: '1rem', borderBottom: '1px solid #E5E7EB', color: row[5]==='✓'?'#2EAF77':'#aaa', fontWeight: 'bold' }}>{row[5]}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <Divider />
+
+        {/* --- SECTION 8: WIREFRAMES --- */}
+        <section>
+          <SectionBadge>Wireframes</SectionBadge>
+          <p style={{ fontSize: '1.1rem', marginBottom: '3rem', color: '#555' }}>
+            The product evolved significantly through low, mid, and high-fidelity iterations to optimize for visual scanning and usability.
+          </p>
+
+          <div style={{ display: 'flex', gap: '2rem', justifyContent: 'center' }}>
+            <div style={{ flex: 1, textAlign: 'center' }}>
+              <div style={{ aspectRatio: '9/18', backgroundColor: '#E5E7EB', borderRadius: '16px', marginBottom: '1rem', border: '1px solid #ccc' }}></div>
+              <div style={{ fontWeight: '700' }}>Sketching</div>
+            </div>
+            <div style={{ flex: 1, textAlign: 'center' }}>
+              <div style={{ aspectRatio: '9/18', backgroundColor: '#d1d5db', borderRadius: '16px', marginBottom: '1rem', border: '1px solid #ccc' }}></div>
+              <div style={{ fontWeight: '700' }}>Mid-fidelity Wireframe</div>
+            </div>
+            <div style={{ flex: 1, textAlign: 'center' }}>
+              <div style={{ aspectRatio: '9/18', backgroundColor: '#0042D0', borderRadius: '16px', marginBottom: '1rem', border: '1px solid #002d8f' }}></div>
+              <div style={{ fontWeight: '700' }}>High-fidelity Wireframe</div>
+            </div>
+          </div>
+        </section>
+
+        <Divider />
+
+        {/* --- SECTION 9: FINAL UI MOCKUPS --- */}
+        <section>
+          <SectionBadge>Final UI Mockups</SectionBadge>
+          
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '5rem', marginTop: '3rem' }}>
+            {/* Screen 1 */}
+            <div style={{ display: 'flex', gap: '3rem', alignItems: 'center', backgroundColor: '#fff', padding: '2rem', borderRadius: '16px', border: '1px solid #E5E7EB' }}>
+              <div style={{ flex: '0 0 250px' }}>
+                <img src="/home-screen.png" alt="Home Screen Mockup" style={{ width: '100%', borderRadius: '16px', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }} />
+              </div>
+              <div>
+                <h3 style={{ fontFamily: "'Glyseric', serif", fontSize: '2rem', marginBottom: '1rem', color: '#1E293B' }}>Home Screen</h3>
+                <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                  <li style={{ display: 'flex', gap: '1rem' }}><span style={{ color: '#0042D0', fontWeight: 'bold' }}>→</span> <div><strong style={{ color: '#1E293B' }}>Hick's Law:</strong> Streamlined search and category choices to reduce decision fatigue.</div></li>
+                  <li style={{ display: 'flex', gap: '1rem' }}><span style={{ color: '#0042D0', fontWeight: 'bold' }}>→</span> <div><strong style={{ color: '#1E293B' }}>Easy Scanning (F-Pattern):</strong> Featured jobs aligned left for optimal visual parsing.</div></li>
+                  <li style={{ display: 'flex', gap: '1rem' }}><span style={{ color: '#0042D0', fontWeight: 'bold' }}>→</span> <div><strong style={{ color: '#1E293B' }}>Social Proof Trust:</strong> Company logos build instant credibility.</div></li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Screen 2 */}
+            <div style={{ display: 'flex', gap: '3rem', alignItems: 'center', backgroundColor: '#fff', padding: '2rem', borderRadius: '16px', border: '1px solid #E5E7EB' }}>
+              <div style={{ flex: '0 0 250px' }}>
+                <img src="/send-assessment-screen.png" alt="Send Assessment Mockup" style={{ width: '100%', borderRadius: '16px', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }} />
+              </div>
+              <div>
+                <h3 style={{ fontFamily: "'Glyseric', serif", fontSize: '2rem', marginBottom: '1rem', color: '#1E293B' }}>Send Assessment Screen</h3>
+                <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                  <li style={{ display: 'flex', gap: '1rem' }}><span style={{ color: '#0042D0', fontWeight: 'bold' }}>→</span> <div><strong style={{ color: '#1E293B' }}>Reduced Cognitive Load:</strong> Simple singular action format to guide users quickly without distractions.</div></li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Screen 3 */}
+            <div style={{ display: 'flex', gap: '3rem', alignItems: 'center', backgroundColor: '#fff', padding: '2rem', borderRadius: '16px', border: '1px solid #E5E7EB' }}>
+              <div style={{ flex: '0 0 250px' }}>
+                <img src="/set-your-job-preference-3.png" alt="Select Job Type Mockup" style={{ width: '100%', borderRadius: '16px', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }} />
+              </div>
+              <div>
+                <h3 style={{ fontFamily: "'Glyseric', serif", fontSize: '2rem', marginBottom: '1rem', color: '#1E293B' }}>Select Job Type Screen</h3>
+                <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                  <li style={{ display: 'flex', gap: '1rem' }}><span style={{ color: '#0042D0', fontWeight: 'bold' }}>→</span> <div><strong style={{ color: '#1E293B' }}>Goal-Gradient Effect:</strong> Progress indicators motivate users to finish setup.</div></li>
+                  <li style={{ display: 'flex', gap: '1rem' }}><span style={{ color: '#0042D0', fontWeight: 'bold' }}>→</span> <div><strong style={{ color: '#1E293B' }}>Miller's Law:</strong> Options separated into digestible chunks.</div></li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Screen 4 */}
+            <div style={{ display: 'flex', gap: '3rem', alignItems: 'center', backgroundColor: '#fff', padding: '2rem', borderRadius: '16px', border: '1px solid #E5E7EB' }}>
+              <div style={{ flex: '0 0 250px' }}>
+                <div style={{ width: '100%', aspectRatio: '9/18', backgroundColor: '#F5F4F1', borderRadius: '16px', border: '2px solid #E5E7EB', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>[ Mockup ]</div>
+              </div>
+              <div>
+                <h3 style={{ fontFamily: "'Glyseric', serif", fontSize: '2rem', marginBottom: '1rem', color: '#1E293B' }}>Employer's Hiring Screen</h3>
+                <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                  <li style={{ display: 'flex', gap: '1rem' }}><span style={{ color: '#0042D0', fontWeight: 'bold' }}>→</span> <div><strong style={{ color: '#1E293B' }}>Law of Prägnanz:</strong> Organized data simplifies complex candidate comparisons.</div></li>
+                  <li style={{ display: 'flex', gap: '1rem' }}><span style={{ color: '#0042D0', fontWeight: 'bold' }}>→</span> <div><strong style={{ color: '#1E293B' }}>Serial Position Effect:</strong> Top matches are displayed most prominently.</div></li>
+                </ul>
+              </div>
+            </div>
+
+             {/* Screen 5 */}
+             <div style={{ display: 'flex', gap: '3rem', alignItems: 'center', backgroundColor: '#fff', padding: '2rem', borderRadius: '16px', border: '1px solid #E5E7EB' }}>
+              <div style={{ flex: '0 0 250px' }}>
+                <img src="/job-details-screen 1.png" alt="Job Details Screen Mockup" style={{ width: '100%', borderRadius: '16px', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }} />
+              </div>
+              <div>
+                <h3 style={{ fontFamily: "'Glyseric', serif", fontSize: '2rem', marginBottom: '1rem', color: '#1E293B' }}>Job Details Screen</h3>
+                <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                  <li style={{ display: 'flex', gap: '1rem' }}><span style={{ color: '#0042D0', fontWeight: 'bold' }}>→</span> <div><strong style={{ color: '#1E293B' }}>Psychology (Scalability/F-Pattern):</strong> Important data placed along the natural eye path.</div></li>
+                  <li style={{ display: 'flex', gap: '1rem' }}><span style={{ color: '#0042D0', fontWeight: 'bold' }}>→</span> <div><strong style={{ color: '#1E293B' }}>Jacob's Law:</strong> Standardized application buttons matching industry norms.</div></li>
+                </ul>
+              </div>
+            </div>
+
+             {/* Screen 6 */}
+             <div style={{ display: 'flex', gap: '3rem', alignItems: 'center', backgroundColor: '#fff', padding: '2rem', borderRadius: '16px', border: '1px solid #E5E7EB' }}>
+              <div style={{ flex: '0 0 250px' }}>
+                <img src="/messages-screen.png" alt="Message Screen Mockup" style={{ width: '100%', borderRadius: '16px', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }} />
+              </div>
+              <div>
+                <h3 style={{ fontFamily: "'Glyseric', serif", fontSize: '2rem', marginBottom: '1rem', color: '#1E293B' }}>Message Screen</h3>
+                <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                  <li style={{ display: 'flex', gap: '1rem' }}><span style={{ color: '#0042D0', fontWeight: 'bold' }}>→</span> <div><strong style={{ color: '#1E293B' }}>Law of Similarity:</strong> Consistent chat bubbles establish immediate understanding.</div></li>
+                  <li style={{ display: 'flex', gap: '1rem' }}><span style={{ color: '#0042D0', fontWeight: 'bold' }}>→</span> <div><strong style={{ color: '#1E293B' }}>Jacob's Law:</strong> UI feels instantly familiar to typical messaging platforms.</div></li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <Divider />
+
+        {/* --- SECTION 10: SET YOUR PREFERENCE SCREEN --- */}
+        <section>
+          <SectionBadge>Set Your Preference Screen</SectionBadge>
+          <p style={{ fontSize: '1.1rem', marginBottom: '3rem', color: '#555' }}>
+            A modular 6-step onboarding flow guarantees accurate candidate profiling without overwhelming the user during signup.
+          </p>
+
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
+            {[
+              { step: "Step 1/6", desc: "Select design category (Visual Designer, Graphic Designer, UI Designer, etc.)" },
+              { step: "Step 2/6", desc: "Select job type (Full-time, Part-time, Internship, Freelance)" },
+              { step: "Step 3/6", desc: "Select job scheme (On-site, Remote, Hybrid)" },
+              { step: "Step 4/6", desc: "Industry preference" },
+              { step: "Step 5/6", desc: "Location preference (Country + City dropdowns)" },
+              { step: "Step 6/6", desc: "Salary range slider (optional)" }
+            ].map((item, i) => (
+              <div key={i} style={{ backgroundColor: '#fff', border: '1px solid #E5E7EB', padding: '1.5rem', borderRadius: '12px' }}>
+                <div style={{ fontSize: '1.1rem', fontWeight: '800', color: '#0042D0', marginBottom: '0.5rem' }}>{item.step}</div>
+                <div style={{ color: '#1E293B', fontWeight: '500' }}>{item.desc}</div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <Divider />
+
+        {/* --- SECTION 11: CANDIDATE PROFILE SCREEN --- */}
+        <section>
+          <h2 style={{ fontFamily: "'Glyseric', serif", fontSize: '2.5rem', color: '#0042D0', marginBottom: '2rem' }}>
+            What these screens tell a recruiter?
+          </h2>
+          
+          <div style={{ display: 'flex', gap: '4rem', alignItems: 'center' }}>
+            <div style={{ flex: '0 0 260px' }}>
+               {/* Stand-in for candidate profile */}
+               <img src="/Android Compact - 56.png" alt="Candidate profile" style={{ width: '100%', borderRadius: '18px', boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }} />
+            </div>
+            <div>
+              <h3 style={{ fontSize: '1.5rem', fontWeight: '700', marginBottom: '1rem', color: '#1E293B' }}>Candidate Profile Highlights</h3>
+              <p style={{ fontSize: '1.1rem', color: '#555', marginBottom: '1.5rem', lineHeight: '1.6' }}>
+                The profile view summarizes the candidate (Dhruv Jain, Senior UI/UX Designer) providing a <strong>92% Match Score</strong> immediately.
+              </p>
+              <ul style={{ paddingLeft: '1.2rem', marginBottom: '2rem', color: '#333', fontSize: '1rem', lineHeight: '1.6' }}>
+                <li><strong>Stats:</strong> 47 Projects / 4.9 Rating / 12 Reviews</li>
+                <li><strong>Sections:</strong> Experience, Certifications & Awards, Languages</li>
+                <li><strong>Actions:</strong> Send Message, Save Candidate, Schedule Interview, Send Assessment</li>
+              </ul>
+              <div style={{ padding: '1.5rem', backgroundColor: '#eef2ff', borderLeft: '4px solid #0042D0', fontSize: '1.1rem', fontStyle: 'italic', fontWeight: '500', color: '#0042D0' }}>
+                "Summary and portfolio reveal their proven impact and design process."
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <Divider />
+
+        {/* --- SECTION 12: COLOR PALETTE --- */}
+        <section>
+          <SectionBadge>Color Palette</SectionBadge>
+          
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '2rem', marginTop: '2rem' }}>
+            {/* Swatch 1 */}
+            <div style={{ border: '1px solid #E5E7EB', borderRadius: '12px', overflow: 'hidden', backgroundColor: '#fff' }}>
+              <div style={{ backgroundColor: '#0042D0', height: '120px' }}></div>
+              <div style={{ padding: '1.5rem' }}>
+                <div style={{ fontWeight: '800', fontSize: '1.1rem', marginBottom: '0.2rem' }}>Primary Blue</div>
+                <div style={{ color: '#0042D0', fontFamily: 'monospace', fontWeight: 'bold', marginBottom: '1rem' }}>#0042D0</div>
+                <p style={{ fontSize: '0.9rem', color: '#555', margin: 0 }}>Professional and calm, inspires trust, use for key actions and branding.</p>
+              </div>
+            </div>
+
+            {/* Swatch 2 */}
+            <div style={{ border: '1px solid #E5E7EB', borderRadius: '12px', overflow: 'hidden', backgroundColor: '#fff' }}>
+              <div style={{ backgroundColor: '#E5E7EB', height: '120px' }}></div>
+              <div style={{ padding: '1.5rem' }}>
+                <div style={{ fontWeight: '800', fontSize: '1.1rem', marginBottom: '0.2rem' }}>Neutral Gray</div>
+                <div style={{ color: '#1E293B', fontFamily: 'monospace', fontWeight: 'bold', marginBottom: '1rem', opacity: 0.5 }}>#E5E7EB</div>
+                <p style={{ fontSize: '0.9rem', color: '#555', margin: 0 }}>Clean and supportive, use for backgrounds and secondary text.</p>
+              </div>
+            </div>
+
+            {/* Swatch 3 */}
+            <div style={{ border: '1px solid #E5E7EB', borderRadius: '12px', overflow: 'hidden', backgroundColor: '#fff' }}>
+              <div style={{ backgroundColor: '#1E293B', height: '120px' }}></div>
+              <div style={{ padding: '1.5rem' }}>
+                <div style={{ fontWeight: '800', fontSize: '1.1rem', marginBottom: '0.2rem' }}>Dark Charcoal</div>
+                <div style={{ color: '#1E293B', fontFamily: 'monospace', fontWeight: 'bold', marginBottom: '1rem' }}>#1E293B</div>
+                <p style={{ fontSize: '0.9rem', color: '#555', margin: 0 }}>Strong and clear, excellent contrast, use for all primary text and headlines.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <Divider />
+
+        {/* --- SECTION 13: TYPOGRAPHY --- */}
+        <section>
+          <SectionBadge>Typography</SectionBadge>
+          <p style={{ fontSize: '1.1rem', marginBottom: '3rem', color: '#555' }}>
+            We chose <strong>Inter</strong> for our global interface typography to guarantee professional legibility across devices and dense UI data displays.
+          </p>
+          
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem' }}>
+            {/* Type Scale */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', backgroundColor: '#fff', border: '1px solid #E5E7EB', borderRadius: '12px', padding: '2rem' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid #f0f0f0', paddingBottom: '1rem' }}>
+                <span style={{ fontSize: '24px', fontWeight: '600' }}>Heading</span>
+                <span style={{ color: '#888' }}>Semi-bold 24</span>
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid #f0f0f0', paddingBottom: '1rem' }}>
+                <span style={{ fontSize: '18px', fontWeight: '400' }}>Sub-Heading</span>
+                <span style={{ color: '#888' }}>Regular 18</span>
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid #f0f0f0', paddingBottom: '1rem' }}>
+                <span style={{ fontSize: '16px', fontWeight: '600' }}>Body text (Primary)</span>
+                <span style={{ color: '#888' }}>Semi-bold 16</span>
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                <span style={{ fontSize: '16px', fontWeight: '400' }}>Body text (Secondary)</span>
+                <span style={{ color: '#888' }}>Regular 16</span>
+              </div>
+            </div>
+
+            {/* Display Card */}
+            <div style={{ backgroundColor: '#1E293B', color: '#fff', borderRadius: '12px', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '2rem' }}>
+              <div style={{ fontSize: '8rem', lineHeight: '1', fontWeight: '600', marginBottom: '1rem' }}>Aa</div>
+              <div style={{ fontSize: '1.5rem', letterSpacing: '0.2em', textTransform: 'uppercase', opacity: 0.6 }}>Inter</div>
+            </div>
+          </div>
+        </section>
+
+        <Divider />
+
+        {/* --- SECTION 14: LEARNINGS & TAKEAWAYS --- */}
+        <section>
+          <SectionBadge>Learnings & Takeaways</SectionBadge>
+          
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', backgroundColor: '#fff', border: '1px solid #E5E7EB', padding: '3rem', borderRadius: '12px' }}>
+            <p style={{ fontSize: '1.25rem', lineHeight: '1.6', color: '#1E293B', margin: 0 }}>
+              The creative hiring process is deeply fragmented, forcing users to jump between portfolio sites, job boards, and skill-testing platforms.
+            </p>
+            <p style={{ fontSize: '1.25rem', lineHeight: '1.6', color: '#1E293B', margin: 0 }}>
+              A major white space was identified — no competitor integrates practical skill tests or real-time application tracking. This is the key opportunity.
+            </p>
+            <p style={{ fontSize: '1.25rem', lineHeight: '1.6', color: '#1E293B', margin: 0 }}>
+              Prioritising the core "All-in-One" system is essential. Avoiding feature creep will be critical to solving the main user pain point.
             </p>
           </div>
         </section>
 
-        {/* 2. Three Screen Mockups — 3-column grid */}
-        <section style={{ 
-          display: 'grid', 
-          gridTemplateColumns: 'repeat(3, 1fr)', 
-          gap: '1.5rem', 
-          marginBottom: '10rem'
-        }}>
+        <Divider />
+
+        {/* --- SECTION 15: THANK YOU --- */}
+        <section style={{ textAlign: 'center', paddingBottom: '2rem' }}>
+          <div style={{ display: 'flex', justifyContent: 'center' }}>
+            <SectionBadge>Thank You</SectionBadge>
+          </div>
           
-          {/* Card 1: Home Screen (light blue bg #f0f4ff) */}
-          <div style={{ 
-            backgroundColor: '#f0f4ff', 
-            borderRadius: '12px', 
-            padding: '2rem 1.25rem',
-            border: '0.5px solid rgba(0,0,0,0.03)',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            textAlign: 'center'
-          }}>
-            {/* Phone Frame */}
-            <div style={{ 
-              width: '100%', 
-              maxWidth: '220px',
-              aspectRatio: '9/18.5', 
-              backgroundColor: '#fff', 
-              borderRadius: '18px', 
-              boxShadow: '0 12px 35px rgba(0,66,208,0.06)',
-              overflow: 'hidden',
-              position: 'relative',
-              display: 'flex',
-              flexDirection: 'column',
-              border: '0.5px solid rgba(0,0,0,0.05)'
-            }}>
-              {/* Status Bar */}
-              <div style={{ height: '24px', padding: '4px 14px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '9px', fontWeight: '600' }}>
-                <span>9:41</span>
-                <span>📶 🪫</span>
-              </div>
-              
-              {/* App Content */}
-              <div style={{ padding: '0.8rem', flex: 1, textAlign: 'left', overflow: 'hidden' }}>
-                {/* Logo */}
-                <div style={{ color: 'var(--color-primary, #0042D0)', fontSize: '1.2rem', fontWeight: 'bold', marginBottom: '0.8rem' }}>✦</div>
-                
-                {/* Search */}
-                <div style={{ backgroundColor: '#f0f0f4', borderRadius: '8px', padding: '0.65rem', fontSize: '0.6rem', color: '#999', marginBottom: '1rem' }}>
-                  Search jobs, companies, skills...
-                </div>
-                
-                {/* Stats */}
-                <div style={{ display: 'flex', gap: '0.3rem', marginBottom: '1.2rem' }}>
-                   <div style={{ backgroundColor: '#eef2ff', color: 'var(--color-primary, #0042D0)', padding: '3px 6px', borderRadius: '4px', fontSize: '0.52rem', fontWeight: '800' }}>247 Active Jobs</div>
-                   <div style={{ backgroundColor: '#eefcf6', color: 'var(--color-accent-green, #2EAF77)', padding: '3px 6px', borderRadius: '4px', fontSize: '0.52rem', fontWeight: '800' }}>89 New Today</div>
-                   <div style={{ backgroundColor: '#f5f3ff', color: 'var(--color-accent-purple, #7C6EE0)', padding: '3px 6px', borderRadius: '4px', fontSize: '0.52rem', fontWeight: '800' }}>1.2k Companies</div>
-                </div>
-
-                <div style={{ fontSize: '0.75rem', fontWeight: '800', marginBottom: '0.6rem', color: '#1A1A1A' }}>Featured Jobs</div>
-                
-                {/* Job Card */}
-                <div style={{ border: '0.5px solid #f0f0f0', borderRadius: '8px', padding: '0.65rem', backgroundColor: '#fff' }}>
-                  <div style={{ fontSize: '0.65rem', fontWeight: '800', color: '#1A1A1A' }}>Senior UX Designer</div>
-                  <div style={{ fontSize: '0.55rem', color: '#666', marginTop: '1px' }}>TechFlow Inc. · $120k–$150k</div>
-                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '3px', marginTop: '6px' }}>
-                     <span style={{ fontSize: '0.45rem', backgroundColor: '#f5f5f7', padding: '1px 4px', borderRadius: '2px', fontWeight: '600' }}>Full-time</span>
-                     <span style={{ fontSize: '0.45rem', backgroundColor: '#f5f5f7', padding: '1px 4px', borderRadius: '2px', fontWeight: '600' }}>Remote</span>
-                     <span style={{ fontSize: '0.45rem', backgroundColor: '#f5f5f7', padding: '1px 4px', borderRadius: '2px', fontWeight: '600' }}>Senior</span>
-                     <span style={{ fontSize: '0.45rem', backgroundColor: '#eefcf6', color: 'var(--color-accent-green, #2EAF77)', padding: '1px 4px', borderRadius: '2px', fontWeight: '800' }}>92% Match</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Bottom Nav */}
-              <div style={{ height: '44px', borderTop: '0.5px solid #f0f0f0', display: 'flex', justifyContent: 'space-around', alignItems: 'center', backgroundColor: '#fff', paddingBottom: '4px' }}>
-                <span style={{ fontSize: '12px', color: '#0042D0' }}>🏠</span>
-                <span style={{ fontSize: '12px', opacity: 0.15 }}>💼</span>
-                <span style={{ fontSize: '12px', opacity: 0.15 }}>💬</span>
-                <span style={{ fontSize: '12px', opacity: 0.15 }}>👤</span>
-              </div>
-            </div>
-
-            {/* Below Phone Stats */}
-            <div style={{ marginTop: '1.5rem' }}>
-               <div style={{ display: 'inline-flex', alignItems: 'center', gap: '5px', backgroundColor: '#eefcf6', color: '#2EAF77', padding: '4px 10px', borderRadius: '20px', fontSize: '0.65rem', fontWeight: '800', marginBottom: '8px' }}>
-                  <span style={{ width: '5px', height: '5px', backgroundColor: '#2EAF77', borderRadius: '50%' }}></span> Online
-               </div>
-               <div style={{ fontSize: '0.75rem', fontWeight: '800', color: '#0042D0', marginBottom: '4px' }}>designlink.com</div>
-               <p style={{ fontSize: '0.7rem', color: '#666', margin: 0, lineHeight: '1.4', maxWidth: '160px' }}>
-                 We have more than 100+ active jobs for creatives this year!
-               </p>
-            </div>
-          </div>
-
-          {/* Card 2: Status Screen (white bg) */}
-          <div style={{ 
-            backgroundColor: '#fff', 
-            borderRadius: '12px', 
-            padding: '2rem 1.25rem',
-            border: '0.5px solid rgba(0,0,0,0.08)',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center'
-          }}>
-            <div style={{ 
-              width: '100%', 
-              maxWidth: '220px',
-              aspectRatio: '9/18.5', 
-              backgroundColor: '#fff', 
-              borderRadius: '18px', 
-              boxShadow: '0 15px 45px rgba(0,0,0,0.04)',
-              overflow: 'hidden',
-              display: 'flex',
-              flexDirection: 'column',
-              border: '0.5px solid #eee'
-            }}>
-              <div style={{ height: '24px', padding: '4px 14px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '9px', fontWeight: '600' }}>
-                <span>9:41</span>
-                <span>🔋</span>
-              </div>
-              <div style={{ padding: '0.8rem', flex: 1 }}>
-                <div style={{ fontSize: '0.85rem', fontWeight: '800', marginBottom: '1.2rem', display: 'flex', alignItems: 'center', gap: '6px', color: '#1A1A1A' }}>
-                  <span style={{ fontSize: '1rem', fontWeight: 'normal' }}>←</span> Application Status
-                </div>
-                
-                <div style={{ backgroundColor: '#fff', borderRadius: '8px', padding: '0.8rem', marginBottom: '1.2rem', border: '0.5px solid #f0f0f0', boxShadow: '0 2px 8px rgba(0,0,0,0.02)' }}>
-                  <div style={{ fontSize: '0.65rem', fontWeight: '800', color: '#1A1A1A' }}>TechFlow Inc.</div>
-                  <div style={{ fontSize: '0.55rem', color: '#666', marginTop: '1px' }}>Senior UI/UX Designer</div>
-                  <div style={{ fontSize: '0.55rem', color: '#0042D0', marginTop: '1px', fontWeight: 'bold' }}>$85K–$120K</div>
-                  <div style={{ fontSize: '0.55rem', color: '#aaa', marginTop: '8px' }}>Applied 5 days ago</div>
-                </div>
-
-                {/* Vertical Timeline */}
-                <div style={{ position: 'relative', paddingLeft: '1.2rem', marginTop: '0.5rem' }}>
-                  <div style={{ position: 'absolute', left: '6px', top: '8px', bottom: '8px', width: '1px', backgroundColor: '#f0f0f0' }}></div>
-                  
-                  {/* Step 1 */}
-                  <div style={{ marginBottom: '1.5rem', position: 'relative' }}>
-                    <div style={{ position: 'absolute', left: '-1.25rem', top: '2px', width: '7px', height: '7px', backgroundColor: '#2EAF77', borderRadius: '50%', zIndex: 1 }}></div>
-                    <div style={{ fontSize: '0.68rem', fontWeight: '800', color: '#1A1A1A' }}>Application Submitted</div>
-                    <div style={{ fontSize: '0.55rem', color: '#2EAF77', fontWeight: '700', marginTop: '1px' }}>Completed</div>
-                  </div>
-
-                  {/* Step 2 */}
-                  <div style={{ marginBottom: '1.5rem', position: 'relative' }}>
-                    <div style={{ position: 'absolute', left: '-1.25rem', top: '2px', width: '7px', height: '7px', backgroundColor: '#2EAF77', borderRadius: '50%', zIndex: 1 }}></div>
-                    <div style={{ fontSize: '0.68rem', fontWeight: '800', color: '#1A1A1A' }}>Application Under Review</div>
-                    <div style={{ fontSize: '0.55rem', color: '#2EAF77', fontWeight: '700', marginTop: '1px' }}>Completed</div>
-                  </div>
-
-                  {/* Step 3 */}
-                  <div style={{ position: 'relative' }}>
-                    <div style={{ position: 'absolute', left: '-1.25rem', top: '2px', width: '7px', height: '7px', backgroundColor: '#EF9F27', borderRadius: '50%', zIndex: 1 }}></div>
-                    <div style={{ fontSize: '0.68rem', fontWeight: '800', color: '#1A1A1A' }}>Interview Scheduled</div>
-                    <div style={{ fontSize: '0.55rem', color: '#EF9F27', fontWeight: '700', marginTop: '1px' }}>In Progress</div>
-                  </div>
-                </div>
-              </div>
-
-               {/* Bottom Nav Jobs Active */}
-               <div style={{ height: '44px', borderTop: '0.5px solid #f0f0f0', display: 'flex', justifyContent: 'space-around', alignItems: 'center', backgroundColor: '#fff', paddingBottom: '4px' }}>
-                <span style={{ fontSize: '12px', opacity: 0.15 }}>🏠</span>
-                <span style={{ fontSize: '12px', color: '#0042D0', fontWeight: 'bold' }}>💼</span>
-                <span style={{ fontSize: '12px', opacity: 0.15 }}>💬</span>
-                <span style={{ fontSize: '12px', opacity: 0.15 }}>👤</span>
-              </div>
-            </div>
-            
-            <div style={{ marginTop: '1.5rem', color: '#aaa', fontSize: '0.7rem', fontWeight: '700' }}>
-               [20+] real-time tracked applications
-            </div>
-          </div>
-
-          {/* Card 3: Dark Mode Experience (dark #111 bg) */}
-          <div style={{ 
-            backgroundColor: '#111', 
-            borderRadius: '12px', 
-            padding: '2rem 1.25rem',
-            border: '0.5px solid rgba(255,255,255,0.05)',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            color: '#fff'
-          }}>
-             <div style={{ 
-              width: '100%', 
-              maxWidth: '220px',
-              aspectRatio: '9/18.5', 
-              backgroundColor: '#000', 
-              borderRadius: '18px', 
-              boxShadow: '0 20px 50px rgba(0,0,0,0.6)',
-              overflow: 'hidden',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'center',
-              alignItems: 'center',
-              padding: '1.5rem',
-              border: '0.5px solid rgba(255,255,255,0.1)'
-            }}>
-              {/* App Icon */}
-              <div style={{ width: '56px', height: '56px', backgroundColor: 'var(--color-primary, #0042D0)', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.8rem', marginBottom: '0.8rem', boxShadow: '0 8px 16px rgba(0,66,208,0.3)' }}>
-                ✦
-              </div>
-              <div style={{ fontSize: '0.9rem', fontWeight: '800', marginBottom: '0.3rem' }}>DesignLink</div>
-              <div style={{ fontSize: '0.6rem', opacity: 0.4, textAlign: 'center', maxWidth: '120px', lineHeight: '1.3' }}>Portfolio-first. Talent, unfiltered.</div>
-              
-              {/* App Grid (iOS style container) */}
-              <div style={{ marginTop: '2.5rem', width: '100%', backgroundColor: '#1c1c1e', borderRadius: '15px', padding: '1.2rem 0.6rem', display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0.6rem' }}>
-                 {[
-                   { icon: '✦', color: '#0042D0', label: 'DesignLink' },
-                   { icon: '📷', color: '#333', label: 'Camera' },
-                   { icon: '👤', color: 'transparent', label: 'Contacts', border: '1px solid #444' },
-                   { icon: '☁️', color: '#0ea5e9', label: 'Weather' },
-                   { icon: '📝', color: '#eab308', label: 'Notes' },
-                   { icon: '➗', color: '#f97316', label: 'Calculator' }
-                 ].map((app, i) => (
-                   <div key={i} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                      <div style={{ width: '28px', height: '28px', backgroundColor: app.color, borderRadius: '6px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '14px', border: app.border }}>
-                        {app.icon}
-                      </div>
-                      <span style={{ fontSize: '6px', color: '#777', marginTop: '5px', fontWeight: '700' }}>{app.label}</span>
-                   </div>
-                 ))}
-              </div>
-            </div>
-            
-            <div style={{ marginTop: '1.5rem', opacity: 0.3, fontSize: '0.7rem', fontWeight: '800' }}>
-               Dark mode experience
-            </div>
-          </div>
-
-        </section>
-
-        {/* 3. Context + Facts Section — 3-column with top border */}
-        <section style={{ 
-          display: 'grid', 
-          gridTemplateColumns: '1.2fr 0.8fr 1fr', 
-          gap: '2rem', 
-          paddingTop: '3rem',
-          borderTop: '0.5px solid #eee'
-        }}>
-          {/* Left: Context */}
-          <div>
-            <span style={{ 
-              display: 'block', 
-              fontSize: '0.7rem', 
-              fontWeight: '800', 
-              textTransform: 'uppercase', 
-              letterSpacing: '0.15em', 
-              color: 'var(--color-primary, #0042D0)',
-              marginBottom: '1rem' 
-            }}>Key Task</span>
-            <h2 style={{ fontSize: '2rem', fontWeight: '700', marginBottom: '1.5rem', color: 'var(--color-text-primary)', letterSpacing: '-0.02em' }}>Context</h2>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem' }}>
-              <p style={{ fontSize: '0.9rem', lineHeight: '1.7', color: 'var(--color-text-secondary)', margin: 0 }}>
-                The current creative hiring landscape is fragmented. Designers are forced to jump between portfolio hosting sites, professional networking platforms, and complex application portals that often fail to value visual work and actual craftsmanship.
-              </p>
-              <p style={{ fontSize: '0.9rem', lineHeight: '1.7', color: 'var(--color-text-secondary)', margin: 0 }}>
-                DesignLink bridges this gap by offering a singular mobile-first home where talent can showcase their portfolios, apply for roles, track statuses in real-time, and undergo verified skill assessments in one seamless app experience.
-              </p>
-            </div>
-          </div>
-
-          {/* Middle: Whitespace */}
-          <div></div>
-
-          {/* Right: Facts */}
-          <div>
-            <span style={{ 
-              display: 'block', 
-              fontSize: '0.7rem', 
-              fontWeight: '800', 
-              textTransform: 'uppercase', 
-              letterSpacing: '0.15em', 
-              color: 'var(--color-text-secondary)',
-              marginBottom: '1.5rem' 
-            }}>Facts</span>
-            
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
-               <div style={{ display: 'flex', alignItems: 'center', gap: '1.2rem' }}>
-                  <span style={{ fontSize: '2rem', fontWeight: '700', color: 'var(--color-text-primary)' }}>2025</span>
-                  <span style={{ fontSize: '0.7rem', color: '#aaa', textTransform: 'uppercase', lineHeight: '1.2', fontWeight: '700', letterSpacing: '0.05em' }}>Year<br/>Founded</span>
-               </div>
-               <div style={{ display: 'flex', alignItems: 'center', gap: '1.2rem' }}>
-                  <span style={{ fontSize: '2rem', fontWeight: '700', color: 'var(--color-text-primary)' }}>50k+</span>
-                  <span style={{ fontSize: '0.7rem', color: '#aaa', textTransform: 'uppercase', lineHeight: '1.2', fontWeight: '700', letterSpacing: '0.05em' }}>Total<br/>Students</span>
-               </div>
-               <div style={{ display: 'flex', alignItems: 'center', gap: '1.2rem' }}>
-                  <span style={{ fontSize: '2rem', fontWeight: '700', color: 'var(--color-text-primary)' }}>55+</span>
-                  <span style={{ fontSize: '0.7rem', color: '#aaa', textTransform: 'uppercase', lineHeight: '1.2', fontWeight: '700', letterSpacing: '0.05em' }}>Countries</span>
-               </div>
-            </div>
-          </div>
+          <h2 style={{ fontFamily: "'Glyseric', serif", fontSize: '2.5rem', color: '#1E293B', margin: '2rem 0', lineHeight: '1.2' }}>
+            "Thank you for your time. This analysis highlights a clear and exciting opportunity for DesignLink." 
+          </h2>
+          <p style={{ fontSize: '1.25rem', color: '#0042D0', fontWeight: '600' }}>
+            "I'm always open to feedback or conversation — feel free to connect!"
+          </p>
         </section>
 
       </main>
-      
-      {/* Footer Branding */}
-      <footer style={{ paddingBottom: '5rem', textAlign: 'center' }}>
-         <div style={{ fontSize: '0.7rem', opacity: 0.2, letterSpacing: '0.2em', fontWeight: '800', color: 'var(--color-text-primary)' }}>DESIGNLINK CASE STUDY • PRESENTATION 2024</div>
-      </footer>
     </div>
   );
 };

@@ -49,7 +49,7 @@ const DesignLinkCaseStudy = () => {
         backdropFilter: 'blur(10px)',
         borderBottom: '1px solid #E5E7EB'
       }}>
-        <div style={{ maxWidth: '860px', margin: '0 auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        <div style={{ maxWidth: '1024px', margin: '0 auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <a href="#/" style={{ 
             color: '#0042D0', 
             textDecoration: 'none', 
@@ -66,7 +66,7 @@ const DesignLinkCaseStudy = () => {
       </nav>
 
       <main style={{ 
-        maxWidth: '860px', 
+        maxWidth: '1024px', 
         margin: '0 auto', 
         padding: '10rem 2rem 6rem',
         boxSizing: 'border-box'
@@ -324,15 +324,15 @@ const DesignLinkCaseStudy = () => {
 
           <div style={{ display: 'flex', gap: '2rem', justifyContent: 'center' }}>
             <div style={{ flex: 1, textAlign: 'center' }}>
-              <div style={{ aspectRatio: '9/18', backgroundColor: '#E5E7EB', borderRadius: '16px', marginBottom: '1rem', border: '1px solid #ccc' }}></div>
+              <img src="/Sketching.png" alt="Sketching" style={{ width: '100%', borderRadius: '16px', marginBottom: '1rem', border: '1px solid #ccc', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }} />
               <div style={{ fontWeight: '700' }}>Sketching</div>
             </div>
             <div style={{ flex: 1, textAlign: 'center' }}>
-              <div style={{ aspectRatio: '9/18', backgroundColor: '#d1d5db', borderRadius: '16px', marginBottom: '1rem', border: '1px solid #ccc' }}></div>
+              <img src="/Mid-Fidelity Wireframe.png" alt="Mid-fidelity Wireframe" style={{ width: '100%', borderRadius: '16px', marginBottom: '1rem', border: '1px solid #ccc', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }} />
               <div style={{ fontWeight: '700' }}>Mid-fidelity Wireframe</div>
             </div>
             <div style={{ flex: 1, textAlign: 'center' }}>
-              <div style={{ aspectRatio: '9/18', backgroundColor: '#0042D0', borderRadius: '16px', marginBottom: '1rem', border: '1px solid #002d8f' }}></div>
+              <img src="/High-fidelity Wireframe.png" alt="High-fidelity Wireframe" style={{ width: '100%', borderRadius: '16px', marginBottom: '1rem', border: '1px solid #002d8f', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }} />
               <div style={{ fontWeight: '700' }}>High-fidelity Wireframe</div>
             </div>
           </div>
@@ -363,7 +363,7 @@ const DesignLinkCaseStudy = () => {
             {/* Screen 2 */}
             <div style={{ display: 'flex', gap: '3rem', alignItems: 'center', backgroundColor: '#fff', padding: '2rem', borderRadius: '16px', border: '1px solid #E5E7EB' }}>
               <div style={{ flex: '0 0 250px' }}>
-                <img src="/send-assessment-screen.png" alt="Send Assessment Mockup" style={{ width: '100%', borderRadius: '16px', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }} />
+                <img src="/Send-assesment-screen.png" alt="Send Assessment Mockup" style={{ width: '100%', borderRadius: '16px', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }} />
               </div>
               <div>
                 <h3 style={{ fontFamily: "'Glyseric', serif", fontSize: '2rem', marginBottom: '1rem', color: '#1E293B' }}>Send Assessment Screen</h3>
@@ -376,7 +376,7 @@ const DesignLinkCaseStudy = () => {
             {/* Screen 3 */}
             <div style={{ display: 'flex', gap: '3rem', alignItems: 'center', backgroundColor: '#fff', padding: '2rem', borderRadius: '16px', border: '1px solid #E5E7EB' }}>
               <div style={{ flex: '0 0 250px' }}>
-                <img src="/set-your-job-preference-3.png" alt="Select Job Type Mockup" style={{ width: '100%', borderRadius: '16px', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }} />
+                <img src="/select-your-job%20type.jpg" alt="Select Job Type Mockup" style={{ width: '100%', borderRadius: '16px', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }} />
               </div>
               <div>
                 <h3 style={{ fontFamily: "'Glyseric', serif", fontSize: '2rem', marginBottom: '1rem', color: '#1E293B' }}>Select Job Type Screen</h3>
@@ -390,7 +390,7 @@ const DesignLinkCaseStudy = () => {
             {/* Screen 4 */}
             <div style={{ display: 'flex', gap: '3rem', alignItems: 'center', backgroundColor: '#fff', padding: '2rem', borderRadius: '16px', border: '1px solid #E5E7EB' }}>
               <div style={{ flex: '0 0 250px' }}>
-                <div style={{ width: '100%', aspectRatio: '9/18', backgroundColor: '#F5F4F1', borderRadius: '16px', border: '2px solid #E5E7EB', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>[ Mockup ]</div>
+                <img src="/employer-hiring%20screen.png" alt="Employer Hiring Screen Mockup" style={{ width: '100%', borderRadius: '16px', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }} />
               </div>
               <div>
                 <h3 style={{ fontFamily: "'Glyseric', serif", fontSize: '2rem', marginBottom: '1rem', color: '#1E293B' }}>Employer's Hiring Screen</h3>
@@ -404,7 +404,7 @@ const DesignLinkCaseStudy = () => {
              {/* Screen 5 */}
              <div style={{ display: 'flex', gap: '3rem', alignItems: 'center', backgroundColor: '#fff', padding: '2rem', borderRadius: '16px', border: '1px solid #E5E7EB' }}>
               <div style={{ flex: '0 0 250px' }}>
-                <img src="/job-details-screen 1.png" alt="Job Details Screen Mockup" style={{ width: '100%', borderRadius: '16px', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }} />
+                <img src="/job-details-screen.png" alt="Job Details Screen Mockup" style={{ width: '100%', borderRadius: '16px', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }} />
               </div>
               <div>
                 <h3 style={{ fontFamily: "'Glyseric', serif", fontSize: '2rem', marginBottom: '1rem', color: '#1E293B' }}>Job Details Screen</h3>

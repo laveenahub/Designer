@@ -468,8 +468,8 @@ const DesignLinkCaseStudy = () => {
           
           <div style={{ display: 'flex', gap: '4rem', alignItems: 'center' }}>
             <div style={{ flex: '0 0 260px' }}>
-               {/* Stand-in for candidate profile */}
-               <img src="/Android Compact - 56.png" alt="Candidate profile" style={{ width: '100%', borderRadius: '18px', boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }} />
+               {/* Candidate profile */}
+               <img src="/candinate-profile.png" alt="Candidate profile" style={{ width: '100%', borderRadius: '18px', boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }} />
             </div>
             <div>
               <h3 style={{ fontSize: '1.5rem', fontWeight: '700', marginBottom: '1rem', color: '#1E293B' }}>Candidate Profile Highlights</h3>

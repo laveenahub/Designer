@@ -146,7 +146,7 @@ const AiInPractice = () => {
               </div>
 
               <div style={{ fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.1em', color: '#a0a0a0', textAlign: 'center' }}>
-                Tool used: Google Whisk · Prompt written by Laveena Chetwani
+                Tool used: Google Whisk · Prompt written by Laveena Chetwaani
               </div>
             </div>
           </div>
@@ -223,7 +223,7 @@ const AiInPractice = () => {
               </a>
 
               <div style={{ fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.1em', color: '#a0a0a0', borderTop: '1px solid rgba(0,0,0,0.1)', paddingTop: '1.5rem' }}>
-                Tool used: Figma Make · Concept & build by Laveena Chetwani
+                Tool used: Figma Make · Concept & build by Laveena Chetwaani
               </div>
             </div>
           </div>

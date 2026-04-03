@@ -153,7 +153,7 @@ function App() {
           <div className="container about-editorial-grid">
             <div className="about-photo-column reveal">
               <div className="about-photo-wrapper">
-                <img src="/profile.jpg" alt="Laveena Chetwani" className="about-photo" />
+                <img src="/profile.jpg" alt="Laveena Chetwaani" className="about-photo" />
               </div>
             </div>
 

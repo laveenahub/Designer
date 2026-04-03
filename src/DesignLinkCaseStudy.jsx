@@ -1,5 +1,4 @@
 import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
 
 // Utility for Section Badges
 const SectionBadge = ({ children }) => (

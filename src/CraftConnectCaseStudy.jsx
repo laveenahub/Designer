@@ -1,9 +1,620 @@
 import React from 'react';
-import './CraftConnectCaseStudy.css';
 
 const CraftConnectCaseStudy = () => {
   return (
     <div className="craft-connect-page">
+      <style dangerouslySetInnerHTML={{ __html: `
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+.craft-connect-page {
+  --saffron: #E8621A;
+  --saffron-light: #F5A057;
+  --terracotta: #C4472A;
+  --sand: #F7F0E6;
+  --sand-dark: #EDE4D4;
+  --ink: #1A1208;
+  --ink-mid: #4A3728;
+  --ink-light: #7A6555;
+  --gold: #D4A017;
+  --teal: #1A6E6E;
+  --white: #FFFFFF;
+}
+
+.craft-connect-page * { margin: 0; padding: 0; box-sizing: border-box; }
+
+.craft-connect-page {
+  background: var(--white);
+  font-family: 'DM Sans', sans-serif;
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* ── NAV ── */
+.craft-connect-page nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--sand-dark);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 60px;
+}
+.craft-connect-page .nav-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.3px;
+}
+.craft-connect-page .nav-links { display: flex; gap: 36px; }
+.craft-connect-page .nav-links a {
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  transition: color 0.2s;
+}
+.craft-connect-page .nav-links a:hover { color: var(--saffron); }
+
+/* ── LAYOUT ── */
+.craft-connect-page .container { max-width: 1000px; margin: 0 auto; padding: 0 40px; }
+
+.craft-connect-page section { padding: 80px 0; }
+
+/* ── HERO BANNER ── */
+.craft-connect-page .hero-banner {
+  width: 100%;
+  height: 480px;
+  background: linear-gradient(135deg, #1A0A02 0%, #3D1A0A 30%, #E8621A 70%, #D4A017 100%);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.craft-connect-page .hero-pattern {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 20% 50%, rgba(212,160,23,0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(232,98,26,0.2) 0%, transparent 40%),
+    repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(255,255,255,0.02) 40px, rgba(255,255,255,0.02) 41px);
+}
+.craft-connect-page .hero-mandala {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  right: -60px;
+  top: -60px;
+  opacity: 0.06;
+}
+.craft-connect-page .hero-content {
+  position: relative;
+  text-align: center;
+  color: white;
+  padding: 40px;
+}
+.craft-connect-page .hero-tag {
+  display: inline-block;
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.3);
+  color: #FFD580;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  border-radius: 100px;
+  margin-bottom: 24px;
+}
+.craft-connect-page .hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 52px;
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 16px;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+}
+.craft-connect-page .hero-title em {
+  font-style: italic;
+  color: #FFD580;
+}
+.craft-connect-page .hero-subtitle {
+  font-size: 17px;
+  color: rgba(255,255,255,0.75);
+  max-width: 520px;
+  margin: 0 auto;
+}
+.craft-connect-page .hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  margin-top: 36px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(255,255,255,0.2);
+}
+.craft-connect-page .hero-stat .num {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #FFD580;
+  display: block;
+}
+.craft-connect-page .hero-stat .label {
+  font-size: 12px;
+  color: rgba(255,255,255,0.65);
+  letter-spacing: 0.5px;
+}
+
+/* ── PROJECT INTRO ── */
+.craft-connect-page .project-intro {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+.craft-connect-page .project-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 20px;
+  letter-spacing: -0.5px;
+}
+.craft-connect-page .project-title em {
+  font-style: italic;
+  color: var(--saffron);
+}
+.craft-connect-page .overview-text {
+  color: var(--ink-mid);
+  font-size: 16px;
+  line-height: 1.8;
+}
+.craft-connect-page .meta-block { display: flex; flex-direction: column; gap: 28px; padding-top: 8px; }
+.craft-connect-page .meta-item label {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--saffron);
+  margin-bottom: 6px;
+}
+.craft-connect-page .meta-item span {
+  font-size: 15px;
+  color: var(--ink-mid);
+}
+
+/* ── SCREEN CAROUSEL ── */
+.craft-connect-page .carousel-wrap {
+  width: 100%;
+  overflow: hidden;
+  padding: 20px 0 32px;
+}
+.craft-connect-page .carousel-track {
+  display: flex;
+  gap: 20px;
+  animation: scroll-left 30s linear infinite;
+  width: max-content;
+}
+.craft-connect-page .carousel-track:hover { animation-play-state: paused; }
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.craft-connect-page .carousel-screen {
+  width: 200px;
+  height: 360px;
+  border-radius: 20px;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: var(--sand-dark);
+  border: 1px solid rgba(0,0,0,0.08);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  position: relative;
+}
+.craft-connect-page .screen-mock {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+/* SCREEN 1 — Artisan Registration */
+.craft-connect-page .s1 { background: linear-gradient(180deg, #FFF8F2 0%, #FFF3E8 100%); padding: 16px; }
+.craft-connect-page .s1 .topbar { display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; }
+.craft-connect-page .s1 .topbar span { font-size:10px; color:#999; }
+.craft-connect-page .s1 h4 { font-size:13px; font-weight:700; color:var(--ink); margin-bottom:4px; font-family:'Playfair Display',serif; }
+.craft-connect-page .s1 p { font-size:9px; color:var(--ink-light); margin-bottom:14px; }
+.craft-connect-page .s1 .avatar-upload {
+  width:70px; height:70px; border-radius:50%; border:2px dashed var(--saffron);
+  display:flex; align-items:center; justify-content:center; margin:0 auto 14px;
+  background:#FFF3E8; font-size:22px;
+}
+.craft-connect-page .s1 .field {
+  background:white; border-radius:8px; padding:8px 10px; margin-bottom:8px;
+  border:1px solid #EDD; font-size:9px; color:#999;
+}
+.craft-connect-page .s1 .field strong { display:block; color:var(--ink); font-size:8px; margin-bottom:2px; }
+.craft-connect-page .s1 .craft-tags { display:flex; flex-wrap:wrap; gap:4px; margin-bottom:10px; }
+.craft-connect-page .s1 .tag {
+  background:#FFF3E8; border:1px solid var(--saffron-light); color:var(--saffron);
+  font-size:8px; padding:3px 8px; border-radius:100px;
+}
+.craft-connect-page .s1 .tag.active { background:var(--saffron); color:white; }
+.craft-connect-page .s1 .wa-btn {
+  background:#25D366; color:white; border-radius:8px; padding:9px;
+  text-align:center; font-size:9px; font-weight:600; margin-top:6px;
+}
+/* SCREEN 2 — Product Listing */
+.craft-connect-page .s2 { background:#FFF; padding:16px; }
+.craft-connect-page .s2 .header { font-size:12px; font-weight:700; color:var(--ink); margin-bottom:12px; font-family:'Playfair Display',serif; }
+.craft-connect-page .s2 .photo-zone {
+  width:100%; height:130px; background:linear-gradient(135deg,#F5A05720,#E8621A20);
+  border-radius:10px; border:1.5px dashed var(--saffron-light);
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  font-size:22px; margin-bottom:10px;
+}
+.craft-connect-page .s2 .photo-zone span { font-size:8px; color:var(--saffron); margin-top:4px; }
+.craft-connect-page .s2 .price-row { display:flex; gap:6px; margin-bottom:8px; }
+.craft-connect-page .s2 .price-box {
+  flex:1; background:#F7F0E6; border-radius:7px; padding:8px;
+  font-size:8px; color:var(--ink-light);
+}
+.craft-connect-page .s2 .price-box strong { display:block; font-size:11px; color:var(--ink); }
+.craft-connect-page .s2 .story-box {
+  background:#FFFDF5; border:1px solid #EDD; border-radius:8px; padding:8px;
+  font-size:8px; color:#999; margin-bottom:8px;
+}
+.craft-connect-page .s2 .submit-btn {
+  background:var(--saffron); color:white; border-radius:8px; padding:9px;
+  text-align:center; font-size:9px; font-weight:600;
+}
+/* SCREEN 3 — Product Page */
+.craft-connect-page .s3 { background:#FFF; overflow:hidden; }
+.craft-connect-page .s3 .prod-img {
+  width:100%; height:160px;
+  background:linear-gradient(135deg,#E8621A,#D4A017);
+  display:flex; align-items:center; justify-content:center;
+  font-size:48px;
+}
+.craft-connect-page .s3 .prod-info { padding:12px 14px; }
+.craft-connect-page .s3 .prod-name { font-size:12px; font-weight:700; color:var(--ink); font-family:'Playfair Display',serif; }
+.craft-connect-page .s3 .prod-craft { font-size:9px; color:var(--saffron); margin-bottom:6px; }
+.craft-connect-page .s3 .prod-price { font-size:16px; font-weight:700; color:var(--terracotta); margin-bottom:8px; }
+.craft-connect-page .s3 .artisan-row {
+  display:flex; align-items:center; gap:8px; padding:8px;
+  background:#FFF8F2; border-radius:8px; margin-bottom:8px;
+}
+.craft-connect-page .s3 .art-avatar {
+  width:30px; height:30px; border-radius:50%;
+  background:linear-gradient(135deg,var(--saffron),var(--gold));
+  display:flex; align-items:center; justify-content:center; font-size:14px; flex-shrink:0;
+}
+.craft-connect-page .s3 .art-name { font-size:9px; font-weight:600; color:var(--ink); }
+.craft-connect-page .s3 .art-loc { font-size:8px; color:var(--ink-light); }
+.craft-connect-page .s3 .verified { font-size:8px; color:#25D366; font-weight:600; }
+.craft-connect-page .s3 .stars { color:#F5A057; font-size:10px; }
+.craft-connect-page .s3 .buy-btn {
+  background:var(--saffron); color:white; border-radius:8px; padding:9px;
+  text-align:center; font-size:9px; font-weight:600; margin-top:4px;
+}
+/* SCREEN 4 — Trust / Dashboard */
+.craft-connect-page .s4 { background:#FFF; padding:14px; }
+.craft-connect-page .s4 .header { font-size:12px; font-weight:700; color:var(--ink); margin-bottom:12px; font-family:'Playfair Display',serif; }
+.craft-connect-page .s4 .badge-card {
+  background:linear-gradient(135deg,#1A6E6E,#0D4444);
+  border-radius:10px; padding:12px; color:white; margin-bottom:10px;
+  display:flex; align-items:center; gap:10px;
+}
+.craft-connect-page .s4 .badge-icon { font-size:24px; }
+.craft-connect-page .s4 .badge-title { font-size:10px; font-weight:700; }
+.craft-connect-page .s4 .badge-sub { font-size:8px; opacity:0.75; }
+.craft-connect-page .s4 .cert-card {
+  background:#FFFDF5; border:1px solid #EDD; border-radius:8px; padding:10px;
+  margin-bottom:8px;
+}
+.craft-connect-page .s4 .cert-title { font-size:9px; font-weight:700; color:var(--ink); margin-bottom:2px; }
+.craft-connect-page .s4 .cert-id { font-size:8px; color:var(--ink-light); }
+.craft-connect-page .s4 .stats-row { display:flex; gap:6px; }
+.craft-connect-page .s4 .stat-box {
+  flex:1; background:var(--sand); border-radius:8px; padding:8px; text-align:center;
+}
+.craft-connect-page .s4 .stat-num { font-size:16px; font-weight:700; color:var(--saffron); display:block; font-family:'Playfair Display',serif; }
+.craft-connect-page .s4 .stat-label { font-size:7px; color:var(--ink-light); }
+/* SCREEN 5 — Discovery / Browse */
+.craft-connect-page .s5 { background:#FFF; padding:0; overflow:hidden; }
+.craft-connect-page .s5 .top { padding:14px; }
+.craft-connect-page .s5 .search-bar {
+  background:#F5F5F5; border-radius:10px; padding:9px 12px;
+  font-size:9px; color:#999; display:flex; align-items:center; gap:6px;
+  margin-bottom:12px;
+}
+.craft-connect-page .s5 .filter-chips { display:flex; gap:6px; overflow:hidden; margin-bottom:12px; }
+.craft-connect-page .s5 .chip {
+  white-space:nowrap; background:var(--sand); border:1px solid #DDD;
+  color:var(--ink-mid); font-size:8px; padding:4px 10px; border-radius:100px;
+}
+.craft-connect-page .s5 .chip.active { background:var(--saffron); color:white; border-color:var(--saffron); }
+.craft-connect-page .s5 .grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; padding:0 14px; }
+.craft-connect-page .s5 .prod-card { border-radius:10px; overflow:hidden; background:var(--sand); }
+.craft-connect-page .s5 .card-img {
+  height:80px; display:flex; align-items:center; justify-content:center; font-size:28px;
+}
+.craft-connect-page .s5 .card-info { padding:7px; }
+.craft-connect-page .s5 .card-name { font-size:8px; font-weight:600; color:var(--ink); }
+.craft-connect-page .s5 .card-price { font-size:9px; color:var(--saffron); font-weight:700; }
+.craft-connect-page .s5 .card-city { font-size:7px; color:var(--ink-light); }
+
+/* ── BADGE ── */
+.craft-connect-page .badge {
+  display: inline-block;
+  background: var(--saffron);
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  padding: 7px 18px;
+  border-radius: 6px;
+  margin-bottom: 28px;
+}
+
+/* ── SECTION HEADINGS ── */
+.craft-connect-page .section-h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 32px;
+  color: var(--ink);
+  letter-spacing: -0.3px;
+}
+
+/* ── ICON CARD GRID ── */
+.craft-connect-page .card-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+.craft-connect-page .card-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.craft-connect-page .card-grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+.craft-connect-page .info-card { padding: 28px 24px; }
+.craft-connect-page .info-card .icon { font-size: 28px; margin-bottom: 14px; }
+.craft-connect-page .info-card .card-title { font-size: 15px; font-weight: 700; color: var(--ink); margin-bottom: 8px; }
+.craft-connect-page .info-card .card-text { font-size: 14px; color: var(--ink-light); line-height: 1.7; }
+
+/* ── PROBLEM SECTION ── */
+.craft-connect-page .problem-bg { background: var(--sand); }
+.craft-connect-page .problem-text { font-size: 17px; color: var(--ink-mid); line-height: 1.85; margin-bottom: 28px; }
+.craft-connect-page .problem-text strong { color: var(--terracotta); }
+.craft-connect-page .pain-points {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 36px;
+}
+.craft-connect-page .pain-card {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  border-left: 4px solid var(--saffron);
+}
+.craft-connect-page .pain-card .pain-title { font-weight: 700; font-size: 15px; color: var(--ink); margin-bottom: 8px; }
+.craft-connect-page .pain-card .pain-desc { font-size: 13px; color: var(--ink-light); line-height: 1.7; }
+
+/* ── NUMBERED CHALLENGES ── */
+.craft-connect-page .challenges { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+.craft-connect-page .challenge-card { border-top: 2px solid var(--sand-dark); padding-top: 24px; }
+.craft-connect-page .challenge-num { font-size: 52px; font-weight: 700; color: var(--sand-dark); line-height: 1; font-family: 'Playfair Display', serif; margin-bottom: 8px; }
+.craft-connect-page .challenge-title { font-size: 16px; font-weight: 700; color: var(--ink); margin-bottom: 10px; }
+.craft-connect-page .challenge-text { font-size: 14px; color: var(--ink-light); line-height: 1.75; }
+
+/* ── PERSONA ── */
+.craft-connect-page .persona-wrap { display: grid; grid-template-columns: 180px 1fr; gap: 48px; align-items: start; margin-bottom: 56px; }
+.craft-connect-page .persona-wrap.reverse { grid-template-columns: 1fr 180px; }
+.craft-connect-page .persona-avatar {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 64px;
+  border: 3px solid var(--saffron);
+}
+.craft-connect-page .persona-avatar.artisan { background: linear-gradient(135deg, #FFF3E8, #F5A057); }
+.craft-connect-page .persona-avatar.customer { background: linear-gradient(135deg, #E8F4F0, #1A6E6E); }
+.craft-connect-page .persona-quote {
+  background: var(--sand);
+  border-left: 3px solid var(--saffron);
+  padding: 12px 16px;
+  font-size: 13px;
+  font-style: italic;
+  color: var(--ink-mid);
+  border-radius: 0 8px 8px 0;
+  margin-top: 16px;
+  max-width: 260px;
+}
+.craft-connect-page .persona-name { font-size: 20px; font-weight: 700; color: var(--ink); font-family: 'Playfair Display', serif; margin-bottom: 4px; }
+.craft-connect-page .persona-tag { font-size: 13px; color: var(--saffron); font-weight: 600; margin-bottom: 16px; }
+.craft-connect-page .persona-bio { font-size: 14px; color: var(--ink-mid); margin-bottom: 20px; line-height: 1.7; }
+.craft-connect-page .persona-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.craft-connect-page .persona-col h5 { font-size: 12px; font-weight: 700; color: var(--saffron); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+.craft-connect-page .persona-col ul { list-style: none; }
+.craft-connect-page .persona-col ul li { font-size: 13px; color: var(--ink-mid); padding: 4px 0; padding-left: 14px; position: relative; }
+.craft-connect-page .persona-col ul li::before { content: '•'; position: absolute; left: 0; color: var(--saffron); }
+
+/* ── COMPETITOR TABLE ── */
+.craft-connect-page .comp-table { width: 100%; border-collapse: collapse; margin-top: 8px; }
+.craft-connect-page .comp-table th {
+  text-align: left;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--saffron);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 12px 16px;
+  background: var(--sand);
+  border-bottom: 2px solid var(--sand-dark);
+}
+.craft-connect-page .comp-table th:first-child { border-radius: 8px 0 0 0; }
+.craft-connect-page .comp-table th:last-child { border-radius: 0 8px 0 0; }
+.craft-connect-page .comp-table td {
+  padding: 14px 16px;
+  font-size: 14px;
+  color: var(--ink-mid);
+  border-bottom: 1px solid var(--sand-dark);
+  vertical-align: middle;
+}
+.craft-connect-page .comp-table tr:hover td { background: #FFFAF5; }
+.craft-connect-page .check { color: #22C55E; font-size: 16px; }
+.craft-connect-page .cross { color: #EF4444; font-size: 16px; }
+.craft-connect-page .dash { color: #9CA3AF; }
+.craft-connect-page .highlight-col { font-weight: 700; color: var(--saffron); }
+
+/* ── DESIGN PROCESS ── */
+.craft-connect-page .process-steps { display: flex; align-items: flex-start; gap: 0; margin-top: 8px; }
+.craft-connect-page .process-step { flex: 1; text-align: center; position: relative; }
+.craft-connect-page .process-step:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 28px;
+  right: -50%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, var(--saffron), var(--saffron-light));
+  z-index: 0;
+}
+.craft-connect-page .step-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--saffron), var(--saffron-light));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  margin: 0 auto 14px;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 4px 16px rgba(232,98,26,0.3);
+}
+.craft-connect-page .step-title { font-size: 13px; font-weight: 700; color: var(--ink); margin-bottom: 6px; }
+.craft-connect-page .step-items { font-size: 11px; color: var(--ink-light); line-height: 1.8; }
+
+/* ── WIREFRAMES ── */
+.craft-connect-page .wireframe-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.craft-connect-page .wf-item { text-align: center; }
+.craft-connect-page .wf-frame {
+  border: 2px solid var(--sand-dark);
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 14px;
+  background: white;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+}
+.craft-connect-page .wf-phone {
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  gap: 8px;
+  min-height: 240px;
+}
+.craft-connect-page .wf-bar { background: var(--sand-dark); border-radius: 4px; }
+.craft-connect-page .wf-label { font-size: 13px; color: var(--ink-light); font-weight: 500; }
+/* Low-fi */
+.craft-connect-page .lf { border-style: dashed; border-color: #CCC; background: #FAFAFA; }
+.craft-connect-page .lf .wf-phone { opacity: 0.5; filter: grayscale(0.8); }
+
+/* ── METRICS ── */
+.craft-connect-page .metrics-bg { background: linear-gradient(135deg, #1A0A02 0%, #3D1A0A 100%); color: white; }
+.craft-connect-page .metrics-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+.craft-connect-page .metric-card { text-align: center; padding: 32px 20px; background: rgba(255,255,255,0.06); border-radius: 16px; border: 1px solid rgba(255,255,255,0.1); }
+.craft-connect-page .metric-num { font-family: 'Playfair Display', serif; font-size: 44px; font-weight: 700; color: #FFD580; display: block; line-height: 1; margin-bottom: 8px; }
+.craft-connect-page .metric-label { font-size: 14px; color: rgba(255,255,255,0.7); }
+.craft-connect-page .metrics-title { color: white; text-align: center; margin-bottom: 40px; }
+
+/* ── SOLUTION CARDS ── */
+.craft-connect-page .solution-card {
+  background: white;
+  border: 1px solid var(--sand-dark);
+  border-radius: 16px;
+  padding: 28px 24px;
+  position: relative;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.craft-connect-page .solution-card:hover { box-shadow: 0 8px 32px rgba(232,98,26,0.12); transform: translateY(-2px); }
+.craft-connect-page .sol-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--saffron);
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+.craft-connect-page .sol-title { font-size: 16px; font-weight: 700; color: var(--ink); margin-bottom: 10px; }
+.craft-connect-page .sol-text { font-size: 14px; color: var(--ink-light); line-height: 1.75; }
+
+/* ── DIVIDER ── */
+.craft-connect-page .divider { border: none; border-top: 1px solid var(--sand-dark); margin: 0; }
+
+/* ── COLOR PALETTE ── */
+.craft-connect-page .color-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.craft-connect-page .color-card { border: 1px solid var(--sand-dark); border-radius: 14px; overflow: hidden; }
+.craft-connect-page .color-swatch { height: 100px; }
+.craft-connect-page .color-info { padding: 16px; }
+.craft-connect-page .color-hex { font-size: 12px; font-weight: 700; color: var(--ink); font-family: monospace; margin-bottom: 4px; }
+.craft-connect-page .color-name { font-size: 13px; font-weight: 700; color: var(--saffron); margin-bottom: 6px; }
+.craft-connect-page .color-use { font-size: 12px; color: var(--ink-light); line-height: 1.6; }
+
+/* ── TYPOGRAPHY ── */
+.craft-connect-page .typo-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+.craft-connect-page .typo-card { border: 1px solid var(--sand-dark); border-radius: 14px; padding: 28px; }
+.craft-connect-page .typo-scale { list-style: none; }
+.craft-connect-page .typo-scale li { padding: 10px 0; border-bottom: 1px solid var(--sand-dark); font-size: 14px; color: var(--ink-mid); }
+.craft-connect-page .typo-scale li:last-child { border: none; }
+.craft-connect-page .font-display { font-family: 'Playfair Display', serif; font-size: 72px; color: var(--sand-dark); line-height: 1; margin-bottom: 8px; }
+
+/* ── LEARNINGS ── */
+.craft-connect-page .learning-cards { display: flex; flex-direction: column; gap: 20px; }
+.craft-connect-page .learning-card { border-radius: 12px; padding: 28px 32px; display: flex; gap: 24px; align-items: flex-start; }
+.craft-connect-page .learning-card.lc1 { background: var(--sand); }
+.craft-connect-page .learning-card.lc2 { background: #FFF3E8; }
+.craft-connect-page .learning-card.lc3 { background: #E8F4F0; }
+.craft-connect-page .lc-icon { font-size: 28px; flex-shrink: 0; margin-top: 2px; }
+.craft-connect-page .lc-text { font-size: 15px; color: var(--ink-mid); line-height: 1.8; }
+.craft-connect-page .lc-text strong { color: var(--ink); }
+
+/* ── CLOSING ── */
+.craft-connect-page .closing { text-align: center; padding: 100px 0; }
+.craft-connect-page .closing-title { font-family: 'Playfair Display', serif; font-size: 42px; font-weight: 700; color: var(--ink); margin-bottom: 16px; }
+.craft-connect-page .closing-sub { font-size: 17px; color: var(--ink-light); max-width: 540px; margin: 0 auto; }
+
+/* ── QUOTE CARDS ── */
+.craft-connect-page .quotes-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.craft-connect-page .quote-card {
+  background: white;
+  border: 1px solid var(--sand-dark);
+  border-radius: 14px;
+  padding: 28px 24px;
+}
+.craft-connect-page .quote-num {
+  width: 28px; height: 28px; border-radius: 50%;
+  background: var(--saffron); color: white;
+  font-size: 12px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 14px;
+}
+.craft-connect-page .quote-text { font-size: 14px; color: var(--ink-mid); line-height: 1.8; font-style: italic; }
+.craft-connect-page .quote-attr { margin-top: 10px; font-size: 12px; color: var(--ink-light); font-style: normal; font-weight: 600; }
+
+/* Fade in */
+@keyframes fadeUp { from { opacity:0; transform:translateY(24px); } to { opacity:1; transform:translateY(0); } }
+.craft-connect-page .container { animation: fadeUp 0.6s ease both; }
+
+` }} />
+
       {/* ── NAV ── */}
       <nav>
         <span className="nav-name">Laveena Chetwaani</span>

@@ -890,4 +890,66 @@ ul {
         height: auto;
         aspect-ratio: 9/19;
     }
+
+    /* GLOBAL RESPONSIVE OVERRIDES FOR INLINE STYLES */
+    
+    /* 1. Collapse all inline grids into a single vertical column */
+    div[style*="display: grid"] {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+    }
+
+    /* 2. For flex layout wraps (like the mockups next to text) - force column layout */
+    /* Target flex containers inside sections that have a gap larger than 2rem (these are typically side-by-side splits) */
+    div[style*="gap: 3rem"],
+    div[style*="gap: 4rem"],
+    div[style*="gap: 5rem"] {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 2rem !important;
+    }
+
+    /* Protect icon lists and items from stacking vertically */
+    li[style*="display: flex"],
+    .nav-links,
+    nav {
+        flex-direction: row !important;
+    }
+
+    /* 3. Global font scaling for mobile */
+    h1 {
+        font-size: clamp(2rem, 8vw, 2.5rem) !important;
+        line-height: 1.15 !important;
+    }
+
+    h2 {
+        font-size: 1.8rem !important;
+        line-height: 1.2 !important;
+    }
+
+    h3 {
+        font-size: 1.4rem !important;
+    }
+
+    p {
+        font-size: 1rem !important;
+    }
+
+    /* 4. Fix viewport padding */
+    main {
+        padding: 6rem 1.5rem 3rem !important;
+    }
+
+    /* 5. Fluid images */
+    img {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+
+    /* Ensure table in DesignLink scrolls nicely on mobile or fits */
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
 }

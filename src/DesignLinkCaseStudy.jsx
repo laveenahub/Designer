@@ -1,5 +1,4 @@
 import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
 
 const DesignLinkCaseStudy = () => {
   useEffect(() => {
@@ -29,7 +28,7 @@ const DesignLinkCaseStudy = () => {
         borderBottom: '0.5px solid rgba(0,0,0,0.05)'
       }}>
         <div style={{ maxWidth: '860px', margin: '0 auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <Link to="/" style={{ 
+          <a href="#/" style={{ 
             color: 'var(--color-primary, #0042D0)', 
             textDecoration: 'none', 
             fontWeight: '600', 
@@ -39,7 +38,7 @@ const DesignLinkCaseStudy = () => {
             gap: '0.5rem'
           }}>
             ← Back
-          </Link>
+          </a>
           <span style={{ fontSize: '0.7rem', fontWeight: '800', letterSpacing: '0.15em', opacity: 0.4, color: 'var(--color-text-primary)' }}>CASE STUDY: DESIGNLINK</span>
         </div>
       </nav>

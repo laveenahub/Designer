@@ -20,27 +20,31 @@ function App() {
   }, []);
   const [isScrolled, setIsScrolled] = useState(false)
   const [currentPage, setCurrentPage] = useState('home')
-  const [activeTestimonial, setActiveTestimonial] = useState(0)
   const [mousePos, setMousePos] = useState({ x: -100, y: -100 })
   const [isHovering, setIsHovering] = useState(false)
 
   const testimonials = [
     {
       text: "Laveena is fantastic to work with. She is very professional and has great attention to detail. Will definitely use her again in the future.",
-      author: "Founder, The Half Idea"
+      name: "Founder",
+      role: "The Half Idea"
     },
     {
       text: "Working with Laveena has been an absolute pleasure! She exceeded our expectations, delivering a professional redesign perfectly aligned with our vision. The timely delivery made the process seamless. We’re VERY HAPPY with the final product.",
-      author: "Sanjay Product Manager, Under Armor"
+      name: "Sanjay",
+      role: "Product Manager @ Under Armor"
     },
     {
       text: "Our user retention skyrocketed post-launch. Laveena brought a depth of research and structural polish we rarely see from junior talent.",
-      author: "Senior UI UX Designer, Conscent.ai"
+      name: "Client",
+      role: "Senior UI/UX Designer @ Conscent.ai"
+    },
+    {
+      text: "An absolute lifesaver. Laveena took our convoluted flow and turned it into an elegant, intuitive experience. Highly recommended for any product team.",
+      name: "Product Lead",
+      role: "Fintech Startup"
     }
   ]
-
-  const nextTestimonial = () => setActiveTestimonial((prev) => (prev + 1) % testimonials.length)
-  const prevTestimonial = () => setActiveTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length)
 
   useEffect(() => {
     // Basic hash routing
@@ -259,56 +263,47 @@ function App() {
         </section>
 
         {/* --- TESTIMONIAL SECTION --- */}
-        <section id="testimonial" className="section" style={{ paddingTop: 'var(--space-md)' }}>
+        {/* --- TESTIMONIAL SECTION --- */}
+        <section id="testimonial" className="section testimonial-section-bg reveal">
           <div className="container">
-            <span className="section-label reveal">Endorsements</span>
+            <div className="testimonial-header-wrapper">
+              <h2 className="section-label" style={{ margin: 0, textTransform: 'none', fontSize: '2.5rem', fontFamily: 'var(--font-heading)', color: 'var(--text-primary)' }}>What others say!</h2>
+              <span className="testimonial-subtitle">I didn't come up with these, I swear</span>
+            </div>
 
-            <div className="testimonial-carousel reveal">
+            <div className="testimonial-carousel">
               <div className="testimonial-track">
                 {testimonials.map((item, idx) => (
-                  <div
-                    key={idx}
-                    className={`testimonial-slide ${idx === activeTestimonial ? 'active' : ''}`}
-                    style={{ display: idx === activeTestimonial ? 'block' : 'none' }}
-                  >
-                    <p className="manifesto-line" style={{ fontSize: 'clamp(1.4rem, 2.5vw, 2rem)', marginBottom: '1.5rem', lineHeight: '1.3' }}>
+                  <div key={idx} className="testimonial-slide">
+                    <p className="manifesto-line">
                       "{item.text}"
                     </p>
-                    <p className="project-stat" style={{ fontFamily: 'var(--font-body)', color: 'var(--text-secondary)', fontSize: '1rem' }}>
-                      &mdash; {item.author}
-                    </p>
+                    <div className="author-info">
+                      <span className="author-name">{item.name}</span>
+                      <span className="author-role">{item.role}</span>
+                    </div>
                   </div>
                 ))}
-              </div>
-
-              <div className="testimonial-controls" style={{ marginTop: '3rem', display: 'flex', gap: '1rem', alignItems: 'center' }}>
-                <button onClick={prevTestimonial} className="carousel-btn" aria-label="Previous testimonial">&larr;</button>
-                <div className="testimonial-dots">
-                  {testimonials.map((_, idx) => (
-                    <div
-                      key={idx}
-                      onClick={() => setActiveTestimonial(idx)}
-                      className={`testimonial-dot ${idx === activeTestimonial ? 'active' : ''}`}
-                    />
-                  ))}
-                </div>
-                <button onClick={nextTestimonial} className="carousel-btn" aria-label="Next testimonial">&rarr;</button>
               </div>
             </div>
           </div>
         </section>
 
         {/* --- CONTACT / CTA SECTION --- */}
-        <section id="contact" className="section contact-cta">
-          <div className="container">
-            <a href="mailto:contact@laveenachetwani.online" className="giant-cta reveal">
-              build<br />together?
+        <section id="contact" className="section contact-cta reveal">
+          <div className="contact-pill-container">
+            <a href="mailto:contact@laveenachetwani.online" aria-label="Email">
+              <span className="icon">✉️</span> contact@laveenachetwani.online
             </a>
-
-            <div className="contact-details reveal delay-200">
-              <a href="mailto:contact@laveenachetwani.online">contact@laveenachetwani.online</a>
-              <a href="https://linkedin.com/in/laveena-chetwani" target="_blank" rel="noreferrer">LinkedIn: laveena-chetwani</a>
-            </div>
+            <a href="tel:+910000000000" aria-label="Phone">
+              <span className="icon">📞</span> +91 000 000 0000
+            </a>
+            <a href="https://linkedin.com/in/laveena-chetwani" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+              <span className="icon">🔗</span> LinkedIn
+            </a>
+            <a href="https://instagram.com/laveenachetwani" target="_blank" rel="noreferrer" aria-label="Instagram">
+              <span className="icon">📸</span> Instagram
+            </a>
           </div>
         </section>
       </main>

@@ -47,7 +47,7 @@ const Playground = () => {
         <section className="section" style={{ paddingTop: 0, paddingBottom: 'var(--space-lg)' }}>
           <div className="container">
             <h1 className="hero-title reveal" style={{ fontSize: 'clamp(3rem, 7vw, 6rem)', lineHeight: '1.05', letterSpacing: '-0.02em', fontWeight: '400', fontFamily: 'var(--font-heading)' }}>
-              Playground
+              PLAYGROUND
             </h1>
             <p className="hero-subtitle reveal delay-100" style={{ maxWidth: '800px', fontSize: '1.2rem', marginTop: '2rem', fontFamily: 'var(--font-body)', fontStyle: 'normal', color: '#5a5a5a' }}>
               A thoughtful look into how I integrate generative AI into my product design workflow. 
@@ -89,7 +89,7 @@ const Playground = () => {
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '1rem', flexWrap: 'wrap', marginBottom: '4rem' }}>
                 <div style={{ flex: '1', minWidth: '300px', textAlign: 'center' }}>
                   <div style={{ fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.1em', fontWeight: '600', marginBottom: '1rem' }}>ORIGINAL</div>
-                  <div style={{ width: '100%', aspectRatio: '4/5', background: '#e0ded8', borderRadius: '12px', marginBottom: '1rem' }}></div>
+                  <div style={{ width: '100%', aspectRatio: '4/5', background: '#E5E5E5', borderRadius: '12px', marginBottom: '1rem' }}></div>
                   <div style={{ fontSize: '0.9rem', color: '#5a5a5a' }}>A flat, ordinary photo</div>
                 </div>
 
@@ -99,7 +99,7 @@ const Playground = () => {
 
                 <div style={{ flex: '1', minWidth: '300px', textAlign: 'center' }}>
                   <div style={{ fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.1em', fontWeight: '600', marginBottom: '1rem' }}>AFTER WHISK</div>
-                  <div style={{ width: '100%', aspectRatio: '4/5', background: 'linear-gradient(135deg, #F59E0B 0%, #1A1A1A 100%)', borderRadius: '12px', marginBottom: '1rem', boxShadow: '0 20px 40px rgba(245, 158, 11, 0.2)' }}></div>
+                  <div style={{ width: '100%', aspectRatio: '4/5', background: '#D1D1D1', borderRadius: '12px', marginBottom: '1rem', boxShadow: '0 20px 40px rgba(0, 0, 0, 0.1)' }}></div>
                   <div style={{ fontSize: '0.9rem', color: '#5a5a5a' }}>Cinematic dual lighting · 3D transition</div>
                 </div>
               </div>
@@ -125,7 +125,7 @@ const Playground = () => {
                   </ul>
                 </div>
                 <div style={{ flex: '1', borderLeft: '1px solid rgba(0,0,0,0.1)', paddingLeft: '2rem' }}>
-                  <div style={{ fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.1em', fontWeight: '600', marginBottom: '1rem', color: '#F59E0B' }}>WITH WHISK</div>
+                  <div style={{ fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.1em', fontWeight: '600', marginBottom: '1rem', color: '#5a5a5a' }}>WITH WHISK</div>
                   <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.5rem', fontWeight: '500' }}>
                     <li>→ One uploaded image</li>
                     <li>→ One simple prompt</li>
@@ -189,7 +189,7 @@ const Playground = () => {
 
               {/* EXPERIMENT VISUAL BLOCK */}
               <div style={{ width: '100%', background: '#0D0D0D', borderRadius: '16px', padding: '3rem', marginBottom: '2rem', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-                <div style={{ width: '80%', aspectRatio: '16/9', background: '#1A1A1A', borderRadius: '12px', border: '1px solid #333', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', position: 'relative' }}>
+                <div style={{ width: '80%', aspectRatio: '16/9', background: '#FAFAFA', borderRadius: '12px', border: '1px solid #333', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', position: 'relative' }}>
                   <div style={{ fontSize: '1.2rem', opacity: '0.5' }}>[ Interactive Prototype Placeholder ]</div>
                   
                   {/* Fake Cursor Overlay */}

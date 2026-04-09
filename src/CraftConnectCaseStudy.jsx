@@ -7,16 +7,16 @@ const CraftConnectCaseStudy = () => {
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap');
 
 .craft-connect-page {
-  --saffron: #E8621A;
-  --saffron-light: #F5A057;
-  --terracotta: #C4472A;
-  --sand: #F7F0E6;
-  --sand-dark: #EDE4D4;
-  --ink: #1A1208;
-  --ink-mid: #4A3728;
-  --ink-light: #7A6555;
-  --gold: #D4A017;
-  --teal: #1A6E6E;
+  --saffron: #000000;
+  --saffron-light: #404040;
+  --terracotta: #000000;
+  --sand: #FFFFFF;
+  --sand-dark: #E5E5E5;
+  --ink: #000000;
+  --ink-mid: #262626;
+  --ink-light: #525252;
+  --gold: #000000;
+  --teal: #000000;
   --white: #FFFFFF;
 }
 
@@ -70,7 +70,7 @@ const CraftConnectCaseStudy = () => {
 .craft-connect-page .hero-banner {
   width: 100%;
   height: 480px;
-  background: linear-gradient(135deg, #1A0A02 0%, #3D1A0A 30%, #E8621A 70%, #D4A017 100%);
+  background: linear-gradient(135deg, #000000 0%, #1a1a1a 30%, #404040 70%, #808080 100%);
   position: relative;
   overflow: hidden;
   display: flex;
@@ -243,12 +243,12 @@ const CraftConnectCaseStudy = () => {
 .craft-connect-page .s1 .field strong { display:block; color:var(--ink); font-size:8px; margin-bottom:2px; }
 .craft-connect-page .s1 .craft-tags { display:flex; flex-wrap:wrap; gap:4px; margin-bottom:10px; }
 .craft-connect-page .s1 .tag {
-  background:#FFF3E8; border:1px solid var(--saffron-light); color:var(--saffron);
+  background:#E0E0E0; border:1px solid #999; color:#000000;
   font-size:8px; padding:3px 8px; border-radius:100px;
 }
-.craft-connect-page .s1 .tag.active { background:var(--saffron); color:white; }
+.craft-connect-page .s1 .tag.active { background:#000000; color:white; }
 .craft-connect-page .s1 .wa-btn {
-  background:#25D366; color:white; border-radius:8px; padding:9px;
+  background: #000000; color:white; border-radius:8px; padding:9px;
   text-align:center; font-size:9px; font-weight:600; margin-top:6px;
 }
 /* SCREEN 2 — Product Listing */
@@ -771,10 +771,10 @@ const CraftConnectCaseStudy = () => {
                 </div>
               </div>
               <div className="grid">
-                <div className="prod-card"><div className="card-img" style={{ background: '#FFF3E8' }}>🏺</div><div className="card-info"><div className="card-name">Blue Pottery Bowl</div><div className="card-price">₹850</div><div className="card-city">Jaipur</div></div></div>
-                <div className="prod-card"><div className="card-img" style={{ background: '#E8F4F0' }}>🧣</div><div className="card-info"><div className="card-name">Bandhani Dupatta</div><div className="card-price">₹1,400</div><div className="card-city">Jodhpur</div></div></div>
-                <div className="prod-card"><div className="card-img" style={{ background: '#F5F0FF' }}>🖼️</div><div className="card-info"><div className="card-name">Miniature Art</div><div className="card-price">₹3,200</div><div className="card-city">Udaipur</div></div></div>
-                <div className="prod-card"><div className="card-img" style={{ background: '#FFFBEA' }}>🛍️</div><div className="card-info"><div className="card-name">Block Print Tote</div><div className="card-price">₹680</div><div className="card-city">Sanganer</div></div></div>
+                <div className="prod-card"><div className="card-img" style={{ background: '#E5E5E5' }}>🏺</div><div className="card-info"><div className="card-name">Blue Pottery Bowl</div><div className="card-price">₹850</div><div className="card-city">Jaipur</div></div></div>
+                <div className="prod-card"><div className="card-img" style={{ background: '#D4D4D4' }}>🧣</div><div className="card-info"><div className="card-name">Bandhani Dupatta</div><div className="card-price">₹1,400</div><div className="card-city">Jodhpur</div></div></div>
+                <div className="prod-card"><div className="card-img" style={{ background: '#F5F5F5' }}>🖼️</div><div className="card-info"><div className="card-name">Miniature Art</div><div className="card-price">₹3,200</div><div className="card-city">Udaipur</div></div></div>
+                <div className="prod-card"><div className="card-img" style={{ background: '#FAFAFA' }}>🛍️</div><div className="card-info"><div className="card-name">Block Print Tote</div><div className="card-price">₹680</div><div className="card-city">Sanganer</div></div></div>
               </div>
             </div>
           </div>
@@ -855,10 +855,10 @@ const CraftConnectCaseStudy = () => {
                 </div>
               </div>
               <div className="grid">
-                <div className="prod-card"><div className="card-img" style={{ background: '#FFF3E8' }}>🏺</div><div className="card-info"><div className="card-name">Blue Pottery Bowl</div><div className="card-price">₹850</div></div></div>
-                <div className="prod-card"><div className="card-img" style={{ background: '#E8F4F0' }}>🧣</div><div className="card-info"><div className="card-name">Bandhani Dupatta</div><div className="card-price">₹1,400</div></div></div>
-                <div className="prod-card"><div className="card-img" style={{ background: '#F5F0FF' }}>🖼️</div><div className="card-info"><div className="card-name">Miniature Art</div><div className="card-price">₹3,200</div></div></div>
-                <div className="prod-card"><div className="card-img" style={{ background: '#FFFBEA' }}>🛍️</div><div className="card-info"><div className="card-name">Block Print Tote</div><div className="card-price">₹680</div></div></div>
+                <div className="prod-card"><div className="card-img" style={{ background: '#E5E5E5' }}>🏺</div><div className="card-info"><div className="card-name">Blue Pottery Bowl</div><div className="card-price">₹850</div></div></div>
+                <div className="prod-card"><div className="card-img" style={{ background: '#D4D4D4' }}>🧣</div><div className="card-info"><div className="card-name">Bandhani Dupatta</div><div className="card-price">₹1,400</div></div></div>
+                <div className="prod-card"><div className="card-img" style={{ background: '#F5F5F5' }}>🖼️</div><div className="card-info"><div className="card-name">Miniature Art</div><div className="card-price">₹3,200</div></div></div>
+                <div className="prod-card"><div className="card-img" style={{ background: '#FAFAFA' }}>🛍️</div><div className="card-info"><div className="card-name">Block Print Tote</div><div className="card-price">₹680</div></div></div>
               </div>
             </div>
           </div>
@@ -1281,23 +1281,23 @@ const CraftConnectCaseStudy = () => {
         <p style={{ color: 'var(--ink-mid)', fontSize: '16px', maxWidth: '700px', marginBottom: '36px', lineHeight: '1.8' }}>The palette draws directly from Rajasthan's landscape — saffron sunsets, terracotta forts, sand dunes, and teal palace pools. Warm, trustworthy, and distinctly regional.</p>
         <div className="color-cards">
           <div className="color-card">
-            <div className="color-swatch" style={{ background: '#E8621A' }}></div>
+            <div className="color-swatch" style={{ background: '#000000' }}></div>
             <div className="color-info">
-              <div className="color-hex">#E8621A</div>
-              <div className="color-name">Rajasthan Saffron</div>
+              <div className="color-hex">#000000</div>
+              <div className="color-name">Strict Black</div>
               <div className="color-use">Primary actions, badges, key highlights</div>
             </div>
           </div>
           <div className="color-card">
-            <div className="color-swatch" style={{ background: '#C4472A' }}></div>
+            <div className="color-swatch" style={{ background: '#000000' }}></div>
             <div className="color-info">
-              <div className="color-hex">#C4472A</div>
-              <div className="color-name">Terracotta</div>
+              <div className="color-hex">#404040</div>
+              <div className="color-name">Dark Charcoal</div>
               <div className="color-use">Prices, alerts, accent emphasis</div>
             </div>
           </div>
           <div className="color-card">
-            <div className="color-swatch" style={{ background: '#F7F0E6', borderTop: '1px solid #EDD' }}></div>
+            <div className="color-swatch" style={{ background: '#FFFFFF', borderTop: '1px solid #EDD' }}></div>
             <div className="color-info">
               <div className="color-hex">#F7F0E6</div>
               <div className="color-name">Desert Sand</div>
@@ -1305,10 +1305,10 @@ const CraftConnectCaseStudy = () => {
             </div>
           </div>
           <div className="color-card">
-            <div className="color-swatch" style={{ background: '#1A6E6E' }}></div>
+            <div className="color-swatch" style={{ background: '#000000' }}></div>
             <div className="color-info">
-              <div className="color-hex">#1A6E6E</div>
-              <div className="color-name">Palace Teal</div>
+              <div className="color-hex">#000000</div>
+              <div className="color-name">Solid Black</div>
               <div className="color-use">Trust badges, verified indicators</div>
             </div>
           </div>

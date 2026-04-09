@@ -5,8 +5,8 @@ const SectionBadge = ({ children }) => (
   <div style={{ display: 'flex', marginBottom: '1.5rem' }}>
     <span style={{ 
       display: 'inline-block',
-      backgroundColor: '#0042D0', 
-      color: '#fff', 
+      backgroundColor: '#000000', 
+      color: '#ffffff', 
       padding: '6px 16px', 
       borderRadius: '20px', 
       fontWeight: 'bold',
@@ -30,9 +30,9 @@ const DesignLinkCaseStudy = () => {
 
   return (
     <div style={{ 
-      backgroundColor: '#F5F4F1', 
+      backgroundColor: '#FFFFFF', 
       minHeight: '100vh', 
-      color: '#1E293B', 
+      color: '#000000', 
       fontFamily: "'Inter', sans-serif", // Base font
       padding: 0,
       margin: 0
@@ -45,13 +45,13 @@ const DesignLinkCaseStudy = () => {
         width: '100%', 
         padding: '1.5rem 2rem', 
         zIndex: 100,
-        backgroundColor: 'rgba(245, 244, 241, 0.9)',
+        backgroundColor: 'rgba(255, 255, 255, 0.9)',
         backdropFilter: 'blur(10px)',
         borderBottom: '1px solid #E5E7EB'
       }}>
         <div style={{ maxWidth: '1024px', margin: '0 auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <a href="#/" style={{ 
-            color: '#0042D0', 
+            color: '#000000', 
             textDecoration: 'none', 
             fontWeight: '600', 
             fontSize: '0.9rem',
@@ -79,14 +79,14 @@ const DesignLinkCaseStudy = () => {
             fontSize: 'clamp(2.5rem, 5vw, 4.2rem)',
             lineHeight: '1.05',
             fontWeight: 'normal',
-            color: '#1E293B',
+            color: '#000000',
             marginBottom: '3rem',
             letterSpacing: '-0.02em'
           }}>
             Turning forgotten portfolios into meaningful connections between creative talent and top employers
           </h1>
           
-          <hr style={{ border: 'none', borderTop: '2px solid #EF9F27', width: '100px', margin: '0 0 2rem 0' }} />
+          <hr style={{ border: 'none', borderTop: '2px solid #000000', width: '100px', margin: '0 0 2rem 0' }} />
           
           <div style={{ display: 'flex', gap: '4rem', flexWrap: 'wrap' }}>
             <div>
@@ -114,9 +114,9 @@ const DesignLinkCaseStudy = () => {
           
           <div style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap', marginBottom: '2.5rem', fontWeight: '800', color: '#1E293B', fontSize: '1.1rem' }}>
             <span>Portfolio Visibility</span>
-            <span style={{ color: '#0042D0' }}>·</span>
+            <span style={{ color: '#000000' }}>·</span>
             <span>Lack of Transparency</span>
-            <span style={{ color: '#0042D0' }}>·</span>
+            <span style={{ color: '#000000' }}>·</span>
             <span>Hiring Inefficiency</span>
           </div>
           
@@ -124,11 +124,11 @@ const DesignLinkCaseStudy = () => {
             Employers waste hours trying to find quality portfolios, while talented designers are overlooked by automated systems. Our solution is DesignLink, a portfolio-first hiring platform.
           </p>
           
-          <div style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap', fontWeight: '800', color: '#0042D0', fontSize: '1.1rem' }}>
+          <div style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap', fontWeight: '800', color: '#000000', fontSize: '1.1rem' }}>
             <span>Portfolio-First</span>
-            <span style={{ color: '#1E293B' }}>·</span>
+            <span style={{ color: '#000000' }}>·</span>
             <span>Smart Matching</span>
-            <span style={{ color: '#1E293B' }}>·</span>
+            <span style={{ color: '#000000' }}>·</span>
             <span>Transparency</span>
           </div>
         </section>

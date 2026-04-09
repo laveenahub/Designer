@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { AnimatePresence } from 'framer-motion'
 import DesignLinkCaseStudy from './DesignLinkCaseStudy'
-import AiInPractice from './AiInPractice'
+import Playground from './Playground'
 import CraftConnectCaseStudy from './CraftConnectCaseStudy'
 import LoadingScreen from './LoadingScreen'
 import ScrollToTop from './ScrollToTop'
@@ -52,8 +52,8 @@ function App() {
       } else if (hash === '#craftconnect' || hash === '#/craftconnect') {
         setCurrentPage('craftconnect')
         window.scrollTo(0, 0)
-      } else if (hash === '#ai-in-practice' || hash === '#/ai-in-practice') {
-        setCurrentPage('ai-in-practice')
+      } else if (hash === '#playground' || hash === '#/playground') {
+        setCurrentPage('playground')
         window.scrollTo(0, 0)
       } else {
         setCurrentPage('home')
@@ -116,7 +116,7 @@ function App() {
     if (currentPage === 'craftconnect') {
       return <CraftConnectCaseStudy />;
     }
-    if (currentPage === 'ai-in-practice') return <AiInPractice />;
+    if (currentPage === 'playground') return <Playground />;
 
     return (
       <main>
@@ -342,7 +342,7 @@ function App() {
               <div className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
                 <a href="#about" onClick={handleNavClick}>About</a>
                 <a href="#work" onClick={handleNavClick}>Work</a>
-                <a href="#/ai-in-practice" onClick={handleNavClick}>AI in Practise</a>
+                <a href="#/playground" onClick={handleNavClick}>Playground</a>
                 <a href="https://drive.google.com/file/d/1_DaxoUDhjx78x6eKOnqN8CNqCCWAeuUz/view?usp=drive_link" target="_blank" rel="noreferrer" title="Opens PDF ↗">Resume</a>
                 <a href="#contact" onClick={handleNavClick}>Contact</a>
               </div>

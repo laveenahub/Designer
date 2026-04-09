@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-const AiInPractice = () => {
+const Playground = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -47,7 +47,7 @@ const AiInPractice = () => {
         <section className="section" style={{ paddingTop: 0, paddingBottom: 'var(--space-lg)' }}>
           <div className="container">
             <h1 className="hero-title reveal" style={{ fontSize: 'clamp(3rem, 7vw, 6rem)', lineHeight: '1.05', letterSpacing: '-0.02em', fontWeight: '400', fontFamily: 'var(--font-heading)' }}>
-              AI in My Practice
+              Playground
             </h1>
             <p className="hero-subtitle reveal delay-100" style={{ maxWidth: '800px', fontSize: '1.2rem', marginTop: '2rem', fontFamily: 'var(--font-body)', fontStyle: 'normal', color: '#5a5a5a' }}>
               A thoughtful look into how I integrate generative AI into my product design workflow. 
@@ -235,4 +235,4 @@ const AiInPractice = () => {
   );
 };
 
-export default AiInPractice;
+export default Playground;

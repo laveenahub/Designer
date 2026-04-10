@@ -66,40 +66,40 @@ const DesignLinkCaseStudy = () => {
       </nav>
 
       <main style={{ 
-        maxWidth: '1024px', 
+        maxWidth: '1200px', 
         margin: '0 auto', 
-        padding: '10rem 2rem 6rem',
+        padding: '10rem 2rem',
         boxSizing: 'border-box'
       }}>
         
-        {/* --- SECTION 1: HERO / TITLE --- */}
-        <section style={{ marginBottom: '8rem' }}>
-          <h1 style={{ 
-            fontFamily: "'Glyseric', serif",
-            fontSize: 'clamp(2.5rem, 5vw, 4.2rem)',
-            lineHeight: '1.05',
-            fontWeight: 'normal',
-            color: '#000000',
-            marginBottom: '3rem',
-            letterSpacing: '-0.02em'
-          }}>
-            Turning forgotten portfolios into meaningful connections between creative talent and top employers
-          </h1>
-          
-          <hr style={{ border: 'none', borderTop: '2px solid #000000', width: '100px', margin: '0 0 2rem 0' }} />
-          
-          <div style={{ display: 'flex', gap: '4rem', flexWrap: 'wrap' }}>
-            <div>
-              <div style={{ fontSize: '0.75rem', textTransform: 'uppercase', color: '#666', letterSpacing: '0.1em', fontWeight: 'bold', marginBottom: '0.5rem' }}>Collaboration with</div>
-              <div style={{ fontSize: '1.1rem', fontWeight: '600' }}>Designerrs Academy</div>
-            </div>
-            <div>
-              <div style={{ fontSize: '0.75rem', textTransform: 'uppercase', color: '#666', letterSpacing: '0.1em', fontWeight: 'bold', marginBottom: '0.5rem' }}>Platform</div>
-              <div style={{ fontSize: '1.1rem', fontWeight: '600' }}>Android</div>
-            </div>
-            <div>
-              <div style={{ fontSize: '0.75rem', textTransform: 'uppercase', color: '#666', letterSpacing: '0.1em', fontWeight: 'bold', marginBottom: '0.5rem' }}>My Role</div>
-              <div style={{ fontSize: '1.1rem', fontWeight: '600' }}>Product Designer</div>
+        {/* HERO SECTION */}
+        <section style={{ 
+          display: 'grid',
+          gridTemplateColumns: '1fr 1fr',
+          gap: '4rem',
+          alignItems: 'center',
+          marginBottom: '36px'
+        }}>
+          <div>
+            <h1 style={{ 
+              fontSize: 'clamp(3rem, 6vw, 5rem)',
+              lineHeight: '1.1',
+              fontWeight: 'bold',
+              marginBottom: '2rem',
+              letterSpacing: '-0.03em'
+            }}>DesignLink — <br />Connecting Design, Experience & Innovation</h1>
+            <p style={{ 
+              fontSize: '1.25rem',
+              maxWidth: '500px',
+              opacity: 0.8,
+              lineHeight: '1.6'
+            }}>
+              A professional social ecosystem designed to bridge the gap between emerging creative talent and leading industry opportunities through portfolio-first intelligence.
+            </p>
+          </div>
+          <div style={{ position: 'relative' }}>
+            <div style={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+               <img src="/hero.png" alt="Primary Interface" style={{ width: '100%', height: 'auto', boxShadow: '0 30px 60px rgba(0,0,0,0.1)' }} />
             </div>
           </div>
         </section>

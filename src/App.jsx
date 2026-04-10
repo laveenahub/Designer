@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import { AnimatePresence } from 'framer-motion'
 import DesignLinkCaseStudy from './DesignLinkCaseStudy'
 import Playground from './Playground'
@@ -10,6 +10,28 @@ import ImageCarousel from './ImageCarousel'
 function App() {
   const [isLoading, setIsLoading] = useState(true)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const testimonialTrackRef = useRef(null);
+  const [activeTestimonial, setActiveTestimonial] = useState(0);
+
+  const handleTestimonialScroll = () => {
+    if (testimonialTrackRef.current && testimonialTrackRef.current.children.length > 0) {
+      const scrollPosition = testimonialTrackRef.current.scrollLeft;
+      const slideWidth = testimonialTrackRef.current.children[0].offsetWidth + 24;
+      const newIndex = Math.round(scrollPosition / slideWidth);
+      setActiveTestimonial(newIndex);
+    }
+  };
+
+  const scrollToTestimonial = (index) => {
+    if (testimonialTrackRef.current && testimonialTrackRef.current.children.length > 0) {
+      const slideWidth = testimonialTrackRef.current.children[0].offsetWidth + 24;
+      testimonialTrackRef.current.scrollTo({
+        left: index * slideWidth,
+        behavior: 'smooth'
+      });
+      setActiveTestimonial(index);
+    }
+  };
 
   useEffect(() => {
     // Disable automatic browser scroll memory
@@ -287,9 +309,9 @@ function App() {
             </div>
 
             <div className="testimonial-carousel">
-              <div className="testimonial-track">
+              <div className="testimonial-track" ref={testimonialTrackRef} onScroll={handleTestimonialScroll}>
                 {testimonials.map((item, idx) => (
-                  <div key={idx} className="testimonial-slide">
+                  <div key={idx} className="testimonial-slide reveal">
                     <p className="manifesto-line">
                       "{item.text}"
                     </p>
@@ -300,30 +322,29 @@ function App() {
                   </div>
                 ))}
               </div>
+              <div className="testimonial-dots" style={{ display: 'flex', justifyContent: 'center', gap: '8px', marginTop: '1.5rem', paddingBottom: '1rem' }}>
+                {testimonials.map((_, idx) => (
+                  <button 
+                    key={idx} 
+                    onClick={() => scrollToTestimonial(idx)}
+                    aria-label={`Scroll to testimonial ${idx + 1}`}
+                    style={{ 
+                      width: '10px', 
+                      height: '10px', 
+                      borderRadius: '50%', 
+                      backgroundColor: activeTestimonial === idx ? 'var(--text-primary)' : '#d1d5db', 
+                      border: 'none', 
+                      cursor: 'pointer', 
+                      transition: 'background-color 0.3s, transform 0.3s',
+                      transform: activeTestimonial === idx ? 'scale(1.2)' : 'scale(1)'
+                    }}
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </section>
 
-        {/* --- CONTACT / CTA SECTION --- */}
-        <section id="contact" className="section contact-cta reveal">
-          <div className="contact-pill-container">
-            <a href="mailto:contact@laveenachetwani.online" aria-label="Email">
-              <span className="icon">✉️</span> contact@laveenachetwani.online
-            </a>
-            <a href="tel:+917878618889" aria-label="Phone">
-              <span className="icon">📞</span> +91 7878618889
-            </a>
-            <a href="https://linkedin.com/in/laveena-chetwani" target="_blank" rel="noreferrer" aria-label="LinkedIn">
-              <span className="icon">🔗</span> LinkedIn
-            </a>
-            <a href="https://instagram.com/laveenachetwani" target="_blank" rel="noreferrer" aria-label="Instagram">
-              <span className="icon">📸</span> Instagram
-            </a>
-            <a href="https://drive.google.com/file/d/1_DaxoUDhjx78x6eKOnqN8CNqCCWAeuUz/view?usp=drive_link" target="_blank" rel="noreferrer" title="Opens PDF ↗">
-              <span className="icon">📄</span> Resume
-            </a>
-          </div>
-        </section>
       </main>
     );
   }
@@ -347,11 +368,31 @@ function App() {
             transform: `translate3d(${mousePos.x}px, ${mousePos.y}px, 0) translate(-50%, -50%)`
           }}
         />
-        {currentPage === 'home' && (
-          <Navbar isScrolled={isScrolled} activeSection={activeSection} />
-        )}
+        <Navbar isScrolled={isScrolled} activeSection={activeSection} />
 
         {renderContent()}
+
+        {/* --- CONTACT / CTA SECTION --- */}
+        <section id="contact" className="section contact-cta reveal">
+          <div className="contact-pill-container">
+            <a href="mailto:contact@laveenachetwani.online" aria-label="Email">
+              <span className="icon">✉️</span> contact@laveenachetwani.online
+            </a>
+            <a href="tel:+917878618889" aria-label="Phone">
+              <span className="icon">📞</span> +91 7878618889
+            </a>
+            <a href="https://linkedin.com/in/laveena-chetwani" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+              <span className="icon">🔗</span> LinkedIn
+            </a>
+            <a href="https://instagram.com/laveenachetwani" target="_blank" rel="noreferrer" aria-label="Instagram">
+              <span className="icon">📸</span> Instagram
+            </a>
+            <a href="https://drive.google.com/file/d/1_DaxoUDhjx78x6eKOnqN8CNqCCWAeuUz/view?usp=drive_link" target="_blank" rel="noreferrer" title="Opens PDF ↗">
+              <span className="icon">📄</span> Resume
+            </a>
+          </div>
+        </section>
+
         <ScrollToTop />
       </div>
     </>

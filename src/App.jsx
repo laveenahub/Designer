@@ -319,6 +319,9 @@ function App() {
             <a href="https://instagram.com/laveenachetwani" target="_blank" rel="noreferrer" aria-label="Instagram">
               <span className="icon">📸</span> Instagram
             </a>
+            <a href="https://drive.google.com/file/d/1_DaxoUDhjx78x6eKOnqN8CNqCCWAeuUz/view?usp=drive_link" target="_blank" rel="noreferrer" title="Opens PDF ↗">
+              <span className="icon">📄</span> Resume
+            </a>
           </div>
         </section>
       </main>

@@ -1,33 +1,21 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useScroll } from 'framer-motion';
 
-export default function Navbar({ isScrolled, activeSection }) {
+export default function Navbar({ activeSection }) {
   const [isExpanded, setIsExpanded] = useState(false);
-
-  // Auto-expand when scrolled past hero
-  useEffect(() => {
-    if (isScrolled) {
-      setIsExpanded(true);
-    } else {
-      setIsExpanded(false);
-    }
-  }, [isScrolled]);
+  const { scrollYProgress } = useScroll();
 
   const toggleExpand = () => setIsExpanded(!isExpanded);
 
-  // Determine avatar based on active section
-  let avatarSrc = '/profile.jpg';
-  if (activeSection === 'work') avatarSrc = '/1.jpg';
-  if (activeSection === 'playground') avatarSrc = '/2.jpg';
-  if (activeSection === 'contact') avatarSrc = '/3.jpg';
+  // Always use profile image
+  const avatarSrc = '/profile.jpg';
 
-  // Navigation items
+  // Navigation items capitalized, and Resume removed
   const navItems = [
-    { name: 'About', href: '#about' },
-    { name: 'Work', href: '#work' },
-    { name: 'Playground', href: '#/playground' },
-    { name: 'Resume', href: 'https://drive.google.com/file/d/1_DaxoUDhjx78x6eKOnqN8CNqCCWAeuUz/view?usp=drive_link', target: '_blank' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'ABOUT', href: '#about' },
+    { name: 'WORK', href: '#work' },
+    { name: 'PLAYGROUND', href: '#/playground' },
+    { name: 'CONTACT', href: '#contact' },
   ];
 
   return (
@@ -105,14 +93,15 @@ export default function Navbar({ isScrolled, activeSection }) {
                     color: '#ffffff',
                     textDecoration: 'none',
                     fontSize: '0.9rem',
-                    fontFamily: 'var(--font-body)',
+                    fontFamily: 'var(--font-heading)',
                     opacity: 0.7,
                     whiteSpace: 'nowrap',
-                    fontWeight: activeSection === item.name.toLowerCase() ? '700' : '400',
-                    borderBottom: activeSection === item.name.toLowerCase() ? '1px solid #fff' : 'none'
+                    fontWeight: activeSection?.toLowerCase() === item.name.toLowerCase() ? '700' : '400',
+                    borderBottom: activeSection?.toLowerCase() === item.name.toLowerCase() ? '1px solid #fff' : 'none'
                   }}
                   onMouseEnter={(e) => e.target.style.opacity = 1}
                   onMouseLeave={(e) => e.target.style.opacity = 0.7}
+                  onClick={() => setIsExpanded(false)}
                 >
                   {item.name}
                 </motion.a>
@@ -121,14 +110,13 @@ export default function Navbar({ isScrolled, activeSection }) {
           )}
         </AnimatePresence>
 
-        {/* Toggle Button */}
+        {/* Toggle / Progress Button */}
         <motion.button
           layout
           onClick={toggleExpand}
           style={{
             background: 'transparent',
-            border: '1px solid rgba(255,255,255,0.3)',
-            borderRadius: '50%',
+            border: 'none', // Removed solid outline as we have SVG progress
             width: '32px',
             height: '32px',
             display: 'flex',
@@ -137,12 +125,26 @@ export default function Navbar({ isScrolled, activeSection }) {
             color: '#fff',
             cursor: 'pointer',
             flexShrink: 0,
-            marginLeft: isExpanded ? '10px' : 'auto'
+            marginLeft: isExpanded ? '10px' : 'auto',
+            position: 'relative'
           }}
-          whileHover={{ scale: 1.05, backgroundColor: 'rgba(255,255,255,0.1)' }}
+          whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
-          {isExpanded ? '✕' : '☰'}
+          {isExpanded ? (
+            <span style={{ fontSize: '1.2rem' }}>✕</span>
+          ) : (
+            <svg width="24" height="24" viewBox="0 0 24 24" style={{ transform: 'rotate(-90deg)' }}>
+              <circle cx="12" cy="12" r="10" stroke="rgba(255,255,255,0.2)" strokeWidth="2" fill="none" />
+              <motion.circle
+                cx="12" cy="12" r="10"
+                stroke="#ffffff"
+                strokeWidth="2"
+                fill="none"
+                style={{ pathLength: scrollYProgress }}
+              />
+            </svg>
+          )}
         </motion.button>
       </motion.div>
     </div>

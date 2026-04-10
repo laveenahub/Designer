@@ -295,8 +295,8 @@ function App() {
             <a href="mailto:contact@laveenachetwani.online" aria-label="Email">
               <span className="icon">✉️</span> contact@laveenachetwani.online
             </a>
-            <a href="tel:+910000000000" aria-label="Phone">
-              <span className="icon">📞</span> +91 000 000 0000
+            <a href="tel:+917878618889" aria-label="Phone">
+              <span className="icon">📞</span> +91 7878618889
             </a>
             <a href="https://linkedin.com/in/laveena-chetwani" target="_blank" rel="noreferrer" aria-label="LinkedIn">
               <span className="icon">🔗</span> LinkedIn

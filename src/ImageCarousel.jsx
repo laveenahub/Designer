@@ -92,9 +92,6 @@ export default function ImageCarousel() {
           </motion.div>
         );
       })}
-      <div style={{ position: 'absolute', bottom: '-40px', left: 0, right: 0, textAlign: 'center', color: '#999', fontSize: '0.8rem', fontFamily: 'var(--font-body)', letterSpacing: '0.05em' }}>
-        [ DRAG IMAGE TO INTERACT ]
-      </div>
     </div>
   );
 }

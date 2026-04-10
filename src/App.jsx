@@ -162,7 +162,7 @@ function App() {
             </div>
 
             <div className="about-text-content">
-              <div className="reveal" style={{ fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--text-secondary)', marginBottom: '1rem', fontFamily: 'var(--font-body)' }}>
+              <div className="reveal section-label" style={{ marginBottom: '1rem' }}>
                 ABOUT
               </div>
 
@@ -264,10 +264,10 @@ function App() {
 
         {/* --- TESTIMONIAL SECTION --- */}
         {/* --- TESTIMONIAL SECTION --- */}
-        <section id="testimonial" className="section testimonial-section-bg reveal">
+        <section id="testimonial" className="section reveal">
           <div className="container">
             <div className="testimonial-header-wrapper">
-              <h2 className="section-label" style={{ margin: 0, textTransform: 'none', fontSize: '2.5rem', fontFamily: 'var(--font-heading)', color: 'var(--text-primary)' }}>What others say!</h2>
+              <span className="section-label" style={{ marginBottom: '0.5rem' }}>WHAT OTHER'S SAY!</span>
               <span className="testimonial-subtitle">I didn't come up with these, I swear</span>
             </div>
 

@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 
-// Pulling images 1 through 11 as per instructions
-const images = Array.from({ length: 11 }, (_, i) => `/${i + 1}.jpg`);
+// Pulling images excluding 2, 5, and 11
+const images = Array.from({ length: 11 }, (_, i) => `/${i + 1}.jpg`)
+  .filter(img => !['/2.jpg', '/5.jpg', '/11.jpg'].includes(img));
 
 const CARD_OFFSET = 15;
 const SCALE_FACTOR = 0.05;

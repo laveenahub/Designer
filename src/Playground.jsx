@@ -32,7 +32,7 @@ const Playground = () => {
   }, []);
 
   return (
-    <div style={{ backgroundColor: '#FFFFFF', minHeight: '100vh', fontFamily: "'Inter', sans-serif", color: '#1A1A1A' }}>
+    <div style={{ backgroundColor: '#FFFFFF', minHeight: '100vh', fontFamily: "'Glyseric', serif", color: '#1A1A1A' }}>
       <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`} style={{ backgroundColor: isScrolled ? 'rgba(255, 255, 255, 0.95)' : 'transparent' }}>
         <div className="container nav-container">
           <a href="#/" className="logo" style={{ color: '#1A1A1A' }}>Lavee.</a>

@@ -33,7 +33,7 @@ const DesignLinkCaseStudy = () => {
       backgroundColor: '#FFFFFF', 
       minHeight: '100vh', 
       color: '#000000', 
-      fontFamily: "'Inter', sans-serif", // Base font
+      fontFamily: "'Glyseric', serif", // Base font
       padding: 0,
       margin: 0
     }}>

@@ -5,7 +5,8 @@ import Playground from './Playground'
 import CraftConnectCaseStudy from './CraftConnectCaseStudy'
 import LoadingScreen from './LoadingScreen'
 import ScrollToTop from './ScrollToTop'
-
+import Navbar from './Navbar'
+import ImageCarousel from './ImageCarousel'
 function App() {
   const [isLoading, setIsLoading] = useState(true)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -22,6 +23,22 @@ function App() {
   const [currentPage, setCurrentPage] = useState('home')
   const [mousePos, setMousePos] = useState({ x: -100, y: -100 })
   const [isHovering, setIsHovering] = useState(false)
+  const [activeSection, setActiveSection] = useState('hero')
+
+  useEffect(() => {
+    if (currentPage !== 'home') return;
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    }, { threshold: 0.5 });
+    
+    const sections = document.querySelectorAll('section');
+    sections.forEach(s => observer.observe(s));
+    return () => sections.forEach(s => observer.unobserve(s));
+  }, [currentPage]);
 
   const testimonials = [
     {
@@ -156,9 +173,7 @@ function App() {
         <section id="about" className="section" style={{ paddingTop: 'var(--space-md)', paddingBottom: 'var(--space-md)' }}>
           <div className="container about-editorial-grid">
             <div className="about-photo-column reveal">
-              <div className="about-photo-wrapper">
-                <img src="/profile.jpg" alt="Laveena Chetwaani" className="about-photo" />
-              </div>
+              <ImageCarousel />
             </div>
 
             <div className="about-text-content">
@@ -216,7 +231,7 @@ function App() {
               {/* DESIGNLINK CARD */}
               <a href="#/designlink" className="premium-card reveal">
                 <div className="premium-card-left">
-                  <span className="premium-label">DesignLink • 2024</span>
+                  <span className="premium-label">DesignLink • 2025</span>
                   <h3 className="premium-headline">Connecting designers with real-world opportunities through a seamless platform</h3>
 
                   <div className="premium-tags">
@@ -239,7 +254,7 @@ function App() {
               {/* CRAFTCONNECT CARD */}
               <a href="#/craftconnect" className="premium-card reveal delay-100">
                 <div className="premium-card-left">
-                  <span className="premium-label">CraftConnect • 2024</span>
+                  <span className="premium-label">CraftConnect • 2025</span>
                   <h3 className="premium-headline">Empowering Rajasthan artisans with direct global market access</h3>
 
                   <div className="premium-tags">
@@ -330,23 +345,7 @@ function App() {
           }}
         />
         {currentPage === 'home' && (
-          <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
-            <div className="container nav-container">
-              <a href="#" className="logo">Lavee.</a>
-
-              <div className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
-                <a href="#about" onClick={handleNavClick}>About</a>
-                <a href="#work" onClick={handleNavClick}>Work</a>
-                <a href="#/playground" onClick={handleNavClick}>Playground</a>
-                <a href="https://drive.google.com/file/d/1_DaxoUDhjx78x6eKOnqN8CNqCCWAeuUz/view?usp=drive_link" target="_blank" rel="noreferrer" title="Opens PDF ↗">Resume</a>
-                <a href="#contact" onClick={handleNavClick}>Contact</a>
-              </div>
-
-              <div className="mobile-menu-btn" onClick={toggleMenu}>
-                {isMenuOpen ? '[ CLOSE ]' : '[ MENU ]'}
-              </div>
-            </div>
-          </nav>
+          <Navbar isScrolled={isScrolled} activeSection={activeSection} />
         )}
 
         {renderContent()}

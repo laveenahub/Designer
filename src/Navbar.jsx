@@ -37,6 +37,7 @@ export default function Navbar({ activeSection }) {
           padding: isExpanded ? '10px 20px 10px 10px' : '10px 20px 10px 10px'
         }}
         transition={{ type: 'spring', stiffness: 400, damping: 30 }}
+        onClick={() => !isExpanded && setIsExpanded(true)}
         style={{
           backgroundColor: '#000000',
           color: '#ffffff',
@@ -48,7 +49,8 @@ export default function Navbar({ activeSection }) {
           overflow: 'hidden',
           pointerEvents: 'auto',
           minHeight: '60px',
-          gap: '20px'
+          gap: '20px',
+          cursor: isExpanded ? 'default' : 'pointer'
         }}
       >
         {/* Profile Section (always visible) */}
